@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Web Bán Sách</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">📚 Web Bán Sách</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" asp-controller="Sach" asp-action="Index">Sách</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="LoaiSach" asp-action="Index">Loại Sách</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="KhachHang" asp-action="Index">Khách Hàng</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="HoaDon" asp-action="Index">Hóa Đơn</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main class="container mt-4">
+        @RenderBody()
+    </main>
+    <footer class="bg-light text-center p-3">
+        <p>&copy; 2025 - Web Bán Sách</p>
+    </footer>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

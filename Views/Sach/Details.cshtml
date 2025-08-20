@@ -1,0 +1,57 @@
+﻿@model QLBanSachWeb.Models.Sach
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="text-center mb-4" style="color: #343a40;">Chi Tiết Sách</h1>
+
+<div class="container">
+    <div class="card shadow-sm mb-4" style="background-color: #f8f9fa;">
+        <div class="card-body">
+            <dl class="row">
+
+                <dt class="col-sm-3 font-weight-bold">Tên Sách</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.TenSach)</dd>
+
+                <dt class="col-sm-3 font-weight-bold">Tác Giả</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.TacGia)</dd>
+
+                <dt class="col-sm-3 font-weight-bold">Nhà Xuất Bản</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.NXB)</dd>
+
+                <dt class="col-sm-3 font-weight-bold">Năm Xuất Bản</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.NamXB)</dd>
+
+                <dt class="col-sm-3 font-weight-bold">Giá Bán</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.GiaBan)</dd>
+
+                <dt class="col-sm-3 font-weight-bold">Số Lượng</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.SoLuong)</dd>
+
+                <dt class="col-sm-3 font-weight-bold">Mô Tả</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.MoTa)</dd>
+
+                <dt class="col-sm-3 font-weight-bold">Hình Ảnh</dt>
+                <dd class="col-sm-9">
+                    @if (!string.IsNullOrEmpty(Model.HinhAnh))
+                    {
+                        <img src="~/images/@Model.HinhAnh" alt="@Model.TenSach" class="img-thumbnail" style="max-width:250px;" />
+                    }
+                    else
+                    {
+                        <span>Chưa có ảnh</span>
+                    }
+                </dd>
+
+                <dt class="col-sm-3 font-weight-bold">Loại Sách</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.MaLoaiNavigation.TenLoai)</dd>
+
+            </dl>
+        </div>
+        <div class="card-footer text-right">
+            <a asp-action="Edit" asp-route-id="@Model.MaSach" class="btn btn-warning mr-2">Chỉnh Sửa</a>
+            <a asp-action="Index" class="btn btn-secondary">Quay Lại</a>
+        </div>
+    </div>
+</div>

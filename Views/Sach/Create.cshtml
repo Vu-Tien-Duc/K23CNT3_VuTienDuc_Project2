@@ -1,0 +1,55 @@
+﻿@model QLBanSachWeb.Models.Sach
+
+<h1>Thêm sách mới</h1>
+
+<form asp-action="Create" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="TenSach"></label>
+        <input asp-for="TenSach" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="TacGia"></label>
+        <input asp-for="TacGia" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MaLoai"></label>
+        <select asp-for="MaLoai" class="form-control" asp-items="ViewBag.MaLoai"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NXB"></label>
+        <input asp-for="NXB" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NamXB"></label>
+        <input asp-for="NamXB" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="GiaBan"></label>
+        <input asp-for="GiaBan" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SoLuong"></label>
+        <input asp-for="SoLuong" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MoTa"></label>
+        <textarea asp-for="MoTa" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label>Hình ảnh</label>
+        <input type="file" class="form-control" name="HinhAnhFile" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</form>
