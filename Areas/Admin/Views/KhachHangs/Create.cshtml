@@ -1,0 +1,37 @@
+﻿@model QLBanSachWeb.Models.KhachHang
+
+
+
+@{
+    ViewData["Create"] = "Create";
+}
+
+
+<form asp-action="@ViewData["Create"]">
+    <div class="form-group">
+        <label asp-for="HoTen"></label>
+        <input asp-for="HoTen" class="form-control" />
+        <span asp-validation-for="HoTen" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MatKhau"></label>
+        <input asp-for="MatKhau" class="form-control" type="password" />
+        <span asp-validation-for="MatKhau" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SDT"></label>
+        <input asp-for="SDT" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="DiaChi"></label>
+        <input asp-for="DiaChi" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">Lưu</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>

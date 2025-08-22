@@ -24,6 +24,7 @@ public partial class Sach
 
     public string? MoTa { get; set; }
 
+
     public string? HinhAnh { get; set; }
     [NotMapped]
     public IFormFile? HinhAnhFile { get; set; } // cho phép null

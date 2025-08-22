@@ -1,0 +1,56 @@
+﻿@model List<QLBanSachWeb.Models.CartItem>
+
+@{
+    ViewData["Title"] = "Giỏ hàng";
+}
+
+<h2>Giỏ hàng của bạn</h2>
+
+@if (Model.Count == 0)
+{
+    <p>Giỏ hàng trống.</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Sách</th>
+                <th>Hình ảnh</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.TenSach</td>
+                    <td>
+                        @if (!string.IsNullOrEmpty(item.HinhAnh))
+                        {
+                            <img src="~/images/@item.HinhAnh" width="80" />
+                        }
+                    </td>
+                    <td>@item.GiaBan.ToString("n0") ₫</td>
+                    <td>
+                        <form asp-action="Update" method="post" class="d-inline">
+                            <input type="hidden" name="id" value="@item.MaSach" />
+                            <input type="number" name="soLuong" value="@item.SoLuong" min="1" class="form-control d-inline" style="width:70px" />
+                            <button type="submit" class="btn btn-sm btn-warning">Cập nhật</button>
+                        </form>
+                    </td>
+                    <td>@item.ThanhTien.ToString("n0") ₫</td>
+                    <td>
+                        <a asp-action="Remove" asp-route-id="@item.MaSach" class="btn btn-sm btn-danger">Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h4>Tổng cộng: @ViewBag.Total.ToString("n0") ₫</h4>
+    <a href="#" class="btn btn-success">Thanh toán</a>
+}

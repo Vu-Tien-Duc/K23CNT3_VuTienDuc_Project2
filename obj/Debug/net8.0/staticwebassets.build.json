@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "42Xw8znWvajHqBiaMeIyJAf1jhXmThyLjdyw27/Jh6w=",
+  "Hash": "ATKN6sAYcDnCcH6gbb8CAag7fENSPDG1iay3NvOJMaA=",
   "Source": "QLBanSachWeb",
   "BasePath": "_content/QLBanSachWeb",
   "Mode": "Default",
@@ -243,6 +243,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\th (1).jpg"
+    },
+    {
+      "Identity": "D:\\Project2\\QLBanSachWeb\\wwwroot\\images\\th.jpg",
+      "SourceId": "QLBanSachWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project2\\QLBanSachWeb\\wwwroot\\",
+      "BasePath": "_content/QLBanSachWeb",
+      "RelativePath": "images/th.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\th.jpg"
     },
     {
       "Identity": "D:\\Project2\\QLBanSachWeb\\wwwroot\\images\\vivo v27e.jpg",

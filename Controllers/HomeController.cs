@@ -12,13 +12,23 @@ public class HomeController : Controller
     }
 
     // GET: /Home/Index
-    public async Task<IActionResult> Index(string? searchString)
+    public async Task<IActionResult> Index(string? searchString, int? categoryId)
     {
-        var sach = from s in _context.Saches select s;
+        // Lấy tất cả thể loại đưa sang ViewBag
+        ViewBag.Categories = await _context.LoaiSaches.ToListAsync();
+        ViewBag.SelectedCategory = categoryId;
+
+        var sach = from s in _context.Saches
+                   select s;
 
         if (!string.IsNullOrEmpty(searchString))
         {
             sach = sach.Where(s => s.TenSach.Contains(searchString));
+        }
+
+        if (categoryId.HasValue)
+        {
+            sach = sach.Where(s => s.MaLoai == categoryId);
         }
 
         return View(await sach.ToListAsync());
@@ -30,6 +40,7 @@ public class HomeController : Controller
         if (id == null) return NotFound();
 
         var sach = await _context.Saches
+            .Include(s => s.MaLoaiNavigation) // để lấy tên thể loại
             .FirstOrDefaultAsync(m => m.MaSach == id);
 
         if (sach == null) return NotFound();

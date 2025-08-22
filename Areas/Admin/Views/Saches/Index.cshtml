@@ -1,0 +1,64 @@
+﻿@model IEnumerable<QLBanSachWeb.Models.Sach>
+
+@{
+    ViewData["Title"] = "Quản lý Sách";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1 class="mb-4">Danh sách sách</h1>
+
+<p>
+    <a asp-area="Admin" asp-controller="Saches" asp-action="Create" class="btn btn-primary">➕ Thêm mới</a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Tên sách</th>
+            <th>Tác giả</th>
+            <th>Loại sách</th>
+            <th>NXB</th>
+            <th>Năm XB</th>
+            <th>Giá bán</th>
+            <th>Số lượng</th>
+            <th>Mô tả</th>
+            <th>Hình ảnh</th>
+            <th style="width:180px;">Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TenSach</td>
+                <td>@item.TacGia</td>
+                <td>@item.MaLoaiNavigation?.TenLoai</td>
+                <td>@item.NXB</td>
+                <td>@item.NamXB</td>
+                <td>@item.GiaBan.ToString("C0")</td>
+                <td>@item.SoLuong</td>
+                <td>@item.MoTa</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.HinhAnh))
+                    {
+                        <img src="~/images/@item.HinhAnh" width="80" height="100" style="object-fit:cover;" />
+                    }
+                    else
+                    {
+                        <span class="text-muted">Không có</span>
+                    }
+                </td>
+                <td>
+                    <a asp-area="Admin" asp-controller="Saches" asp-action="Edit" asp-route-id="@item.MaSach" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-area="Admin" asp-controller="Saches" asp-action="Details" asp-route-id="@item.MaSach" class="btn btn-sm btn-info">Details</a>
+                    <form asp-area="Admin" asp-controller="Saches" asp-action="Delete" asp-route-id="@item.MaSach" method="post" asp-antiforgery="true" style="display:inline">
+                        <button type="submit" class="btn btn-sm btn-danger"
+                                onclick="return confirm('Bạn có chắc chắn muốn xóa sách này?');">
+                            Delete
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -4,32 +4,50 @@
     ViewData["Title"] = "Chi tiết sách";
 }
 
-<div class="container mt-4">
-    <div class="card shadow-sm">
-        <div class="row g-0">
-            <div class="col-md-4 text-center p-3">
-                @if (!string.IsNullOrEmpty(Model.HinhAnh))
-                {
-                    <img src="~/images/@Model.HinhAnh" class="img-fluid rounded" alt="@Model.TenSach" />
-                }
-                else
-                {
-                    <img src="~/images/no-image.png" class="img-fluid rounded" alt="No Image" />
-                }
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h3 class="card-title">@Model.TenSach</h3>
-                    <p class="card-text"><strong>Tác giả:</strong> @Model.TacGia</p>
-                    <p class="card-text"><strong>Nhà xuất bản:</strong> @Model.NXB</p>
-                    <p class="card-text"><strong>Năm XB:</strong> @Model.NamXB</p>
-                    <p class="card-text"><strong>Số lượng:</strong> @Model.SoLuong</p>
-                    <p class="card-text"><strong>Mô tả:</strong> @Model.MoTa</p>
-                    <h4 class="text-danger">@Model.GiaBan.ToString("N0") đ</h4>
+<h2 class="mb-4">Chi tiết sách</h2>
 
-                    <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
-                </div>
+<div class="row">
+    <!-- Cột ảnh -->
+    <div class="col-md-4">
+        @if (!string.IsNullOrEmpty(Model.HinhAnh))
+        {
+            <img src="~/images/@Model.HinhAnh" class="img-fluid rounded shadow" alt="@Model.TenSach" />
+        }
+        else
+        {
+            <img src="~/images/no-image.png" class="img-fluid rounded shadow" alt="No Image" />
+        }
+
+        <div class="mt-3">
+            <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@Model.MaSach" class="btn btn-primary w-100">
+                Thêm vào giỏ
+            </a>
+        </div>
+    </div>
+
+    <!-- Cột thông tin -->
+    <div class="col-md-8">
+        <div class="card shadow">
+            <div class="card-body">
+                <h4 class="card-title">@Model.TenSach</h4>
+                <p class="card-text"><strong>Tác giả:</strong> @Model.TacGia</p>
+                <p class="card-text"><strong>Thể loại:</strong> @Model.MaLoaiNavigation?.TenLoai</p>
+                <p class="card-text"><strong>Nhà XB:</strong> @Model.NXB</p>
+                <p class="card-text"><strong>Năm XB:</strong> @Model.NamXB</p>
+                <p class="card-text">
+                    <strong>Giá:</strong>
+                <p class="card-text">
+                    <strong>Giá:</strong> @Model.GiaBan.ToString("n0") ₫
+                </p>
+
+                </p>
+                <p class="card-text"><strong>Số lượng:</strong> @Model.SoLuong</p>
+                <p class="card-text"><strong>Mô tả:</strong> @Model.MoTa</p>
             </div>
+        </div>
+
+        <div class="mt-3">
+            <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
         </div>
     </div>
 </div>

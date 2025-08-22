@@ -32,7 +32,13 @@ public partial class QLBanSachContext : DbContext
     public virtual DbSet<Sach> Saches { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Name=DefaultConnection");
+    {
+        if (!optionsBuilder.IsConfigured)
+        {
+            optionsBuilder.UseSqlServer("Name=DefaultConnection");
+        }
+    }
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<QLBanSachWeb.Models.LoaiSach>
+
+@{
+    ViewData["Title"] = "Danh sách loại sách";
+}
+
+<h1>Danh sách loại sách</h1>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Thêm loại sách</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã loại</th>
+            <th>Tên loại</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MaLoai</td>
+                <td>@item.TenLoai</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.MaLoai" class="btn btn-sm btn-warning">Sửa</a>
+                    <a asp-action="Details" asp-route-id="@item.MaLoai" class="btn btn-sm btn-success">Detail</a>
+                    <form asp-area="Admin" asp-controller="LoaiSaches" asp-action="Delete" asp-route-id="@item.MaLoai" method="post" asp-antiforgery="true" style="display:inline">
+                        <button type="submit" class="btn btn-sm btn-danger"
+                                onclick="return confirm('Bạn có chắc chắn muốn xóa sách này?');">
+                            Delete
+                        </button>
+                    </form>
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>

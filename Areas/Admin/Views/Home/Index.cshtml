@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Trang Quản Trị - Dashboard";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1 class="mb-4">Xin chào, Admin 👋</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-header">Sách</div>
+            <div class="card-body">
+                <h5 class="card-title">Quản lý Sách</h5>
+                <p class="card-text">Xem, thêm, sửa, xóa sách.</p>
+                <a href="/Admin/Saches" class="btn btn-light">Đi tới</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-header">Khách Hàng</div>
+            <div class="card-body">
+                <h5 class="card-title">Quản lý Khách Hàng</h5>
+                <p class="card-text">Xem danh sách khách mua sách.</p>
+                <a href="/Admin/KhachHangs" class="btn btn-light">Đi tới</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-white bg-warning mb-3">
+            <div class="card-header">Hóa Đơn</div>
+            <div class="card-body">
+                <h5 class="card-title">Quản lý Hóa Đơn</h5>
+                <p class="card-text">Xem chi tiết hóa đơn bán sách.</p>
+                <a href="/Admin/HoaDon" class="btn btn-light">Đi tới</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-white bg-warning mb-3">
+            <div class="card-header">Loại Sách</div>
+            <div class="card-body">
+                <h5 class="card-title">Quản lý Loại Sách</h5>
+                <p class="card-text">Xem chi tiết Loại sách.</p>
+                <a href="/Admin/LoaiSaches" class="btn btn-light">Đi tới</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+﻿@model QLBanSachWeb.Models.KhachHang
+
+@{
+    ViewData["Title"] = "Chi tiết khách hàng";
+}
+
+<h2>Chi tiết khách hàng</h2>
+
+<div>
+    <p><b>Họ tên:</b> @Model.HoTen</p>
+    <p><b>Email:</b> @Model.Email</p>
+    <p><b>SĐT:</b> @Model.SDT</p>
+    <p><b>Địa chỉ:</b> @Model.DiaChi</p>
+</div>
+
+<a asp-action="Index" class="btn btn-secondary">Quay lại</a>

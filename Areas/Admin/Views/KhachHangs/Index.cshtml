@@ -1,0 +1,42 @@
+﻿@model IEnumerable<QLBanSachWeb.Models.KhachHang>
+
+@{
+    ViewData["Title"] = "Danh sách khách hàng";
+}
+
+<h2>Danh sách khách hàng</h2>
+
+<a asp-action="Create" class="btn btn-primary">Thêm mới</a>
+
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>Mã KH</th>
+            <th>Họ tên</th>
+            <th>Email</th>
+            <th>SĐT</th>
+            <th>Địa chỉ</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MaKH</td>
+                <td>@item.HoTen</td>
+                <td>@item.Email</td>
+                <td>@item.SDT</td>
+                <td>@item.DiaChi</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.MaKH" class="btn btn-warning btn-sm">Sửa</a>
+                    <a asp-action="Details" asp-route-id="@item.MaKH" class="btn btn-info btn-sm">Chi tiết</a>
+                    <form asp-action="Delete" asp-route-id="@item.MaKH" method="post" style="display:inline;"
+                          onsubmit="return confirm('Bạn có chắc muốn xóa khách hàng này?');">
+                        <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

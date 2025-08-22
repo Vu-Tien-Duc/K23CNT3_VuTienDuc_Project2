@@ -1,10 +1,13 @@
 ﻿@model QLBanSachWeb.Models.Sach
 
-<h1>Thêm sách mới</h1>
+@{
+    ViewData["Title"] = "Thêm Sách";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Thêm Sách</h2>
 
 <form asp-action="Create" enctype="multipart/form-data">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
     <div class="form-group">
         <label asp-for="TenSach"></label>
         <input asp-for="TenSach" class="form-control" />
@@ -17,7 +20,7 @@
 
     <div class="form-group">
         <label asp-for="MaLoai"></label>
-        <select asp-for="MaLoai" class="form-control" asp-items="ViewBag.MaLoai"></select>
+        <select asp-for="MaLoai" asp-items="ViewBag.MaLoai" class="form-control"></select>
     </div>
 
     <div class="form-group">
@@ -46,10 +49,10 @@
     </div>
 
     <div class="form-group">
-        <label>Hình ảnh</label>
-        <input type="file" class="form-control" name="HinhAnhFile" />
+        <label asp-for="HinhAnhFile">Chọn ảnh</label>
+        <input asp-for="HinhAnhFile" type="file" class="form-control" />
     </div>
 
-    <button type="submit" class="btn btn-primary">Save</button>
-    <a asp-action="Index" class="btn btn-secondary">Back</a>
+    <button type="submit" class="btn btn-success">Lưu</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
 </form>

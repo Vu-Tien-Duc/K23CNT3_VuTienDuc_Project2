@@ -3,60 +3,65 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using QLBanSachWeb.Models;
 
-namespace QLBanSachWeb.Controllers
+namespace QLBanSachWeb.Areas.Admin.Controllers
 {
-    public class SachController : Controller
+    [Area("Admin")]
+    public class SachesController : Controller
     {
         private readonly QLBanSachContext _context;
+        private readonly IWebHostEnvironment _env;
 
-        public SachController(QLBanSachContext context)
+        public SachesController(QLBanSachContext context, IWebHostEnvironment env)
         {
             _context = context;
+            _env = env;
         }
 
-        // GET: Sach
-        public IActionResult Index()
+        // GET: Admin/Saches
+        public async Task<IActionResult> Index()
         {
-            var saches = _context.Saches.Include(s => s.MaLoaiNavigation).ToList();
-
+            var saches = await _context.Saches
+                .Include(s => s.MaLoaiNavigation)
+                .ToListAsync();
             return View(saches);
         }
 
-        // GET: Sach/Details/5
-        public IActionResult Details(int? id)
+        // GET: Admin/Saches/Details/5
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null) return NotFound();
 
-            var sach = _context.Saches
+            var sach = await _context.Saches
                 .Include(s => s.MaLoaiNavigation)
-                .FirstOrDefault(m => m.MaSach == id);
+                .FirstOrDefaultAsync(m => m.MaSach == id);
+
             if (sach == null) return NotFound();
 
             return View(sach);
         }
 
-        // GET: Sach/Create
+        // GET: Admin/Saches/Create
         public IActionResult Create()
         {
             ViewBag.MaLoai = new SelectList(_context.LoaiSaches, "MaLoai", "TenLoai");
             return View();
         }
 
-        // POST: Sach/Create
+        // POST: Admin/Saches/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Sach sach, IFormFile HinhAnhFile)
+        public async Task<IActionResult> Create(Sach sach)
         {
             if (ModelState.IsValid)
             {
-                if (HinhAnhFile != null && HinhAnhFile.Length > 0)
+                if (sach.HinhAnhFile != null && sach.HinhAnhFile.Length > 0)
                 {
-                    var fileName = Path.GetFileName(HinhAnhFile.FileName);
-                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
+                    string fileName = Path.GetFileName(sach.HinhAnhFile.FileName);
+                    string path = Path.Combine(_env.WebRootPath, "images", fileName);
 
-                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    using (var stream = new FileStream(path, FileMode.Create))
                     {
-                        await HinhAnhFile.CopyToAsync(stream);
+                        await sach.HinhAnhFile.CopyToAsync(stream);
                     }
 
                     sach.HinhAnh = fileName;
@@ -70,7 +75,7 @@ namespace QLBanSachWeb.Controllers
             return View(sach);
         }
 
-        // GET: Sach/Edit/5
+        // GET: Admin/Saches/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null) return NotFound();
@@ -79,15 +84,13 @@ namespace QLBanSachWeb.Controllers
             if (sach == null) return NotFound();
 
             ViewBag.MaLoai = new SelectList(_context.LoaiSaches, "MaLoai", "TenLoai", sach.MaLoai);
-
             return View(sach);
         }
 
-
-        // POST: Sach/Edit/5
+        // POST: Admin/Saches/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, Sach sach, string OldImage)
+        public async Task<IActionResult> Edit(int id, Sach sach, string? oldImage)
         {
             if (id != sach.MaSach) return NotFound();
 
@@ -95,27 +98,39 @@ namespace QLBanSachWeb.Controllers
             {
                 try
                 {
+                    var existingSach = await _context.Saches.FindAsync(id);
+                    if (existingSach == null) return NotFound();
+
+                    // update fields
+                    existingSach.TenSach = sach.TenSach;
+                    existingSach.TacGia = sach.TacGia;
+                    existingSach.MaLoai = sach.MaLoai;
+                    existingSach.NXB = sach.NXB;
+                    existingSach.NamXB = sach.NamXB;
+                    existingSach.GiaBan = sach.GiaBan;
+                    existingSach.SoLuong = sach.SoLuong;
+                    existingSach.MoTa = sach.MoTa;
+
+                    // upload ảnh mới
                     if (sach.HinhAnhFile != null && sach.HinhAnhFile.Length > 0)
                     {
-                        var fileName = Path.GetFileName(sach.HinhAnhFile.FileName);
-                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
+                        string fileName = Path.GetFileName(sach.HinhAnhFile.FileName);
+                        string path = Path.Combine(_env.WebRootPath, "images", fileName);
 
                         using (var stream = new FileStream(path, FileMode.Create))
                         {
                             await sach.HinhAnhFile.CopyToAsync(stream);
                         }
 
-                        sach.HinhAnh = fileName;
+                        existingSach.HinhAnh = fileName;
                     }
                     else
                     {
-                        sach.HinhAnh = OldImage; // giữ lại ảnh cũ
+                        existingSach.HinhAnh = oldImage; // giữ ảnh cũ
                     }
 
-
-                    _context.Update(sach);
+                    _context.Update(existingSach);
                     await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -124,26 +139,28 @@ namespace QLBanSachWeb.Controllers
                     else
                         throw;
                 }
+                return RedirectToAction(nameof(Index));
             }
 
             ViewBag.MaLoai = new SelectList(_context.LoaiSaches, "MaLoai", "TenLoai", sach.MaLoai);
             return View(sach);
         }
 
-        // GET: Sach/Delete/5
-        public IActionResult Delete(int? id)
+        // GET: Admin/Saches/Delete/5
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
 
-            var sach = _context.Saches
+            var sach = await _context.Saches
                 .Include(s => s.MaLoaiNavigation)
-                .FirstOrDefault(m => m.MaSach == id);
+                .FirstOrDefaultAsync(m => m.MaSach == id);
+
             if (sach == null) return NotFound();
 
             return View(sach);
         }
 
-        // POST: Sach/Delete/5
+        // POST: Admin/Saches/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -151,31 +168,11 @@ namespace QLBanSachWeb.Controllers
             var sach = await _context.Saches.FindAsync(id);
             if (sach != null)
             {
-                try
-                {
-                    // Xóa file ảnh vật lý nếu có
-                    if (!string.IsNullOrEmpty(sach.HinhAnh))
-                    {
-                        var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", sach.HinhAnh);
-                        if (System.IO.File.Exists(imagePath))
-                        {
-                            System.IO.File.Delete(imagePath);
-                        }
-                    }
-
-                    // Xóa trong database
-                    _context.Saches.Remove(sach);
-                    await _context.SaveChangesAsync();
-                }
-                catch (Exception ex)
-                {
-                    // Bắt lỗi nếu có ràng buộc FK
-                    TempData["ErrorMessage"] = "Không thể xóa sách này vì đang được sử dụng. Chi tiết: " + ex.Message;
-                    return RedirectToAction(nameof(Index));
-                }
+                _context.Saches.Remove(sach);
+                await _context.SaveChangesAsync();
             }
+
             return RedirectToAction(nameof(Index));
         }
-
     }
 }

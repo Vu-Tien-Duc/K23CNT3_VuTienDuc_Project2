@@ -1,0 +1,34 @@
+﻿@model QLBanSachWeb.Models.LoaiSach
+
+@{
+    ViewData["Title"] = "Thêm loại sách";
+}
+
+<h1>Thêm loại sách</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- KHÔNG nhập MaLoai nữa -->
+            <div class="form-group">
+                <label asp-for="TenLoai" class="control-label">Tên loại</label>
+                <input asp-for="TenLoai" class="form-control" />
+                <span asp-validation-for="TenLoai" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-2">
+                <input type="submit" value="Lưu" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
