@@ -4,50 +4,60 @@
     ViewData["Title"] = "Chi tiết sách";
 }
 
-<h2 class="mb-4">Chi tiết sách</h2>
+<div class="container my-4">
+    <h2 class="mb-4 text-center text-primary fw-bold">Chi tiết sách</h2>
 
-<div class="row">
-    <!-- Cột ảnh -->
-    <div class="col-md-4">
-        @if (!string.IsNullOrEmpty(Model.HinhAnh))
-        {
-            <img src="~/images/@Model.HinhAnh" class="img-fluid rounded shadow" alt="@Model.TenSach" />
-        }
-        else
-        {
-            <img src="~/images/no-image.png" class="img-fluid rounded shadow" alt="No Image" />
-        }
+    <div class="row g-4">
+        <!-- Cột ảnh -->
+        <div class="col-md-4 text-center">
+            <div class="border rounded shadow-sm p-2 bg-light">
+                @if (!string.IsNullOrEmpty(Model.HinhAnh))
+                {
+                    <img src="~/images/@Model.HinhAnh" class="img-fluid rounded" alt="@Model.TenSach" />
+                }
+                else
+                {
+                    <img src="~/images/no-image.png" class="img-fluid rounded" alt="No Image" />
+                }
+            </div>
 
-        <div class="mt-3">
-            <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@Model.MaSach" class="btn btn-primary w-100">
-                Thêm vào giỏ
-            </a>
-        </div>
-    </div>
-
-    <!-- Cột thông tin -->
-    <div class="col-md-8">
-        <div class="card shadow">
-            <div class="card-body">
-                <h4 class="card-title">@Model.TenSach</h4>
-                <p class="card-text"><strong>Tác giả:</strong> @Model.TacGia</p>
-                <p class="card-text"><strong>Thể loại:</strong> @Model.MaLoaiNavigation?.TenLoai</p>
-                <p class="card-text"><strong>Nhà XB:</strong> @Model.NXB</p>
-                <p class="card-text"><strong>Năm XB:</strong> @Model.NamXB</p>
-                <p class="card-text">
-                    <strong>Giá:</strong>
-                <p class="card-text">
-                    <strong>Giá:</strong> @Model.GiaBan.ToString("n0") ₫
-                </p>
-
-                </p>
-                <p class="card-text"><strong>Số lượng:</strong> @Model.SoLuong</p>
-                <p class="card-text"><strong>Mô tả:</strong> @Model.MoTa</p>
+            <div class="mt-3">
+                <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@Model.MaSach"
+                   class="btn btn-success w-100 fw-semibold shadow-sm">
+                    <i class="bi bi-cart-plus"></i> Thêm vào giỏ
+                </a>
             </div>
         </div>
 
-        <div class="mt-3">
-            <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+        <!-- Cột thông tin -->
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h3 class="card-title text-dark fw-bold mb-3">@Model.TenSach</h3>
+                    <ul class="list-group list-group-flush mb-3">
+                        <li class="list-group-item"><strong>Tác giả:</strong> @Model.TacGia</li>
+                        <li class="list-group-item"><strong>Thể loại:</strong> @Model.MaLoaiNavigation?.TenLoai</li>
+                        <li class="list-group-item"><strong>Nhà XB:</strong> @Model.NXB</li>
+                        <li class="list-group-item"><strong>Năm XB:</strong> @Model.NamXB</li>
+                        <li class="list-group-item text-danger fw-bold fs-5">
+                            <strong>Giá:</strong>
+                            @(Model.GiaBan > 0 ? Model.GiaBan.ToString("n0") + " ₫" : "Liên hệ")
+                        </li>
+                        <li class="list-group-item"><strong>Số lượng:</strong> @Model.SoLuong</li>
+                        <li class="list-group-item"><strong>Mô tả:</strong><br /> @Model.MoTa</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-3 d-flex justify-content-between">
+                <a asp-action="Index" class="btn btn-outline-secondary px-4">
+                    <i class="bi bi-arrow-left"></i> Quay lại
+                </a>
+                <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@Model.MaSach"
+                   class="btn btn-primary px-4">
+                    Mua ngay
+                </a>
+            </div>
         </div>
     </div>
 </div>

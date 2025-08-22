@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ATKN6sAYcDnCcH6gbb8CAag7fENSPDG1iay3NvOJMaA=",
+  "Hash": "hYCef2+chnDQ8A9F1FjB7PQPadsVSklYosloZWfM270=",
   "Source": "QLBanSachWeb",
   "BasePath": "_content/QLBanSachWeb",
   "Mode": "Default",
@@ -224,6 +224,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\LapTrinhC.jpg"
+    },
+    {
+      "Identity": "D:\\Project2\\QLBanSachWeb\\wwwroot\\images\\logoD.jpg",
+      "SourceId": "QLBanSachWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project2\\QLBanSachWeb\\wwwroot\\",
+      "BasePath": "_content/QLBanSachWeb",
+      "RelativePath": "images/logoD.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logoD.jpg"
     },
     {
       "Identity": "D:\\Project2\\QLBanSachWeb\\wwwroot\\images\\th (1).jpg",

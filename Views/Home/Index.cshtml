@@ -6,54 +6,70 @@
     int? selectedCategory = ViewBag.SelectedCategory as int?;
 }
 
-<h2>Danh sách sách</h2>
+<div class="container my-4">
+    <h2 class="mb-4 text-primary fw-bold text-center">📚 Danh sách sách</h2>
 
-<form asp-action="Index" method="get" class="mb-3">
-    <input type="text" name="searchString" placeholder="Tìm kiếm sách..." class="form-control mb-2" />
+    <form asp-action="Index" method="get" class="mb-3 d-flex gap-2">
+        <input type="text" name="searchString" placeholder="Tìm kiếm sách..." class="form-control w-25" />
 
-    <select name="categoryId" class="form-select mb-2">
-        <option value="">-- Tất cả thể loại --</option>
-        @if (categories != null)
-        {
-            foreach (var cat in categories)
+        <select name="categoryId" class="form-select w-25">
+            <option value="">-- Tất cả thể loại --</option>
+            @if (categories != null)
             {
-                <option value="@cat.MaLoai" selected="@(selectedCategory == cat.MaLoai)">
-                    @cat.TenLoai
-                </option>
+                foreach (var cat in categories)
+                {
+                    <option value="@cat.MaLoai" selected="@(selectedCategory == cat.MaLoai)">
+                        @cat.TenLoai
+                    </option>
+                }
             }
-        }
-    </select>
+        </select>
 
-    <button type="submit" class="btn btn-primary">Lọc</button>
-</form>
+        <select name="sortOrder" class="form-select w-25">
+            <option value="">Mặc định</option>
+            <option value="price_asc" selected="@(ViewBag.CurrentSort == "price_asc")">Giá tăng dần</option>
+            <option value="price_desc" selected="@(ViewBag.CurrentSort == "price_desc")">Giá giảm dần</option>
+        </select>
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Tên sách</th>
-            <th>Tác giả</th>
-            <th>Giá</th>
-            <th>Hình ảnh</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+        <button type="submit" class="btn btn-primary">Lọc</button>
+    </form>
+
+    <div class="row">
         @foreach (var item in Model)
         {
-            <tr>
-                <td>@item.TenSach</td>
-                <td>@item.TacGia</td>
-                <td>@item.GiaBan.ToString("n0") ₫</td>
-                <td>
-                    @if (!string.IsNullOrEmpty(item.HinhAnh))
-                    {
-                        <img src="~/images/@item.HinhAnh" width="80" />
-                    }
-                </td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.MaSach" class="btn btn-info btn-sm">Chi tiết</a>
-                </td>
-            </tr>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="~/images/@item.HinhAnh" class="card-img-top" alt="@item.TenSach" style="height:250px; object-fit:cover;" />
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">@item.TenSach</h5>
+                        <p class="card-text text-muted">Tác giả: @item.TacGia</p>
+                        <p class="fw-bold text-danger">@item.GiaBan.ToString("n0") ₫</p>
+                        <div class="mt-auto">
+                            <a asp-action="Details" asp-route-id="@item.MaSach" class="btn btn-info btn-sm w-100 mb-2">Chi tiết</a>
+                            <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@item.MaSach" class="btn btn-success btn-sm w-100">Thêm vào giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         }
-    </tbody>
-</table>
+    </div>
+
+    <!-- Pagination -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                    <a class="page-link" asp-action="Index" asp-route-page="@i"
+                       asp-route-searchString="@Context.Request.Query["searchString"]"
+                       asp-route-categoryId="@selectedCategory"
+                       asp-route-sortOrder="@ViewBag.CurrentSort">
+                        @i
+                    </a>
+                </li>
+            }
+        </ul>
+    </nav>
+
+
+</div>
