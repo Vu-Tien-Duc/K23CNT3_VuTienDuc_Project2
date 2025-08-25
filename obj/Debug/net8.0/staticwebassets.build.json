@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hYCef2+chnDQ8A9F1FjB7PQPadsVSklYosloZWfM270=",
+  "Hash": "tgGFpTXQ4nP43SM8KL0TrUDr3ls0IhrIO+P4HZADSXQ=",
   "Source": "QLBanSachWeb",
   "BasePath": "_content/QLBanSachWeb",
   "Mode": "Default",
@@ -300,6 +300,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\vivo v27e.jpg"
+    },
+    {
+      "Identity": "D:\\Project2\\QLBanSachWeb\\wwwroot\\images\\z6937009893093_b8098325b4d8f237bf68c5763f66918f.jpg",
+      "SourceId": "QLBanSachWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project2\\QLBanSachWeb\\wwwroot\\",
+      "BasePath": "_content/QLBanSachWeb",
+      "RelativePath": "images/z6937009893093_b8098325b4d8f237bf68c5763f66918f.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\z6937009893093_b8098325b4d8f237bf68c5763f66918f.jpg"
     },
     {
       "Identity": "D:\\Project2\\QLBanSachWeb\\wwwroot\\js\\site.js",

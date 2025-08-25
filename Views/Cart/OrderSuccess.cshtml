@@ -1,0 +1,42 @@
+﻿@model QLBanSachWeb.Models.DonHang
+
+@{
+    ViewData["Title"] = "Đặt hàng thành công";
+}
+
+<div class="alert alert-success mt-4">
+    <h3>✅ Đặt hàng thành công!</h3>
+    <p>Mã đơn hàng: <strong>@Model.MaDH</strong></p>
+    <p>Ngày đặt: @(Model.NgayDat.HasValue ? Model.NgayDat.Value.ToString("dd/MM/yyyy HH:mm") : "N/A")</p>
+    <p>Tổng tiền: <strong>@(Model.TongTien.HasValue ? Model.TongTien.Value.ToString("N0") : "0") đ</strong></p>
+    <p>Trạng thái: <span class="badge bg-warning">@Model.TrangThai</span></p>
+</div>
+
+<h4>📚 Chi tiết đơn hàng</h4>
+<table class="table table-bordered">
+    <thead class="table-light">
+        <tr>
+            <th>Sách</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Thành tiền</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ct in Model.CT_DonHangs)
+        {
+            <tr>
+                <td>@ct.MaSachNavigation?.TenSach</td>
+                <td>@ct.DonGia.ToString("N0") đ</td>
+                <td>@ct.SoLuong</td>
+                <td>@((ct.SoLuong * ct.DonGia).ToString("N0")) đ</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="mt-3">
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Tiếp tục mua sắm</a>
+
+</div>

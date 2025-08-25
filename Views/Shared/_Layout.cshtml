@@ -13,22 +13,39 @@
     <header class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" asp-controller="Home" asp-action="Index">📚 Web Bán Sách</a>
-            <div class="collapse navbar-collapse">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link" asp-controller="Sach" asp-action="Index">Sách</a></li>
                     <li class="nav-item"><a class="nav-link" asp-controller="LoaiSach" asp-action="Index">Loại Sách</a></li>
                     <li class="nav-item"><a class="nav-link" asp-controller="KhachHang" asp-action="Index">Khách Hàng</a></li>
                     <li class="nav-item"><a class="nav-link" asp-controller="HoaDon" asp-action="Index">Hóa Đơn</a></li>
                 </ul>
-            </div>
+
+                    <!-- Nút đăng nhập & đăng ký -->
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="btn btn-outline-light me-2" asp-controller="Account" asp-action="Login">Đăng nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-warning" asp-controller="Account" asp-action="SignUp">Đăng ký</a>
+                        </li>
+                    </ul>
+                </div>
         </div>
     </header>
+
     <main class="container mt-4">
         @RenderBody()
     </main>
+
     <footer class="bg-light text-center p-3">
         <p>&copy; 2025 - Web Bán Sách</p>
     </footer>
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>

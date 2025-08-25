@@ -1,79 +1,57 @@
-﻿@model List<QLBanSachWeb.Models.CartItem>
+﻿    @model IEnumerable<QLBanSachWeb.Models.CT_GioHang>
 
-@{
-    ViewData["Title"] = "Giỏ hàng";
-}
+    @{
+        ViewData["Title"] = "Giỏ hàng";
+    }
 
-<div class="container my-4">
-    <h2 class="mb-4 text-primary fw-bold text-center">🛒 Giỏ hàng của bạn</h2>
+    <h2 class="mb-4">🛒 Giỏ hàng của bạn</h2>
 
-    @if (Model == null || !Model.Any())
+    @if (!Model.Any())
     {
-        <div class="alert alert-info text-center shadow-sm">
-            Giỏ hàng trống. <a asp-controller="Home" asp-action="Index" class="alert-link">Tiếp tục mua sắm</a>
-        </div>
+        <div class="alert alert-info">Giỏ hàng trống!</div>
     }
     else
     {
-        <div class="row g-3">
-            @foreach (var item in Model)
-            {
-                <div class="col-md-6">
-                    <div class="card shadow-sm border-0 h-100">
-                        <div class="row g-0">
-                            <!-- Hình ảnh -->
-                            <div class="col-4 text-center p-2">
-                                @if (!string.IsNullOrEmpty(item.HinhAnh))
-                                {
-                                    <img src="~/images/@item.HinhAnh" class="img-fluid rounded" alt="@item.TenSach" />
-                                }
-                                else
-                                {
-                                    <img src="~/images/no-image.png" class="img-fluid rounded" alt="No Image" />
-                                }
-                            </div>
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Sách</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.MaSachNavigation.TenSach</td>
+                        <td>@item.MaSachNavigation.GiaBan.ToString("N0") đ</td>
+                        <td>
+                            <form asp-action="Update" asp-controller="Cart" method="post" class="d-flex">
+                                <input type="hidden" name="maSach" value="@item.MaSach" />
+                                <input type="number" name="soLuong" value="@item.SoLuong" min="1" class="form-control me-2" style="width:80px;" />
+                                <button type="submit" class="btn btn-sm btn-primary">Cập nhật</button>
+                            </form>
+                        </td>
+                    <td>@((item.SoLuong * item.MaSachNavigation.GiaBan).ToString("N0")) đ</td>
 
-                            <!-- Thông tin -->
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <h5 class="card-title mb-2">@item.TenSach</h5>
-                                    <p class="text-danger fw-bold mb-1">@item.GiaBan.ToString("n0") ₫</p>
-
-                                    <!-- Cập nhật số lượng -->
-                                    <form asp-action="Update" method="post" class="d-flex align-items-center mb-2">
-                                        <input type="hidden" name="id" value="@item.MaSach" />
-                                        <input type="number" name="soLuong" value="@item.SoLuong" min="1"
-                                               class="form-control me-2" style="width:80px" />
-                                        <button type="submit" class="btn btn-sm btn-warning">Cập nhật</button>
-                                    </form>
-
-                                    <p class="mb-1"><strong>Thành tiền:</strong> @item.ThanhTien.ToString("n0") ₫</p>
-
-                                    <a asp-action="Remove" asp-route-id="@item.MaSach"
-                                       class="btn btn-sm btn-outline-danger">
-                                        <i class="bi bi-trash"></i> Xóa
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            }
+                        <td>
+                            <a asp-action="Remove" asp-route-maSach="@item.MaSach" class="btn btn-sm btn-danger">Xóa</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    <div class="d-flex justify-content-between align-items-center mt-3">
+        <h4 class="text-success">Tổng tiền: @ViewBag.Total.ToString("N0") đ</h4>
+        <div>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary btn-lg me-2">
+                ← Tiếp tục mua sắm
+            </a>
+            <a asp-action="Checkout" class="btn btn-success btn-lg">Thanh toán</a>
         </div>
+    </div>
 
-        <!-- Tổng cộng + hành động -->
-        <div class="mt-4 p-3 bg-light rounded shadow-sm">
-            <h4 class="text-end text-dark">
-                Tổng cộng: <span class="text-danger fw-bold">@ViewBag.Total.ToString("n0") ₫</span>
-            </h4>
-            <div class="d-flex justify-content-between mt-3">
-                <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary">
-                    ← Tiếp tục mua hàng
-                </a>
-                <a href="#" class="btn btn-success px-4 fw-semibold">
-                    Thanh toán ngay
-                </a>
-            </div>
-        </div>
     }
-</div>

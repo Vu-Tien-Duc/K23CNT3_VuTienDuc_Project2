@@ -1,0 +1,37 @@
+﻿@model QLBanSachWeb.Models.KhachHang
+
+@{
+    ViewData["Title"] = "Đăng ký";
+}
+
+<h2 class="mb-3">📝 Đăng ký tài khoản</h2>
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}
+
+<form asp-action="Signup" method="post">
+    <div class="mb-3">
+        <label>Họ tên</label>
+        <input asp-for="HoTen" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label>Email</label>
+        <input asp-for="Email" type="email" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label>Mật khẩu</label>
+        <input asp-for="MatKhau" type="password" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label>Số điện thoại</label>
+        <input asp-for="SDT" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Địa chỉ</label>
+        <input asp-for="DiaChi" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">Đăng ký</button>
+    <a asp-action="Login" class="btn btn-link">Đã có tài khoản? Đăng nhập</a>
+</form>

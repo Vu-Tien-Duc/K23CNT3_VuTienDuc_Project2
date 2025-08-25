@@ -3,44 +3,116 @@
   "WorkspaceRootPath": "D:\\Project2\\QLBanSachWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\views\\account\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:views\\account\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\views\\home\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:views\\home\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\models\\sach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:models\\sach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\areas\\admin\\views\\saches\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:areas\\admin\\views\\saches\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\areas\\admin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:areas\\admin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\areas\\admin\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:areas\\admin\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\areas\\admin\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:areas\\admin\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\views\\cart\\ordersuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:views\\cart\\ordersuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\models\\giohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:models\\giohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\models\\ct_giohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:models\\ct_giohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\models\\qlbansachcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:models\\qlbansachcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\models\\ct_donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:models\\ct_donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\views\\home\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:views\\home\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\models\\sach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:models\\sach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\models\\loaisach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -49,18 +121,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\areas\\admin\\controllers\\sachescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:areas\\admin\\controllers\\sachescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\models\\qlbansachcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:models\\qlbansachcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\areas\\admin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:areas\\admin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\areas\\admin\\controllers\\khachhangscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -91,32 +151,8 @@
       "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:areas\\admin\\views\\loaisaches\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\areas\\admin\\views\\saches\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:areas\\admin\\views\\saches\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\areas\\admin\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:areas\\admin\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\areas\\admin\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:areas\\admin\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\areas\\admin\\views\\loaisaches\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -143,24 +179,8 @@
       "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:areas\\admin\\views\\saches\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\models\\ct_giohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:models\\ct_giohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\models\\ct_donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|solutionrelative:models\\ct_donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A7D3EF49-9E9F-4F23-906D-9B135878DD63}|QLBanSachWeb.csproj|d:\\project2\\qlbansachweb\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -187,331 +207,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Areas\\Admin\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T11:53:52.218Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAEIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T08:25:42.055Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Sach.cs",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Models\\Sach.cs",
-              "RelativeDocumentMoniker": "Models\\Sach.cs",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Models\\Sach.cs",
-              "RelativeToolTip": "Models\\Sach.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAswBQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T08:26:44.679Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Views\\Cart\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Cart\\Index.cshtml",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Views\\Cart\\Index.cshtml",
-              "RelativeToolTip": "Views\\Cart\\Index.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAgwEUAAABMAAAAAAAAAA==",
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-22T06:06:25.83Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAgwD0AAABSAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-18T08:36:21.023Z",
+              "WhenOpened": "2025-08-25T08:24:15.869Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-20T11:57:04.768Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Views\\Home\\Details.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Details.cshtml",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Views\\Home\\Details.cshtml",
-              "RelativeToolTip": "Views\\Home\\Details.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAADMAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-20T07:35:42.743Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAADwvy4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T08:07:17.962Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "LoaiSach.cs",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Models\\LoaiSach.cs",
-              "RelativeDocumentMoniker": "Models\\LoaiSach.cs",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Models\\LoaiSach.cs",
-              "RelativeToolTip": "Models\\LoaiSach.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T10:45:54.795Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "CartItem.cs",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Models\\CartItem.cs",
-              "RelativeDocumentMoniker": "Models\\CartItem.cs",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Models\\CartItem.cs",
-              "RelativeToolTip": "Models\\CartItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-21T09:45:36.861Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CartController.cs",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Controllers\\CartController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CartController.cs",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Controllers\\CartController.cs",
-              "RelativeToolTip": "Controllers\\CartController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAYwCIAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-22T06:04:09.833Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "SachesController.cs",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Controllers\\SachesController.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\SachesController.cs",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Controllers\\SachesController.cs",
-              "RelativeToolTip": "Areas\\Admin\\Controllers\\SachesController.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAowK8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T11:38:14.644Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "QLBanSachContext.cs",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Models\\QLBanSachContext.cs",
-              "RelativeDocumentMoniker": "Models\\QLBanSachContext.cs",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Models\\QLBanSachContext.cs",
-              "RelativeToolTip": "Models\\QLBanSachContext.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAApwEEAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T08:27:20.445Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "_LayoutAdmin.cshtml",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-20T11:46:43.963Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-20T11:54:24.528Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "KhachHangsController.cs",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Controllers\\KhachHangsController.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\KhachHangsController.cs",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Controllers\\KhachHangsController.cs",
-              "RelativeToolTip": "Areas\\Admin\\Controllers\\KhachHangsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-21T09:20:42.579Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\KhachHangs\\Index.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\KhachHangs\\Index.cshtml",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\KhachHangs\\Index.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\KhachHangs\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-21T09:22:47.249Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\KhachHangs\\Create.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\KhachHangs\\Create.cshtml",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\KhachHangs\\Create.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\KhachHangs\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-21T09:22:22.283Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\KhachHangs\\Details.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\KhachHangs\\Details.cshtml",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\KhachHangs\\Details.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\KhachHangs\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-21T09:22:33.191Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\KhachHangs\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\KhachHangs\\Edit.cshtml",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\KhachHangs\\Edit.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\KhachHangs\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-21T09:22:39.875Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "LoaiSachesController.cs",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Controllers\\LoaiSachesController.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\LoaiSachesController.cs",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Controllers\\LoaiSachesController.cs",
-              "RelativeToolTip": "Areas\\Admin\\Controllers\\LoaiSachesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-21T09:04:26.937Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\LoaiSaches\\Index.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LoaiSaches\\Index.cshtml",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\LoaiSaches\\Index.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\LoaiSaches\\Index.cshtml",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAgwCYAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-21T09:09:38.571Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Saches\\Index.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Saches\\Index.cshtml",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Saches\\Index.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\Saches\\Index.cshtml",
-              "ViewState": "AgIAABwAAAAAAAAAAAAgwDoAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-20T12:04:08.512Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Views\\_ViewStart.cshtml",
-              "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Views\\_ViewStart.cshtml",
-              "RelativeToolTip": "Views\\_ViewStart.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-18T08:36:16.962Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-18T08:36:15.401Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "_ValidationScriptsPartial.cshtml",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-21T09:13:25.993Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-18T10:18:26.239Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\_ViewStart.cshtml",
@@ -523,7 +231,58 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 4,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CartController.cs",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Controllers\\CartController.cs",
+              "RelativeToolTip": "Controllers\\CartController.cs",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAAAJ0AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T06:04:09.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAkwCQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-18T10:18:26.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Signup.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Views\\Account\\Signup.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Signup.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Views\\Account\\Signup.cshtml",
+              "RelativeToolTip": "Views\\Account\\Signup.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-25T08:24:56.365Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA1wB8AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T08:22:25.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\_ViewImports.cshtml",
@@ -535,91 +294,127 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\LoaiSaches\\Create.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LoaiSaches\\Create.cshtml",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\LoaiSaches\\Create.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\LoaiSaches\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAASAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-21T09:08:25.235Z"
+              "WhenOpened": "2025-08-18T08:36:16.962Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\LoaiSaches\\Details.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LoaiSaches\\Details.cshtml",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\LoaiSaches\\Details.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\LoaiSaches\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "_LayoutAdmin.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-21T09:09:07.522Z"
+              "WhenOpened": "2025-08-20T11:46:43.963Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\LoaiSaches\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LoaiSaches\\Edit.cshtml",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\LoaiSaches\\Edit.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\LoaiSaches\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-21T09:09:32.189Z"
+              "WhenOpened": "2025-08-20T11:54:24.528Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Saches\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Saches\\Edit.cshtml",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Saches\\Edit.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\Saches\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAAzAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Saches\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Saches\\Index.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Saches\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Saches\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-20T12:04:02.955Z"
+              "WhenOpened": "2025-08-20T12:04:08.512Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Saches\\Create.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Saches\\Create.cshtml",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Saches\\Create.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\Saches\\Create.cshtml",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwCkAAAApAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-20T11:39:17.014Z"
+              "WhenOpened": "2025-08-18T08:36:15.401Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Saches\\Details.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Saches\\Details.cshtml",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Saches\\Details.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\Saches\\Details.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAgwCsAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-20T12:03:55.214Z"
+              "DocumentIndex": 12,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-20T11:57:04.768Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "KhachHang.cs",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Models\\KhachHang.cs",
-              "RelativeDocumentMoniker": "Models\\KhachHang.cs",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Models\\KhachHang.cs",
-              "RelativeToolTip": "Models\\KhachHang.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAkAAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "OrderSuccess.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Views\\Cart\\OrderSuccess.cshtml",
+              "RelativeDocumentMoniker": "Views\\Cart\\OrderSuccess.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Views\\Cart\\OrderSuccess.cshtml",
+              "RelativeToolTip": "Views\\Cart\\OrderSuccess.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAkwB8AAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-25T07:09:15.597Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-18T08:36:21.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Views\\Cart\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Cart\\Index.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Views\\Cart\\Index.cshtml",
+              "RelativeToolTip": "Views\\Cart\\Index.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACwAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-25T07:09:55.238Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T10:56:45.363Z"
+              "WhenOpened": "2025-08-20T11:53:52.218Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 17,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -631,7 +426,43 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 18,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T08:25:42.055Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "KhachHang.cs",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Models\\KhachHang.cs",
+              "RelativeDocumentMoniker": "Models\\KhachHang.cs",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Models\\KhachHang.cs",
+              "RelativeToolTip": "Models\\KhachHang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T10:56:45.363Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "GioHang.cs",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Models\\GioHang.cs",
+              "RelativeDocumentMoniker": "Models\\GioHang.cs",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Models\\GioHang.cs",
+              "RelativeToolTip": "Models\\GioHang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T06:24:26.22Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "CT_GioHang.cs",
               "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Models\\CT_GioHang.cs",
               "RelativeDocumentMoniker": "Models\\CT_GioHang.cs",
@@ -643,19 +474,43 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "Admin.cs",
-              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Models\\Admin.cs",
-              "RelativeDocumentMoniker": "Models\\Admin.cs",
-              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Models\\Admin.cs",
-              "RelativeToolTip": "Models\\Admin.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 23,
+              "Title": "QLBanSachContext.cs",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Models\\QLBanSachContext.cs",
+              "RelativeDocumentMoniker": "Models\\QLBanSachContext.cs",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Models\\QLBanSachContext.cs",
+              "RelativeToolTip": "Models\\QLBanSachContext.cs",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAuwJ4AAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T08:23:45.766Z"
+              "WhenOpened": "2025-08-18T08:27:20.445Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 22,
+              "Title": "DonHang.cs",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Models\\DonHang.cs",
+              "RelativeDocumentMoniker": "Models\\DonHang.cs",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Models\\DonHang.cs",
+              "RelativeToolTip": "Models\\DonHang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T06:24:23.032Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAADwvy4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T08:07:17.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
               "Title": "CT_DonHang.cs",
               "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Models\\CT_DonHang.cs",
               "RelativeDocumentMoniker": "Models\\CT_DonHang.cs",
@@ -667,7 +522,235 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Sach.cs",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Models\\Sach.cs",
+              "RelativeDocumentMoniker": "Models\\Sach.cs",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Models\\Sach.cs",
+              "RelativeToolTip": "Models\\Sach.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAswBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T08:26:44.679Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Views\\Home\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Details.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Views\\Home\\Details.cshtml",
+              "RelativeToolTip": "Views\\Home\\Details.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAADMAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-20T07:35:42.743Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "LoaiSach.cs",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Models\\LoaiSach.cs",
+              "RelativeDocumentMoniker": "Models\\LoaiSach.cs",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Models\\LoaiSach.cs",
+              "RelativeToolTip": "Models\\LoaiSach.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T10:45:54.795Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "SachesController.cs",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Controllers\\SachesController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\SachesController.cs",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Controllers\\SachesController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\SachesController.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAowK8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T11:38:14.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "KhachHangsController.cs",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Controllers\\KhachHangsController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\KhachHangsController.cs",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Controllers\\KhachHangsController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\KhachHangsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T09:20:42.579Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\KhachHangs\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\KhachHangs\\Index.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\KhachHangs\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\KhachHangs\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T09:22:47.249Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\KhachHangs\\Create.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\KhachHangs\\Create.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\KhachHangs\\Create.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\KhachHangs\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T09:22:22.283Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\KhachHangs\\Details.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\KhachHangs\\Details.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\KhachHangs\\Details.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\KhachHangs\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T09:22:33.191Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\KhachHangs\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\KhachHangs\\Edit.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\KhachHangs\\Edit.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\KhachHangs\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T09:22:39.875Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "LoaiSachesController.cs",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Controllers\\LoaiSachesController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\LoaiSachesController.cs",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Controllers\\LoaiSachesController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\LoaiSachesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T09:04:26.937Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\LoaiSaches\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LoaiSaches\\Index.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\LoaiSaches\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\LoaiSaches\\Index.cshtml",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwCYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T09:09:38.571Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T09:13:25.993Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 40,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\LoaiSaches\\Create.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LoaiSaches\\Create.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\LoaiSaches\\Create.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\LoaiSaches\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T09:08:25.235Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\LoaiSaches\\Details.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LoaiSaches\\Details.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\LoaiSaches\\Details.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\LoaiSaches\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T09:09:07.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\LoaiSaches\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LoaiSaches\\Edit.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\LoaiSaches\\Edit.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\LoaiSaches\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T09:09:32.189Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Saches\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Saches\\Edit.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Saches\\Edit.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Saches\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-20T12:04:02.955Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Saches\\Create.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Saches\\Create.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Saches\\Create.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Saches\\Create.cshtml",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwCkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-20T11:39:17.014Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Saches\\Details.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Saches\\Details.cshtml",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Areas\\Admin\\Views\\Saches\\Details.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Saches\\Details.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAgwCsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-20T12:03:55.214Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Models\\Admin.cs",
+              "RelativeDocumentMoniker": "Models\\Admin.cs",
+              "ToolTip": "D:\\Project2\\QLBanSachWeb\\Models\\Admin.cs",
+              "RelativeToolTip": "Models\\Admin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T08:23:45.766Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
@@ -679,7 +762,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 46,
               "Title": "QLBanSachWeb.csproj",
               "DocumentMoniker": "D:\\Project2\\QLBanSachWeb\\QLBanSachWeb.csproj",
               "RelativeDocumentMoniker": "QLBanSachWeb.csproj",
