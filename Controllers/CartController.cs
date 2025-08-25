@@ -15,13 +15,10 @@ namespace QLBanSachWeb.Controllers
         }
 
         // Lấy hoặc tạo giỏ hàng theo KH trong session
-        private GioHang GetOrCreateCart()
+        private GioHang? GetOrCreateCart()
         {
-            var maKH = HttpContext.Session.GetInt32("MaKH") ?? 0; // nếu chưa login = 0
-            if (maKH == 0)
-            {
-                return null; // chưa login -> chưa có giỏ
-            }
+            var maKH = HttpContext.Session.GetInt32("MaKH") ?? 0;
+            if (maKH == 0) return null;
 
             var cart = _context.GioHangs
                         .Include(g => g.CT_GioHangs)
@@ -58,7 +55,6 @@ namespace QLBanSachWeb.Controllers
                 .ToList();
 
             ViewBag.Total = items.Sum(i => i.SoLuong * i.MaSachNavigation.GiaBan);
-
             return View(items);
         }
 
@@ -66,10 +62,7 @@ namespace QLBanSachWeb.Controllers
         public IActionResult AddToCart(int id)
         {
             var cart = GetOrCreateCart();
-            if (cart == null)
-            {
-                return RedirectToAction("Login", "Account");
-            }
+            if (cart == null) return RedirectToAction("Login", "Account");
 
             var item = _context.CT_GioHangs
                         .FirstOrDefault(ct => ct.MaGH == cart.MaGH && ct.MaSach == id);
@@ -136,17 +129,11 @@ namespace QLBanSachWeb.Controllers
             return RedirectToAction("Index");
         }
 
-        // Thanh toán
+        // GET: Thanh toán
         public IActionResult Checkout()
         {
-            var maKH = HttpContext.Session.GetInt32("MaKH");
-            if (maKH == null)
-            {
-                return RedirectToAction("Login", "Account");
-            }
-
             var cart = GetOrCreateCart();
-            if (cart == null) return RedirectToAction("Index");
+            if (cart == null) return RedirectToAction("Login", "Account");
 
             var cartItems = _context.CT_GioHangs
                                     .Where(ct => ct.MaGH == cart.MaGH)
@@ -162,17 +149,88 @@ namespace QLBanSachWeb.Controllers
             return View(cartItems);
         }
 
+        // POST: Thanh toán
+        [HttpPost]
+        public IActionResult CheckoutConfirm()
+        {
+            var maKH = HttpContext.Session.GetInt32("MaKH");
+            if (maKH == null) return RedirectToAction("Login", "Account");
+
+            var cart = GetOrCreateCart();
+            if (cart == null) return RedirectToAction("Index");
+
+            var cartItems = _context.CT_GioHangs
+                                    .Where(ct => ct.MaGH == cart.MaGH)
+                                    .Include(ct => ct.MaSachNavigation)
+                                    .ToList();
+
+            if (!cartItems.Any())
+            {
+                TempData["Error"] = "Giỏ hàng trống!";
+                return RedirectToAction("Index");
+            }
+
+            // Tính tổng tiền
+            decimal tongTien = cartItems.Sum(i => i.SoLuong * i.MaSachNavigation.GiaBan);
+
+            // Tạo đơn hàng
+            var order = new DonHang
+            {
+                MaKH = maKH.Value,
+                NgayDat = DateTime.Now,
+                TrangThai = "Chờ xác nhận",
+                TongTien = tongTien
+            };
+            _context.DonHangs.Add(order);
+            _context.SaveChanges();
+
+            // Thêm chi tiết đơn hàng
+            foreach (var item in cartItems)
+            {
+                var ct = new CT_DonHang
+                {
+                    MaDH = order.MaDH,
+                    MaSach = item.MaSach,
+                    SoLuong = item.SoLuong,
+                    DonGia = item.MaSachNavigation.GiaBan
+                };
+                _context.CT_DonHangs.Add(ct);
+            }
+
+            // Xóa giỏ hàng
+            _context.CT_GioHangs.RemoveRange(cartItems);
+            _context.GioHangs.Remove(cart);
+            _context.SaveChanges();
+
+            return RedirectToAction("OrderSuccess", new { id = order.MaDH });
+        }
+
         // Trang thông báo đặt hàng thành công
         public IActionResult OrderSuccess(int id)
         {
             var order = _context.DonHangs
+                        .Include(d => d.MaKHNavigation) // load KH
                         .Include(d => d.CT_DonHangs)
-                        .ThenInclude(ct => ct.MaSachNavigation)
+                            .ThenInclude(ct => ct.MaSachNavigation)
                         .FirstOrDefault(d => d.MaDH == id);
 
             if (order == null) return NotFound();
 
             return View(order);
         }
+
+        public IActionResult MyOrders()
+        {
+            var maKH = HttpContext.Session.GetInt32("MaKH");
+            if (maKH == null) return RedirectToAction("Login", "Account");
+
+            var orders = _context.DonHangs
+                .Where(d => d.MaKH == maKH)
+                .OrderByDescending(d => d.NgayDat)
+                .ToList();
+
+            return View(orders);
+        }
+
     }
 }

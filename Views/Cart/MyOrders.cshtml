@@ -1,0 +1,63 @@
+﻿@model IEnumerable<QLBanSachWeb.Models.DonHang>
+
+@{
+    ViewData["Title"] = "Đơn hàng của tôi";
+}
+
+<h2 class="mb-4">🧾 Đơn hàng của tôi</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        Bạn chưa có đơn hàng nào.
+        <a asp-controller="Home" asp-action="Index">Tiếp tục mua sắm</a>.
+    </div>
+}
+else
+{
+    <table class="table table-bordered table-striped">
+        <thead class="table-light">
+            <tr>
+                <th>Mã ĐH</th>
+                <th>Ngày đặt</th>
+                <th>Tổng tiền</th>
+                <th>Trạng thái</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var dh in Model)
+            {
+                <tr>
+                    <td><strong>#@dh.MaDH</strong></td>
+                    <td>@dh.NgayDat?.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@dh.TongTien?.ToString("N0") đ</td>
+                    <td>
+                        @if (dh.TrangThai == "Chờ xác nhận")
+                        {
+                            <span class="badge bg-warning text-dark">@dh.TrangThai</span>
+                        }
+                        else if (dh.TrangThai == "Đang giao")
+                        {
+                            <span class="badge bg-info text-dark">@dh.TrangThai</span>
+                        }
+                        else if (dh.TrangThai == "Hoàn tất")
+                        {
+                            <span class="badge bg-success">@dh.TrangThai</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary">@dh.TrangThai</span>
+                        }
+                    </td>
+                    <td>
+                        <a asp-controller="Cart" asp-action="OrderSuccess" asp-route-id="@dh.MaDH"
+                           class="btn btn-sm btn-primary">
+                            Xem chi tiết
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

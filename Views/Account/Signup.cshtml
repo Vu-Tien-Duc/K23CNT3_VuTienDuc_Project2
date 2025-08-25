@@ -1,37 +1,41 @@
 ﻿@model QLBanSachWeb.Models.KhachHang
-
 @{
     ViewData["Title"] = "Đăng ký";
 }
 
-<h2 class="mb-3">📝 Đăng ký tài khoản</h2>
+<div class="container mt-5" style="max-width: 500px;">
+    <h2 class="text-center mb-4">📝 Đăng ký</h2>
 
-@if (ViewBag.Error != null)
-{
-    <div class="alert alert-danger">@ViewBag.Error</div>
-}
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger">@ViewBag.Error</div>
+    }
 
-<form asp-action="Signup" method="post">
-    <div class="mb-3">
-        <label>Họ tên</label>
-        <input asp-for="HoTen" class="form-control" required />
+    <form method="post" asp-action="SignUp">
+        <div class="mb-3">
+            <label for="HoTen" class="form-label">Họ tên</label>
+            <input asp-for="HoTen" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label for="Email" class="form-label">Email</label>
+            <input asp-for="Email" type="email" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label for="MatKhau" class="form-label">Mật khẩu</label>
+            <input asp-for="MatKhau" type="password" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label for="DiaChi" class="form-label">Địa chỉ</label>
+            <input asp-for="DiaChi" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label for="Sdt" class="form-label">Số điện thoại</label>
+            <input asp-for="SDT" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-success w-100">Đăng ký</button>
+    </form>
+
+    <div class="text-center mt-3">
+        Đã có tài khoản? <a asp-action="Login" asp-controller="Account">Đăng nhập</a>
     </div>
-    <div class="mb-3">
-        <label>Email</label>
-        <input asp-for="Email" type="email" class="form-control" required />
-    </div>
-    <div class="mb-3">
-        <label>Mật khẩu</label>
-        <input asp-for="MatKhau" type="password" class="form-control" required />
-    </div>
-    <div class="mb-3">
-        <label>Số điện thoại</label>
-        <input asp-for="SDT" class="form-control" />
-    </div>
-    <div class="mb-3">
-        <label>Địa chỉ</label>
-        <input asp-for="DiaChi" class="form-control" />
-    </div>
-    <button type="submit" class="btn btn-success">Đăng ký</button>
-    <a asp-action="Login" class="btn btn-link">Đã có tài khoản? Đăng nhập</a>
-</form>
+</div>

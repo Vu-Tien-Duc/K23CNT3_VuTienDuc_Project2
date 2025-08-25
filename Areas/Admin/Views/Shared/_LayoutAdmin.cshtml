@@ -1,37 +1,72 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Quản Trị</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        body {
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            min-height: 100vh;
+            background-color: #212529;
+            color: white;
+        }
+        .sidebar a {
+            color: #adb5bd;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+        }
+        .sidebar a:hover, .sidebar a.active {
+            background-color: #495057;
+            color: #fff;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        footer {
+            background: #212529;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            left: 250px;
+            width: calc(100% - 250px);
+        }
+    </style>
 </head>
-
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" asp-area="Admin" asp-controller="Home" asp-action="Index">Trang Quản Trị</a>
-        <div class="navbar-nav">
-            <a class="nav-item nav-link" asp-area="Admin" asp-controller="Saches" asp-action="Index">📚 Quản lý Sách</a>
-            <a class="nav-item nav-link" asp-area="Admin" asp-controller="KhachHangs" asp-action="Index">👤 Khách Hàng</a>
-            <a class="nav-item nav-link" asp-area="Admin" asp-controller="HoaDon" asp-action="Index">🧾 Hóa Đơn</a>
-           
-        </div>
-    </nav>
-
-    <div class="container mt-4">
-        @RenderBody()
+    <!-- Sidebar -->
+    <div class="sidebar d-flex flex-column">
+        <h4 class="p-3 border-bottom">⚙️ Admin Panel</h4>
+        <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="active">🏠 Trang chủ</a>
+        <a asp-area="Admin" asp-controller="Saches" asp-action="Index">📚 Quản lý Sách</a>
+        <a asp-area="Admin" asp-controller="KhachHangs" asp-action="Index">👤 Khách Hàng</a>
+        <a asp-area="Admin" asp-controller="HoaDon" asp-action="Index">🧾 Hóa Đơn</a>
+        <hr class="bg-light" />
+        <a asp-area="" asp-controller="Account" asp-action="Logout">🚪 Đăng xuất</a>
     </div>
 
-    <footer class="bg-dark text-white text-center p-3 mt-4">
-        © 2025 - Hệ thống quản trị bán sách
+    <!-- Content -->
+    <div class="content">
+        <div class="container-fluid">
+            @RenderBody()
+        </div>
+    </div>
+
+    <footer>
+        <small>© 2025 - Hệ thống quản trị bán sách</small>
     </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js"></script>
-
     @RenderSection("Scripts", required: false)
 </body>
-
 </html>

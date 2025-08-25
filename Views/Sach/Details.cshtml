@@ -1,0 +1,25 @@
+﻿@model QLBanSachWeb.Models.Sach
+
+@{
+    ViewData["Title"] = "Chi tiết Sách";
+}
+
+<div class="row mt-4">
+    <div class="col-md-4">
+        <img src="~/images/@Model.HinhAnh"
+             class="img-fluid rounded shadow"
+             alt="@Model.TenSach" />
+    </div>
+    <div class="col-md-8">
+        <h2>@Model.TenSach</h2>
+        <p><strong>Tác giả:</strong> @Model.TacGia</p>
+        <p><strong>Thể loại:</strong> @Model.MaLoaiNavigation?.TenLoai</p>
+        <p><strong>Giá bán:</strong> <span class="text-danger fw-bold">@Model.GiaBan.ToString("N0") đ</span></p>
+        <p><strong>Mô tả:</strong> @Model.MoTa</p>
+
+        <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@Model.MaSach" class="btn btn-success">
+            🛒 Thêm vào giỏ
+        </a>
+        <a asp-action="Index" class="btn btn-secondary">⬅️ Quay lại</a>
+    </div>
+</div>

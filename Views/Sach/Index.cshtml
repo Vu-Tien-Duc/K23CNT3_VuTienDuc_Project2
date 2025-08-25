@@ -1,0 +1,59 @@
+﻿@model IEnumerable<QLBanSachWeb.Models.Sach>
+
+@{
+    ViewData["Title"] = "Danh sách sách";
+}
+
+<h2>📚 Danh sách sách</h2>
+
+<!-- Bộ lọc loại sách -->
+<form method="get" class="mb-3">
+    <select name="maLoai" onchange="this.form.submit()" class="form-select w-auto d-inline-block">
+        <option value="">-- Tất cả loại --</option>
+        @foreach (var loai in (IEnumerable<QLBanSachWeb.Models.LoaiSach>)ViewBag.LoaiSaches)
+        {
+            <option value="@loai.MaLoai" selected="@(ViewBag.MaLoai == loai.MaLoai)">
+                @loai.TenLoai
+            </option>
+
+        }
+    </select>
+</form>
+
+<!-- Danh sách sách -->
+<div class="row">
+    @foreach (var sach in Model)
+    {
+        <div class="col-md-3 mb-4">
+            <div class="card h-100 shadow-sm">
+                <img src="~/images/@sach.HinhAnh" 
+                     class="card-img-top" 
+                     alt="@sach.TenSach" 
+                     style="height: 220px; object-fit: cover;" />
+
+                <div class="card-body">
+                    <h5 class="card-title">@sach.TenSach</h5>
+                    <p class="text-muted mb-1">📖 @sach.MaLoaiNavigation?.TenLoai</p>
+                    <p class="fw-bold text-danger">@sach.GiaBan.ToString("N0") đ</p>
+                    <a asp-controller="Sach" asp-action="Details" asp-route-id="@sach.MaSach" 
+                       class="btn btn-sm btn-primary">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<!-- Phân trang -->
+@if (ViewBag.TotalPages > 1)
+{
+    <nav>
+        <ul class="pagination justify-content-center">
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item @(ViewBag.CurrentPage == i ? "active" : "")">
+                    <a class="page-link" href="?page=@i&maLoai=@ViewBag.MaLoai">@i</a>
+                </li>
+            }
+        </ul>
+    </nav>
+}
