@@ -45,8 +45,16 @@
       "PackagePath": "staticwebassets\\images\\logoD.jpg"
     },
     {
+      "Id": "D:\\Project2\\QLBanSachWeb\\wwwroot\\images\\nhanhandcham.jpg",
+      "PackagePath": "staticwebassets\\images\\nhanhandcham.jpg"
+    },
+    {
       "Id": "D:\\Project2\\QLBanSachWeb\\wwwroot\\images\\th (1).jpg",
       "PackagePath": "staticwebassets\\images\\th (1).jpg"
+    },
+    {
+      "Id": "D:\\Project2\\QLBanSachWeb\\wwwroot\\images\\th (2).jpg",
+      "PackagePath": "staticwebassets\\images\\th (2).jpg"
     },
     {
       "Id": "D:\\Project2\\QLBanSachWeb\\wwwroot\\images\\th.jpg",

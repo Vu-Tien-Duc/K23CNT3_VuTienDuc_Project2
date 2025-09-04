@@ -2,6 +2,11 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using QLBanSachWeb.Models;
+using X.PagedList; // cần cho ToPagedList()
+
+using System.Linq;
+using System.Threading.Tasks;
+using System.IO;
 
 namespace QLBanSachWeb.Areas.Admin.Controllers
 {
@@ -18,13 +23,37 @@ namespace QLBanSachWeb.Areas.Admin.Controllers
         }
 
         // GET: Admin/Saches
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString, int? page)
         {
-            var saches = await _context.Saches
+            int pageSize = 10;
+            int pageNumber = page ?? 1;
+
+            var query = _context.Saches
                 .Include(s => s.MaLoaiNavigation)
-                .ToListAsync();
-            return View(saches);
+                .AsQueryable();
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                query = query.Where(s => s.TenSach.Contains(searchString) || s.TacGia.Contains(searchString));
+            }
+
+            query = query.OrderBy(s => s.TenSach);
+
+            var list = await query.ToListAsync();
+
+            var sachesPaged = new StaticPagedList<Sach>(
+                list.Skip((pageNumber - 1) * pageSize).Take(pageSize),
+                pageNumber,
+                pageSize,
+                list.Count
+            );
+
+            ViewBag.SearchString = searchString;
+            return View(sachesPaged);
         }
+
+
+
 
         // GET: Admin/Saches/Details/5
         public async Task<IActionResult> Details(int? id)

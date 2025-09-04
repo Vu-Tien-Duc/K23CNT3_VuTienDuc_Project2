@@ -1,0 +1,28 @@
+﻿@model QLBanSachWeb.Models.DonHang
+
+@{
+    ViewData["Title"] = "Chi tiết đơn hàng";
+}
+
+<h2>📄 Chi tiết đơn hàng</h2>
+
+<div class="row">
+    <dl class="col-md-6">
+        <dt>Mã ĐH</dt>
+        <dd>@Model.MaDH</dd>
+
+        <dt>Mã KH</dt>
+        <dd>@Model.MaKH</dd>
+
+        <dt>Ngày đặt</dt>
+        <dd>@Model.NgayDat?.ToString("dd/MM/yyyy HH:mm")</dd>
+
+        <dt>Tổng tiền</dt>
+        <dd>@Model.TongTien?.ToString("N0") đ</dd>
+
+        <dt>Trạng thái</dt>
+        <dd>@Model.TrangThai</dd>
+    </dl>
+</div>
+
+<a asp-action="Index" class="btn btn-secondary">⬅ Quay lại</a>

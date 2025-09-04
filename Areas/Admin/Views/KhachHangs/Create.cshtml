@@ -1,37 +1,45 @@
 ﻿@model QLBanSachWeb.Models.KhachHang
 
-
-
 @{
-    ViewData["Create"] = "Create";
+    ViewData["Title"] = "Thêm Khách Hàng";
 }
 
+<h2 class="mb-4">Thêm Khách Hàng</h2>
 
-<form asp-action="@ViewData["Create"]">
-    <div class="form-group">
-        <label asp-for="HoTen"></label>
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="HoTen" class="form-label"></label>
         <input asp-for="HoTen" class="form-control" />
         <span asp-validation-for="HoTen" class="text-danger"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="Email"></label>
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
         <input asp-for="Email" class="form-control" />
         <span asp-validation-for="Email" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
-        <label asp-for="MatKhau"></label>
-        <input asp-for="MatKhau" class="form-control" type="password" />
+    <div class="mb-3">
+        <label asp-for="MatKhau" class="form-label"></label>
+        <input asp-for="MatKhau" type="password" class="form-control" />
         <span asp-validation-for="MatKhau" class="text-danger"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="SDT"></label>
+
+    <div class="mb-3">
+        <label asp-for="SDT" class="form-label"></label>
         <input asp-for="SDT" class="form-control" />
+        <span asp-validation-for="SDT" class="text-danger"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="DiaChi"></label>
+
+    <div class="mb-3">
+        <label asp-for="DiaChi" class="form-label"></label>
         <input asp-for="DiaChi" class="form-control" />
+        <span asp-validation-for="DiaChi" class="text-danger"></span>
     </div>
-    <button type="submit" class="btn btn-success">Lưu</button>
-    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+
+    <button type="submit" class="btn btn-primary">Thêm mới</button>
 </form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

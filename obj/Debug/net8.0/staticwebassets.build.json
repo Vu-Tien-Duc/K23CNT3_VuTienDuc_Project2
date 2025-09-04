@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tgGFpTXQ4nP43SM8KL0TrUDr3ls0IhrIO+P4HZADSXQ=",
+  "Hash": "N3qlJPOpl2YAMlI0Iokb+o/J559BaLJptsjI1RulFpE=",
   "Source": "QLBanSachWeb",
   "BasePath": "_content/QLBanSachWeb",
   "Mode": "Default",
@@ -245,6 +245,25 @@
       "OriginalItemSpec": "wwwroot\\images\\logoD.jpg"
     },
     {
+      "Identity": "D:\\Project2\\QLBanSachWeb\\wwwroot\\images\\nhanhandcham.jpg",
+      "SourceId": "QLBanSachWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project2\\QLBanSachWeb\\wwwroot\\",
+      "BasePath": "_content/QLBanSachWeb",
+      "RelativePath": "images/nhanhandcham.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\nhanhandcham.jpg"
+    },
+    {
       "Identity": "D:\\Project2\\QLBanSachWeb\\wwwroot\\images\\th (1).jpg",
       "SourceId": "QLBanSachWeb",
       "SourceType": "Discovered",
@@ -262,6 +281,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\th (1).jpg"
+    },
+    {
+      "Identity": "D:\\Project2\\QLBanSachWeb\\wwwroot\\images\\th (2).jpg",
+      "SourceId": "QLBanSachWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project2\\QLBanSachWeb\\wwwroot\\",
+      "BasePath": "_content/QLBanSachWeb",
+      "RelativePath": "images/th (2).jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\th (2).jpg"
     },
     {
       "Identity": "D:\\Project2\\QLBanSachWeb\\wwwroot\\images\\th.jpg",

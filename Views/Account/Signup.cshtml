@@ -1,41 +1,51 @@
 ﻿@model QLBanSachWeb.Models.KhachHang
+
 @{
     ViewData["Title"] = "Đăng ký";
 }
 
-<div class="container mt-5" style="max-width: 500px;">
-    <h2 class="text-center mb-4">📝 Đăng ký</h2>
+<h2 class="mb-4">Đăng ký tài khoản</h2>
+
+<form asp-action="SignUp" method="post">
+    <div class="mb-3">
+        <label asp-for="HoTen" class="form-label"></label>
+        <input asp-for="HoTen" class="form-control" />
+        <span asp-validation-for="HoTen" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="MatKhau" class="form-label"></label>
+        <input asp-for="MatKhau" type="password" class="form-control" placeholder="Tối thiểu 6 ký tự" />
+        <span asp-validation-for="MatKhau" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="SDT" class="form-label"></label>
+        <input asp-for="SDT" class="form-control" />
+        <span asp-validation-for="SDT" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="DiaChi" class="form-label"></label>
+        <input asp-for="DiaChi" class="form-control" />
+        <span asp-validation-for="DiaChi" class="text-danger"></span>
+    </div>
 
     @if (ViewBag.Error != null)
     {
         <div class="alert alert-danger">@ViewBag.Error</div>
     }
 
-    <form method="post" asp-action="SignUp">
-        <div class="mb-3">
-            <label for="HoTen" class="form-label">Họ tên</label>
-            <input asp-for="HoTen" class="form-control" required />
-        </div>
-        <div class="mb-3">
-            <label for="Email" class="form-label">Email</label>
-            <input asp-for="Email" type="email" class="form-control" required />
-        </div>
-        <div class="mb-3">
-            <label for="MatKhau" class="form-label">Mật khẩu</label>
-            <input asp-for="MatKhau" type="password" class="form-control" required />
-        </div>
-        <div class="mb-3">
-            <label for="DiaChi" class="form-label">Địa chỉ</label>
-            <input asp-for="DiaChi" class="form-control" />
-        </div>
-        <div class="mb-3">
-            <label for="Sdt" class="form-label">Số điện thoại</label>
-            <input asp-for="SDT" class="form-control" />
-        </div>
-        <button type="submit" class="btn btn-success w-100">Đăng ký</button>
-    </form>
+    <button type="submit" class="btn btn-success">Đăng ký</button>
+    <a asp-action="Login" class="btn btn-link">Đăng nhập</a>
+</form>
 
-    <div class="text-center mt-3">
-        Đã có tài khoản? <a asp-action="Login" asp-controller="Account">Đăng nhập</a>
-    </div>
-</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

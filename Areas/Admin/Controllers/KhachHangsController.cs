@@ -1,8 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using QLBanSachWeb.Models;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Text;
+using System.Security.Cryptography;
 
-namespace QLBanSachWeb.Controllers
+namespace QLBanSachWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class KhachHangsController : Controller
@@ -14,61 +19,68 @@ namespace QLBanSachWeb.Controllers
             _context = context;
         }
 
-        // GET: KhachHang
+        // GET: Admin/KhachHangs
         public async Task<IActionResult> Index()
         {
-            return View(await _context.KhachHangs.ToListAsync());
+            var list = await _context.KhachHangs.ToListAsync();
+            return View(list);
         }
 
-        // GET: KhachHang/Details/5
+        // GET: Admin/KhachHangs/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null) return NotFound();
 
-            var kh = await _context.KhachHangs
-                .FirstOrDefaultAsync(m => m.MaKH == id);
-
+            var kh = await _context.KhachHangs.FirstOrDefaultAsync(x => x.MaKH == id);
             if (kh == null) return NotFound();
 
             return View(kh);
         }
 
-        // GET: KhachHang/Create
+        // GET: Admin/KhachHangs/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: KhachHang/Create
+        // POST: Admin/KhachHangs/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(KhachHang kh)
         {
             if (ModelState.IsValid)
             {
-                // Kiểm tra email trùng
-                bool emailExists = await _context.KhachHangs
-                    .AnyAsync(x => x.Email == kh.Email);
-
+                // kiểm tra email trùng
+                bool emailExists = await _context.KhachHangs.AnyAsync(x => x.Email == kh.Email);
                 if (emailExists)
                 {
                     ModelState.AddModelError("Email", "Email này đã tồn tại");
-                    return View(kh); // Trả lại view với lỗi hiển thị ở asp-validation-for="Email"
+                    return View(kh);
                 }
 
-                // Hash mật khẩu nếu cần
-                // kh.MatKhau = _passwordHasher.HashPassword(kh.MatKhau);
+                // kiểm tra độ dài mật khẩu
+                if (string.IsNullOrEmpty(kh.MatKhau) || kh.MatKhau.Length < 6)
+                {
+                    ModelState.AddModelError("MatKhau", "Mật khẩu phải có ít nhất 6 ký tự");
+                    return View(kh);
+                }
+
+                // hash mật khẩu trực tiếp
+                using (var sha = SHA256.Create())
+                {
+                    var bytes = Encoding.UTF8.GetBytes(kh.MatKhau);
+                    var hash = sha.ComputeHash(bytes);
+                    kh.MatKhau = Convert.ToBase64String(hash);
+                }
 
                 _context.Add(kh);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-
             return View(kh);
         }
 
-
-        // GET: KhachHang/Edit/5
+        // GET: Admin/KhachHangs/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null) return NotFound();
@@ -79,12 +91,13 @@ namespace QLBanSachWeb.Controllers
             return View(kh);
         }
 
+        // POST: Admin/KhachHangs/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, KhachHang kh)
         {
-            // Bỏ qua lỗi required của MatKhau khi edit
-            ModelState.Remove("MatKhau");
+            ModelState.Remove("MatKhau"); // cho phép bỏ trống mật khẩu khi edit
+            ModelState.Remove("ConfirmMatKhau");
 
             if (id != kh.MaKH) return NotFound();
 
@@ -100,7 +113,19 @@ namespace QLBanSachWeb.Controllers
 
                 if (!string.IsNullOrEmpty(kh.MatKhau))
                 {
-                    khachHang.MatKhau = kh.MatKhau; // hash nếu cần
+                    if (kh.MatKhau.Length < 6)
+                    {
+                        ModelState.AddModelError("MatKhau", "Mật khẩu phải có ít nhất 6 ký tự");
+                        return View(kh);
+                    }
+
+                    // hash mật khẩu trực tiếp
+                    using (var sha = SHA256.Create())
+                    {
+                        var bytes = Encoding.UTF8.GetBytes(kh.MatKhau);
+                        var hash = sha.ComputeHash(bytes);
+                        khachHang.MatKhau = Convert.ToBase64String(hash);
+                    }
                 }
 
                 _context.Update(khachHang);
@@ -111,10 +136,9 @@ namespace QLBanSachWeb.Controllers
             return View(kh);
         }
 
-
-
-        // POST: KhachHang/Delete/5
+        // POST: Admin/KhachHangs/Delete/5
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
             var kh = await _context.KhachHangs.FindAsync(id);

@@ -9,28 +9,46 @@
     <style>
         body {
             display: flex;
+            min-height: 100vh;
+            flex-direction: row;
         }
+
         .sidebar {
             width: 250px;
             min-height: 100vh;
             background-color: #212529;
             color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-bottom: 50px;
         }
-        .sidebar a {
-            color: #adb5bd;
-            text-decoration: none;
-            display: block;
-            padding: 10px 20px;
-        }
-        .sidebar a:hover, .sidebar a.active {
-            background-color: #495057;
-            color: #fff;
-        }
+
+            .sidebar h4 {
+                color: #fff;
+            }
+
+            .sidebar a {
+                color: #adb5bd;
+                text-decoration: none;
+                display: block;
+                padding: 10px 20px;
+                transition: all 0.2s;
+            }
+
+                .sidebar a:hover,
+                .sidebar a.active {
+                    background-color: #495057;
+                    color: #fff;
+                }
+
         .content {
+            margin-left: 250px;
             flex-grow: 1;
             padding: 20px;
             background: #f8f9fa;
         }
+
         footer {
             background: #212529;
             color: white;
@@ -47,11 +65,24 @@
     <!-- Sidebar -->
     <div class="sidebar d-flex flex-column">
         <h4 class="p-3 border-bottom">⚙️ Admin Panel</h4>
-        <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="active">🏠 Trang chủ</a>
-        <a asp-area="Admin" asp-controller="Saches" asp-action="Index">📚 Quản lý Sách</a>
-        <a asp-area="Admin" asp-controller="KhachHangs" asp-action="Index">👤 Khách Hàng</a>
-        <a asp-area="Admin" asp-controller="HoaDon" asp-action="Index">🧾 Hóa Đơn</a>
+
+        <a asp-area="Admin" asp-controller="Home" asp-action="Index"
+           class="@(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" ? "active" : "")">🏠 Trang chủ</a>
+
+        <a asp-area="Admin" asp-controller="Saches" asp-action="Index"
+           class="@(ViewContext.RouteData.Values["controller"]?.ToString() == "Saches" ? "active" : "")">📚 Quản lý Sách</a>
+
+        <a asp-area="Admin" asp-controller="KhachHangs" asp-action="Index"
+           class="@(ViewContext.RouteData.Values["controller"]?.ToString() == "KhachHangs" ? "active" : "")">👤 Khách Hàng</a>
+
+        <a asp-area="Admin" asp-controller="GioHang" asp-action="Index"
+           class="@(ViewContext.RouteData.Values["controller"]?.ToString() == "GioHang" ? "active" : "")">🛒 Giỏ Hàng</a>
+
+        <a asp-area="Admin" asp-controller="DonHang" asp-action="Index"
+           class="@(ViewContext.RouteData.Values["controller"]?.ToString() == "DonHang" ? "active" : "")">🧾 Đơn Hàng</a>
+
         <hr class="bg-light" />
+
         <a asp-area="" asp-controller="Account" asp-action="Logout">🚪 Đăng xuất</a>
     </div>
 

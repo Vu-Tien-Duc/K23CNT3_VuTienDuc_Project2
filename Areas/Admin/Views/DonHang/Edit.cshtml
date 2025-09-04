@@ -1,0 +1,38 @@
+﻿@model QLBanSachWeb.Models.DonHang
+@{
+    ViewData["Title"] = "Chỉnh sửa Đơn Hàng";
+}
+
+<h2>Chỉnh sửa Đơn Hàng</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="MaDH" />
+
+    <div class="mb-3">
+        <label>Khách hàng</label>
+        <select asp-for="MaKH" class="form-select"
+                asp-items="@(new SelectList(ViewBag.KhachHangs, "MaKH", "HoTen", Model.MaKH))">
+        </select>
+
+    </div>
+
+    <div class="mb-3">
+        <label>Ngày đặt</label>
+        <input asp-for="NgayDat" class="form-control" type="datetime-local"
+               value="@(Model.NgayDat?.ToString("yyyy-MM-ddTHH:mm"))" />
+    </div>
+
+    <div class="mb-3">
+        <label>Tổng tiền</label>
+        <input asp-for="TongTien" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Trạng thái</label>
+        <select asp-for="TrangThai" class="form-select" asp-items="new SelectList(ViewBag.TrangThaiList)">
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-success">Cập nhật</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>

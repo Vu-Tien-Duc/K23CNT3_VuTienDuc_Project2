@@ -1,52 +1,108 @@
 ﻿@{
-    ViewData["Title"] = "Trang Quản Trị - Dashboard";
-    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    ViewData["Title"] = "Trang chủ";
 }
 
-<h1 class="mb-4">Xin chào, Admin 👋</h1>
+<div class="container mt-4">
+    <h2 class="mb-4">📊 Thống kê doanh thu theo tháng</h2>
 
-<div class="row">
-    <div class="col-md-4">
-        <div class="card text-white bg-primary mb-3">
-            <div class="card-header">Sách</div>
-            <div class="card-body">
-                <h5 class="card-title">Quản lý Sách</h5>
-                <p class="card-text">Xem, thêm, sửa, xóa sách.</p>
-                <a href="/Admin/Saches" class="btn btn-light">Đi tới</a>
-            </div>
-        </div>
+    <div class="card shadow-sm p-3 mb-4 bg-white rounded">
+        <canvas id="doanhThuChart" width="800" height="400"></canvas>
     </div>
 
-    <div class="col-md-4">
-        <div class="card text-white bg-success mb-3">
-            <div class="card-header">Khách Hàng</div>
-            <div class="card-body">
-                <h5 class="card-title">Quản lý Khách Hàng</h5>
-                <p class="card-text">Xem danh sách khách mua sách.</p>
-                <a href="/Admin/KhachHangs" class="btn btn-light">Đi tới</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        <div class="card text-white bg-warning mb-3">
-            <div class="card-header">Hóa Đơn</div>
-            <div class="card-body">
-                <h5 class="card-title">Quản lý Hóa Đơn</h5>
-                <p class="card-text">Xem chi tiết hóa đơn bán sách.</p>
-                <a href="/Admin/HoaDon" class="btn btn-light">Đi tới</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        <div class="card text-white bg-warning mb-3">
-            <div class="card-header">Loại Sách</div>
-            <div class="card-body">
-                <h5 class="card-title">Quản lý Loại Sách</h5>
-                <p class="card-text">Xem chi tiết Loại sách.</p>
-                <a href="/Admin/LoaiSaches" class="btn btn-light">Đi tới</a>
-            </div>
-        </div>
-    </div>
+    <h3 class="mt-5">📋 Bảng thống kê chi tiết</h3>
+    <table class="table table-bordered table-striped mt-3">
+        <thead class="table-dark">
+            <tr>
+                <th>Tháng/Năm</th>
+                <th>Doanh thu (VNĐ)</th>
+            </tr>
+        </thead>
+        <tbody id="doanhThuTable"></tbody>
+    </table>
 </div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+    <script>
+        // Dữ liệu từ Controller
+        var doanhThuData = @Html.Raw(ViewBag.DoanhThuTheoThang);
+
+        // Labels: Tháng/Năm
+        var labels = doanhThuData.map(d => d.Month + "/" + d.Year);
+        var data = doanhThuData.map(d => d.TongDoanhThu);
+
+        // Tạo gradient
+        var ctx = document.getElementById('doanhThuChart').getContext('2d');
+        var gradient = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient.addColorStop(0, 'rgba(75, 192, 192, 0.8)');
+        gradient.addColorStop(1, 'rgba(54, 162, 235, 0.6)');
+
+        // Render biểu đồ
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Doanh thu (VNĐ)',
+                    data: data,
+                    backgroundColor: gradient,
+                    borderRadius: 10, // bo góc thanh
+                    hoverBackgroundColor: 'rgba(255, 99, 132, 0.8)'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: { font: { size: 14 } }
+                    },
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'end',
+                        color: '#000',
+                        font: { weight: 'bold', size: 12 },
+                        formatter: function (value) {
+                            return value.toLocaleString('vi-VN') + " ₫";
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                return context.dataset.label + ': ' + context.raw.toLocaleString('vi-VN') + " ₫";
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function (value) {
+                                return value.toLocaleString('vi-VN') + " ₫";
+                            }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: { size: 12 }
+                        }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels]
+        });
+
+        // Render bảng chi tiết
+        var tableBody = document.getElementById("doanhThuTable");
+        doanhThuData.forEach(d => {
+            var row = `<tr>
+                                <td>${d.Month}/${d.Year}</td>
+                                <td>${d.TongDoanhThu.toLocaleString('vi-VN')} ₫</td>
+                            </tr>`;
+            tableBody.innerHTML += row;
+        });
+    </script>
+}

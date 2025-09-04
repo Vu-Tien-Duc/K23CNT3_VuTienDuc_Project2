@@ -1,0 +1,73 @@
+﻿@model QLBanSachWeb.Models.KhachHang
+
+@{
+    ViewData["Title"] = "Cài đặt tài khoản";
+}
+
+<h2 class="mb-4">Thông tin cá nhân</h2>
+
+<form asp-action="UpdateProfile" method="post">
+    <input type="hidden" asp-for="MaKH" />
+
+    <div class="mb-3">
+        <label asp-for="HoTen" class="form-label"></label>
+        <input asp-for="HoTen" class="form-control" />
+        <span asp-validation-for="HoTen" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="SDT" class="form-label"></label>
+        <input asp-for="SDT" class="form-control" />
+        <span asp-validation-for="SDT" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="DiaChi" class="form-label"></label>
+        <input asp-for="DiaChi" class="form-control" />
+        <span asp-validation-for="DiaChi" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Cập nhật thông tin</button>
+</form>
+
+<hr />
+
+<h2 class="mb-4 mt-5">Đổi mật khẩu</h2>
+
+<form asp-action="ChangePassword" method="post">
+    <div class="mb-3">
+        <label class="form-label">Mật khẩu hiện tại</label>
+        <input type="password" name="currentPassword" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Mật khẩu mới (≥6 ký tự)</label>
+        <input type="password" name="newPassword" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Xác nhận mật khẩu</label>
+        <input type="password" name="confirmPassword" class="form-control" required />
+    </div>
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
+
+    <button type="submit" class="btn btn-warning">Đổi mật khẩu</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<QLBanSachWeb.Models.GioHang>
+
+<h2>📦 Danh sách Giỏ hàng</h2>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Mã GH</th>
+            <th>Khách hàng</th>
+            <th>Ngày tạo</th>
+            <th>Số lượng SP</th>
+            <th>Tổng tiền</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var gh in Model)
+        {
+            <tr>
+                <td>@gh.MaGH</td>
+                <td>@gh.MaKHNavigation?.HoTen</td>
+                <td>@gh.NgayTao?.ToString("dd/MM/yyyy")</td>
+                <td>@gh.CT_GioHangs.Sum(c => c.SoLuong)</td>
+                <td>@gh.CT_GioHangs.Sum(c => c.SoLuong * c.MaSachNavigation.GiaBan).ToString("N0") đ</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@gh.MaGH" class="btn btn-info btn-sm">Chi tiết</a>
+                    <a asp-action="Delete" asp-route-id="@gh.MaGH" class="btn btn-danger btn-sm"
+                       onclick="return confirm('Bạn có chắc muốn xóa giỏ hàng này?')">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

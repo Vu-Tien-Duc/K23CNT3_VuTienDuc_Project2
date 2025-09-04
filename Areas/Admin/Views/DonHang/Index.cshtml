@@ -1,0 +1,50 @@
+﻿@model IEnumerable<QLBanSachWeb.Models.DonHang>
+@{
+    ViewData["Title"] = "Danh sách Đơn Hàng";
+}
+
+<h2>Danh sách Đơn Hàng</h2>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Mã DH</th>
+            <th>Khách hàng</th>
+            <th>Ngày đặt</th>
+            <th>Tổng tiền</th>
+            <th>Trạng thái</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            string badgeClass = item.TrangThai switch
+            {
+                "Chờ xử lý" => "badge bg-warning text-dark",
+                "Đang giao" => "badge bg-info text-dark",
+                "Đã giao" => "badge bg-success",
+                "Đã hủy" => "badge bg-danger",
+                _ => "badge bg-secondary"
+            };
+
+            <tr>
+                <td>@item.MaDH</td>
+                <td>@item.MaKHNavigation?.HoTen</td>
+                <td>@item.NgayDat?.ToString("dd/MM/yyyy HH:mm")</td>
+                <td>@item.TongTien?.ToString("N0") đ</td>
+                <td><span class="@badgeClass">@item.TrangThai</span></td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.MaDH" class="btn btn-sm btn-info">Chi tiết</a>
+                    <a asp-action="Edit" asp-route-id="@item.MaDH" class="btn btn-sm btn-warning">Sửa</a>
+                    <form asp-action="Delete" asp-route-id="@item.MaDH" method="post" style="display:inline"
+                          onsubmit="return confirm('Bạn có chắc muốn xóa đơn này?');">
+                        <button type="submit" class="btn btn-sm btn-danger">Xóa</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">➕ Thêm mới</a>

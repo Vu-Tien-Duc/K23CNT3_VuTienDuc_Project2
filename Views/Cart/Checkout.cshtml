@@ -6,6 +6,13 @@
 
 <h3>🛒 Xác nhận đơn hàng</h3>
 
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
+
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -21,7 +28,13 @@
             <tr>
                 <td>@item.MaSachNavigation.TenSach</td>
                 <td>@item.MaSachNavigation.GiaBan.ToString("N0") đ</td>
-                <td>@item.SoLuong</td>
+                <td>
+                    <form asp-action="Update" method="post" class="d-flex gap-2">
+                        <input type="hidden" name="maSach" value="@item.MaSach" />
+                        <input type="number" name="soLuong" value="@item.SoLuong" min="1" class="form-control w-25" />
+                        <button type="submit" class="btn btn-sm btn-primary">Cập nhật</button>
+                    </form>
+                </td>
                 <td>@((item.SoLuong * item.MaSachNavigation.GiaBan).ToString("N0")) đ</td>
             </tr>
         }

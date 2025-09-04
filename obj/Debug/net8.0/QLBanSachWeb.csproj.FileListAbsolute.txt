@@ -283,3 +283,7 @@ D:\Project2\QLBanSachWeb\obj\Debug\net8.0\refint\QLBanSachWeb.dll
 D:\Project2\QLBanSachWeb\obj\Debug\net8.0\QLBanSachWeb.pdb
 D:\Project2\QLBanSachWeb\obj\Debug\net8.0\QLBanSachWeb.genruntimeconfig.cache
 D:\Project2\QLBanSachWeb\obj\Debug\net8.0\ref\QLBanSachWeb.dll
+D:\Project2\QLBanSachWeb\obj\Debug\net8.0\QLBanSachWeb.MvcApplicationPartsAssemblyInfo.cs
+D:\Project2\QLBanSachWeb\bin\Debug\net8.0\PagedList.Core.dll
+D:\Project2\QLBanSachWeb\bin\Debug\net8.0\X.PagedList.dll
+D:\Project2\QLBanSachWeb\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
