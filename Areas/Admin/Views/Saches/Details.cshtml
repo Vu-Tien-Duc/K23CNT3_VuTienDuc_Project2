@@ -1,57 +1,57 @@
 ﻿@model QLBanSachWeb.Models.Sach
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Chi Tiết Sách";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1 class="text-center mb-4" style="color: #343a40;">Chi Tiết Sách</h1>
-
-<div class="container">
-    <div class="card shadow-sm mb-4" style="background-color: #f8f9fa;">
-        <div class="card-body">
-            <dl class="row">
-
-                <dt class="col-sm-3 font-weight-bold">Tên Sách</dt>
-                <dd class="col-sm-9">@Html.DisplayFor(model => model.TenSach)</dd>
-
-                <dt class="col-sm-3 font-weight-bold">Tác Giả</dt>
-                <dd class="col-sm-9">@Html.DisplayFor(model => model.TacGia)</dd>
-
-                <dt class="col-sm-3 font-weight-bold">Nhà Xuất Bản</dt>
-                <dd class="col-sm-9">@Html.DisplayFor(model => model.NXB)</dd>
-
-                <dt class="col-sm-3 font-weight-bold">Năm Xuất Bản</dt>
-                <dd class="col-sm-9">@Html.DisplayFor(model => model.NamXB)</dd>
-
-                <dt class="col-sm-3 font-weight-bold">Giá Bán</dt>
-                <dd class="col-sm-9">@Html.DisplayFor(model => model.GiaBan)</dd>
-
-                <dt class="col-sm-3 font-weight-bold">Số Lượng</dt>
-                <dd class="col-sm-9">@Html.DisplayFor(model => model.SoLuong)</dd>
-
-                <dt class="col-sm-3 font-weight-bold">Mô Tả</dt>
-                <dd class="col-sm-9">@Html.DisplayFor(model => model.MoTa)</dd>
-
-                <dt class="col-sm-3 font-weight-bold">Hình Ảnh</dt>
-                <dd class="col-sm-9">
-                    @if (!string.IsNullOrEmpty(Model.HinhAnh))
-                    {
-                        <img src="~/images/@Model.HinhAnh" alt="@Model.TenSach" class="img-thumbnail" style="max-width:250px;" />
-                    }
-                    else
-                    {
-                        <span>Chưa có ảnh</span>
-                    }
-                </dd>
-
-                <dt class="col-sm-3 font-weight-bold">Loại Sách</dt>
-                <dd class="col-sm-9">@Html.DisplayFor(model => model.MaLoaiNavigation.TenLoai)</dd>
-
-            </dl>
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h4 class="mb-0">📖 Chi Tiết Sách: @Model.TenSach</h4>
+            <div>
+                <a asp-action="Edit" asp-route-id="@Model.MaSach" class="btn btn-warning btn-sm me-2">✏️ Chỉnh Sửa</a>
+                <a asp-action="Index" class="btn btn-secondary btn-sm">🏠 Quay Lại</a>
+            </div>
         </div>
-        <div class="card-footer text-right">
-            <a asp-action="Edit" asp-route-id="@Model.MaSach" class="btn btn-warning mr-2">Chỉnh Sửa</a>
-            <a asp-action="Index" class="btn btn-secondary">Quay Lại</a>
+        <div class="card-body row">
+            <div class="col-md-4 text-center mb-3">
+                @if (!string.IsNullOrEmpty(Model.HinhAnh))
+                {
+                    <img src="~/images/@Model.HinhAnh" class="img-fluid img-thumbnail" style="max-height:250px;" />
+                }
+                else
+                {
+                    <div class="text-muted border p-5">Chưa có ảnh</div>
+                }
+            </div>
+            <div class="col-md-8">
+                <dl class="row">
+                    <dt class="col-sm-4">Tên Sách:</dt>
+                    <dd class="col-sm-8">@Model.TenSach</dd>
+
+                    <dt class="col-sm-4">Tác Giả:</dt>
+                    <dd class="col-sm-8">@Model.TacGia</dd>
+
+                    <dt class="col-sm-4">Loại Sách:</dt>
+                    <dd class="col-sm-8">@Model.MaLoaiNavigation?.TenLoai</dd>
+
+                    <dt class="col-sm-4">Nhà Xuất Bản:</dt>
+                    <dd class="col-sm-8">@Model.NXB</dd>
+
+                    <dt class="col-sm-4">Năm Xuất Bản:</dt>
+                    <dd class="col-sm-8">@Model.NamXB</dd>
+
+                    <dt class="col-sm-4">Giá Bán:</dt>
+                    <dd class="col-sm-8">@Model.GiaBan.ToString("C0")</dd>
+
+                    <dt class="col-sm-4">Số Lượng:</dt>
+                    <dd class="col-sm-8">@Model.SoLuong</dd>
+
+                    <dt class="col-sm-4">Mô Tả:</dt>
+                    <dd class="col-sm-8">@Model.MoTa</dd>
+                </dl>
+            </div>
         </div>
     </div>
 </div>

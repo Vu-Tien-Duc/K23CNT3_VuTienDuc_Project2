@@ -26,6 +26,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Project2\QLBanSachWeb
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Project2/QLBanSachWeb/Areas/Admin/Views/AdminAccount/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5BY2NvdW50XExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Project2/QLBanSachWeb/Areas/Admin/Views/DonHang/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRG9uSGFuZ1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

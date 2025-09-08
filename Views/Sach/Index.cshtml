@@ -4,56 +4,124 @@
     ViewData["Title"] = "Danh sách sách";
 }
 
-<h2>📚 Danh sách sách</h2>
+<div class="container my-4">
 
-<!-- Bộ lọc loại sách -->
-<form method="get" class="mb-3">
-    <select name="maLoai" onchange="this.form.submit()" class="form-select w-auto d-inline-block">
-        <option value="">-- Tất cả loại --</option>
-        @foreach (var loai in (IEnumerable<QLBanSachWeb.Models.LoaiSach>)ViewBag.LoaiSaches)
+    <h2 class="text-center text-primary fw-bold mb-4">📚 Danh sách sách</h2>
+
+    <!-- Bộ lọc loại sách -->
+    <form method="get" class="mb-4 d-flex justify-content-center">
+        <select name="maLoai" onchange="this.form.submit()" class="form-select w-auto shadow-sm">
+            <option value="">-- Tất cả loại --</option>
+            @foreach (var loai in (IEnumerable<QLBanSachWeb.Models.LoaiSach>)ViewBag.LoaiSaches)
+            {
+                <option value="@loai.MaLoai" selected="@(ViewBag.MaLoai == loai.MaLoai)">
+                    @loai.TenLoai
+                </option>
+            }
+        </select>
+    </form>
+
+    <!-- Danh sách sách -->
+    <div class="row">
+        @foreach (var sach in Model)
         {
-            <option value="@loai.MaLoai" selected="@(ViewBag.MaLoai == loai.MaLoai)">
-                @loai.TenLoai
-            </option>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card book-card h-100 d-flex flex-column border-0 shadow-sm">
 
-        }
-    </select>
-</form>
+                    <!-- Ảnh sách -->
+                    <div class="book-img-wrapper position-relative">
+                        <img src="~/images/@sach.HinhAnh"
+                             alt="@sach.TenSach"
+                             class="card-img-top book-img" />
 
-<!-- Danh sách sách -->
-<div class="row">
-    @foreach (var sach in Model)
-    {
-        <div class="col-md-3 mb-4">
-            <div class="card h-100 shadow-sm">
-                <img src="~/images/@sach.HinhAnh" 
-                     class="card-img-top" 
-                     alt="@sach.TenSach" 
-                     style="height: 220px; object-fit: cover;" />
+                        <!-- Badge loại -->
+                        <span class="badge bg-primary position-absolute top-0 start-0 m-2">
+                            @sach.MaLoaiNavigation?.TenLoai
+                        </span>
+                    </div>
 
-                <div class="card-body">
-                    <h5 class="card-title">@sach.TenSach</h5>
-                    <p class="text-muted mb-1">📖 @sach.MaLoaiNavigation?.TenLoai</p>
-                    <p class="fw-bold text-danger">@sach.GiaBan.ToString("N0") đ</p>
-                    <a asp-controller="Sach" asp-action="Details" asp-route-id="@sach.MaSach" 
-                       class="btn btn-sm btn-primary">Xem chi tiết</a>
+                    <!-- Nội dung -->
+                    <div class="card-body d-flex flex-column text-center">
+                        <h6 class="fw-bold text-truncate">@sach.TenSach</h6>
+                        <p class="text-muted small mb-1">📖 @sach.TacGia</p>
+                        <p class="fw-bold text-danger">@sach.GiaBan.ToString("N0") đ</p>
+
+                        <div class="mt-auto">
+                            <a asp-controller="Sach" asp-action="Details" asp-route-id="@sach.MaSach"
+                               class="btn btn-outline-primary btn-sm w-100 mb-2">
+                                <i class="bi bi-info-circle"></i> Xem chi tiết
+                            </a>
+                            <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@sach.MaSach"
+                               class="btn btn-success btn-sm w-100">
+                                <i class="bi bi-cart-plus"></i> Thêm vào giỏ
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        }
+    </div>
+
+    <!-- Phân trang -->
+    @if (ViewBag.TotalPages > 1)
+    {
+        <nav>
+            <ul class="pagination justify-content-center">
+                <li class="page-item @(ViewBag.CurrentPage == 1 ? "disabled" : "")">
+                    <a class="page-link" href="?page=@(ViewBag.CurrentPage - 1)&maLoai=@ViewBag.MaLoai">«</a>
+                </li>
+                @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                {
+                    <li class="page-item @(ViewBag.CurrentPage == i ? "active" : "")">
+                        <a class="page-link" href="?page=@i&maLoai=@ViewBag.MaLoai">@i</a>
+                    </li>
+                }
+                <li class="page-item @(ViewBag.CurrentPage == ViewBag.TotalPages ? "disabled" : "")">
+                    <a class="page-link" href="?page=@(ViewBag.CurrentPage + 1)&maLoai=@ViewBag.MaLoai">»</a>
+                </li>
+            </ul>
+        </nav>
     }
 </div>
 
-<!-- Phân trang -->
-@if (ViewBag.TotalPages > 1)
-{
-    <nav>
-        <ul class="pagination justify-content-center">
-            @for (int i = 1; i <= ViewBag.TotalPages; i++)
-            {
-                <li class="page-item @(ViewBag.CurrentPage == i ? "active" : "")">
-                    <a class="page-link" href="?page=@i&maLoai=@ViewBag.MaLoai">@i</a>
-                </li>
-            }
-        </ul>
-    </nav>
-}
+<style>
+    /* Card */
+    .book-card {
+        border-radius: 14px;
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+        .book-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+    /* Ảnh sách */
+    .book-img-wrapper {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .book-img {
+        height: 280px;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+    .book-card:hover .book-img {
+        transform: scale(1.08);
+    }
+
+    /* Select filter */
+    select.form-select {
+        min-width: 200px;
+        border-radius: 8px;
+    }
+
+    /* Nút phân trang */
+    .pagination .page-link {
+        border-radius: 6px;
+        margin: 0 2px;
+    }
+</style>

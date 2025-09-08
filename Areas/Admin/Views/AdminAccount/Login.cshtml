@@ -1,0 +1,59 @@
+﻿@{
+    Layout = null;
+    <!-- không dùng layout admin -->
+    ViewData["Title"] = "Đăng nhập Quản trị";
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/login.css" />
+</head>
+<body>
+    <div class="login-box">
+        <h2>Đăng nhập Quản trị</h2>
+        <form asp-action="Login" method="post">
+            @Html.AntiForgeryToken()
+
+            <!-- Email -->
+            <div class="user-box">
+                <input type="email" name="email" required />
+                <label>Email</label>
+            </div>
+
+            <!-- Password -->
+            <div class="user-box">
+                <input type="password" name="password" required />
+                <label>Mật khẩu</label>
+            </div>
+            <button type="submit" class="login-btn" id="loginBtn">
+                🔑 <span class="btn-text">Đăng nhập</span>
+                <span class="spinner" style="display:none;"></span>
+            </button>
+
+
+
+        </form>
+
+        <!-- Error -->
+        @if (!string.IsNullOrEmpty(ViewBag.Error))
+        {
+            <div class="error-msg">@ViewBag.Error</div>
+        }
+    </div>
+</body>
+<script>
+    const loginBtn = document.getElementById("loginBtn");
+    const btnText = loginBtn.querySelector(".btn-text");
+    const spinner = loginBtn.querySelector(".spinner");
+
+    loginBtn.addEventListener("click", function () {
+        loginBtn.classList.add("loading");
+        btnText.style.display = "none";
+        spinner.style.display = "inline-block";
+    });
+</script>
+</html>
+

@@ -2,86 +2,109 @@
 
 @{
     ViewData["Title"] = "Edit Sách";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Edit Sách</h1>
+<h1 class="mb-4">✏️ Chỉnh sửa Sách</h1>
 
-<h4>Sach</h4>
-<hr />
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-8">
         <form asp-action="Edit" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
+            <!-- Hidden Id -->
             <input type="hidden" asp-for="MaSach" />
 
-            <div class="form-group">
-                <label asp-for="TenSach"></label>
-                <input asp-for="TenSach" class="form-control" />
-                <span asp-validation-for="TenSach" class="text-danger"></span>
+            <div class="row g-3">
+
+                <!-- Tên Sách -->
+                <div class="col-md-6">
+                    <label asp-for="TenSach" class="form-label">Tên Sách</label>
+                    <input asp-for="TenSach" class="form-control" placeholder="Nhập tên sách" />
+                    <span asp-validation-for="TenSach" class="text-danger"></span>
+                </div>
+
+                <!-- Tác Giả -->
+                <div class="col-md-6">
+                    <label asp-for="TacGia" class="form-label">Tác Giả</label>
+                    <input asp-for="TacGia" class="form-control" placeholder="Nhập tác giả" />
+                    <span asp-validation-for="TacGia" class="text-danger"></span>
+                </div>
+
+                <!-- Loại Sách -->
+                <div class="col-md-6">
+                    <label asp-for="MaLoai" class="form-label">Loại Sách</label>
+                    <select asp-for="MaLoai" asp-items="ViewBag.MaLoai" class="form-select"></select>
+                    <span asp-validation-for="MaLoai" class="text-danger"></span>
+                </div>
+
+                <!-- Nhà Xuất Bản -->
+                <div class="col-md-6">
+                    <label asp-for="NXB" class="form-label">Nhà Xuất Bản</label>
+                    <input asp-for="NXB" class="form-control" placeholder="Nhập nhà xuất bản" />
+                    <span asp-validation-for="NXB" class="text-danger"></span>
+                </div>
+
+                <!-- Năm XB -->
+                <div class="col-md-4">
+                    <label asp-for="NamXB" class="form-label">Năm Xuất Bản</label>
+                    <input asp-for="NamXB" type="number" class="form-control" placeholder="2025" />
+                    <span asp-validation-for="NamXB" class="text-danger"></span>
+                </div>
+
+                <!-- Giá Bán -->
+                <div class="col-md-4">
+                    <label asp-for="GiaBan" class="form-label">Giá Bán (VNĐ)</label>
+                    <input asp-for="GiaBan" type="number" class="form-control" placeholder="100000" />
+                    <span asp-validation-for="GiaBan" class="text-danger"></span>
+                </div>
+
+                <!-- Số Lượng -->
+                <div class="col-md-4">
+                    <label asp-for="SoLuong" class="form-label">Số Lượng</label>
+                    <input asp-for="SoLuong" type="number" class="form-control" placeholder="10" />
+                    <span asp-validation-for="SoLuong" class="text-danger"></span>
+                </div>
+
+                <!-- Mô Tả -->
+                <div class="col-12">
+                    <label asp-for="MoTa" class="form-label">Mô Tả</label>
+                    <textarea asp-for="MoTa" class="form-control" rows="3" placeholder="Nhập mô tả sách"></textarea>
+                    <span asp-validation-for="MoTa" class="text-danger"></span>
+                </div>
+
+                <!-- Ảnh hiện tại + hidden oldImage -->
+                <div class="col-md-6">
+                    <label class="form-label">Ảnh hiện tại</label><br />
+                    @if (!string.IsNullOrEmpty(Model?.HinhAnh))
+                    {
+                        <img src="~/images/@Model.HinhAnh" class="img-thumbnail mb-2" style="max-width:150px;" />
+                        <input type="hidden" name="oldImage" value="@Model.HinhAnh" />
+                    }
+                    else
+                    {
+                        <p class="text-muted">Chưa có ảnh</p>
+                    }
+                </div>
+
+                <!-- Upload ảnh mới -->
+                <div class="col-md-6">
+                    <label asp-for="HinhAnhFile" class="form-label">Chọn ảnh mới (nếu muốn thay)</label>
+                    <input asp-for="HinhAnhFile" type="file" class="form-control" />
+                    <span asp-validation-for="HinhAnhFile" class="text-danger"></span>
+                </div>
+
             </div>
 
-            <div class="form-group">
-                <label asp-for="TacGia"></label>
-                <input asp-for="TacGia" class="form-control" />
-                <span asp-validation-for="TacGia" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="MaLoai"></label>
-                <select asp-for="MaLoai" class="form-control" asp-items="ViewBag.MaLoai"></select>
-                <span asp-validation-for="MaLoai" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="NXB"></label>
-                <input asp-for="NXB" class="form-control" />
-                <span asp-validation-for="NXB" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="NamXB"></label>
-                <input asp-for="NamXB" class="form-control" />
-                <span asp-validation-for="NamXB" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="GiaBan"></label>
-                <input asp-for="GiaBan" class="form-control" />
-                <span asp-validation-for="GiaBan" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="SoLuong"></label>
-                <input asp-for="SoLuong" class="form-control" />
-                <span asp-validation-for="SoLuong" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="MoTa"></label>
-                <textarea asp-for="MoTa" class="form-control"></textarea>
-                <span asp-validation-for="MoTa" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label>Ảnh hiện tại</label><br />
-                @if (!string.IsNullOrEmpty(Model.HinhAnh))
-                {
-                    <img src="~/images/@Model.HinhAnh" width="120" />
-                    <input type="hidden" name="OldImage" value="@Model.HinhAnh" />
-                }
-            </div>
-
-            <div class="form-group">
-                <label asp-for="HinhAnhFile">Chọn ảnh mới (nếu muốn thay)</label>
-                <input type="file" asp-for="HinhAnhFile" class="form-control" />
-                <span asp-validation-for="HinhAnhFile" class="text-danger"></span>
-            </div>
-
-            <div class="form-group mt-3">
-                <input type="submit" value="Save" class="btn btn-primary" />
-                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            <!-- Submit & Cancel -->
+            <div class="mt-4 d-flex justify-content-end gap-2">
+                <button type="submit" class="btn btn-success btn-lg">💾 Lưu thay đổi</button>
+                <a asp-action="Index" class="btn btn-secondary btn-lg">❌ Hủy</a>
             </div>
         </form>
     </div>
 </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

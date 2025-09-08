@@ -2,10 +2,11 @@
 using QLBanSachWeb.Models;
 using System.Linq;
 using Newtonsoft.Json; // dùng để serialize JSON
-
+using QLBanSachWeb.Filters;
 namespace QLBanSachWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [AdminAuthorize]
     public class HomeController : Controller
     {
         private readonly QLBanSachContext _context;

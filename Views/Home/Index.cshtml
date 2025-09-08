@@ -8,87 +8,140 @@
 
 <div class="container my-4">
 
+
     <!-- Slider/banner nổi bật -->
     <div id="bookCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
         <div class="carousel-inner">
+
+            <!-- Banner 1 -->
             <div class="carousel-item active">
-                <img src="~/images/LapTrinhC.jpg" class="d-block w-100" alt="Banner 1" style="height:auto; max-height:400px; object-fit:cover;">
+                <img src="https://tse1.mm.bing.net/th/id/OIP.HPs0lgyjHws8mTbpAF9_kAHaEo?pid=Api&P=0&h=220"
+                     class="d-block w-100 card-img-top" alt="Banner 1"
+                     style="height: 350px; object-fit: cover;">
             </div>
+
+            <!-- Banner 2 -->
             <div class="carousel-item">
-                <img src="~/images/nhanhandcham.jpg" class="d-block w-100" alt="Banner 2" style="height:auto; max-height:400px; object-fit:cover;">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.vlX6Pec8eEGmwuayITNPxwHaFj?pid=Api&P=0&h=220"
+                     class="d-block w-100 card-img-top" alt="Banner 2"
+                     style="height: 350px; object-fit: cover;">
             </div>
+
+            <!-- Banner 3 -->
             <div class="carousel-item">
-                <img src="~/images/cotinhvn.jpg" class="d-block w-100" alt="Banner 3" style="height:auto; max-height:400px; object-fit:cover;">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/51b5YG6Y1rL._SX329_BO1,204,203,200_.jpg"
+                     class="d-block w-100 card-img-top" alt="Banner 3"
+                     style="height: 350px; object-fit: cover;">
             </div>
+
         </div>
+
         <button class="carousel-control-prev" type="button" data-bs-target="#bookCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
         </button>
+
         <button class="carousel-control-next" type="button" data-bs-target="#bookCarousel" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
         </button>
     </div>
 
+
+
+
     <h2 class="mb-4 text-primary fw-bold text-center">📚 Danh sách sách</h2>
 
     <!-- Form lọc & sắp xếp -->
-    <form asp-action="Index" method="get" class="mb-3 d-flex gap-2 flex-wrap justify-content-center">
-        <input type="text" name="searchString"
-               value="@Context.Request.Query["searchString"]"
-               placeholder="Tìm kiếm sách..." class="form-control w-25" />
+    <form asp-action="Index" method="get" class="mb-4">
+        <div class="filter-bar shadow-sm p-3 rounded bg-white d-flex flex-wrap align-items-center gap-3">
 
-        <select name="categoryId" class="form-select w-25">
-            <option value="">-- Tất cả thể loại --</option>
-            @if (categories != null)
-            {
-                foreach (var cat in categories)
-                {
-                    <option value="@cat.MaLoai" selected="@(selectedCategory == cat.MaLoai)">
-                        @cat.TenLoai
-                    </option>
-                }
-            }
-        </select>
+            <!-- Ô tìm kiếm -->
+            <div class="flex-grow-1">
+                <div class="input-group rounded-pill shadow-sm">
+                    <span class="input-group-text bg-white border-0 rounded-start-pill">
+                        <i class="bi bi-search text-muted"></i>
+                    </span>
+                    <input type="text" name="searchString"
+                           value="@Context.Request.Query["searchString"]"
+                           placeholder="🔍 Tìm sách theo tên, tác giả..."
+                           class="form-control border-0 rounded-end-pill" />
+                </div>
+            </div>
 
-        <select name="sortOrder" class="form-select w-25">
-            <option value="">Mặc định</option>
-            <option value="price_asc" selected="@(ViewBag.CurrentSort == "price_asc")">Giá tăng dần</option>
-            <option value="price_desc" selected="@(ViewBag.CurrentSort == "price_desc")">Giá giảm dần</option>
-        </select>
+            <!-- Thể loại -->
+            <div>
+                <select name="categoryId" class="form-select rounded-pill shadow-sm">
+                    <option value="">📂 Tất cả thể loại</option>
+                    @if (categories != null)
+                    {
+                        foreach (var cat in categories)
+                        {
+                            <option value="@cat.MaLoai" selected="@(selectedCategory == cat.MaLoai)">
+                                @cat.TenLoai
+                            </option>
+                        }
+                    }
+                </select>
+            </div>
 
-        <button type="submit" class="btn btn-primary">Lọc</button>
+            <!-- Sắp xếp -->
+            <div>
+                <select name="sortOrder" class="form-select rounded-pill shadow-sm">
+                    <option value="">🔀 Mặc định</option>
+                    <option value="price_asc" selected="@(ViewBag.CurrentSort == "price_asc")">💲 Giá tăng dần</option>
+                    <option value="price_desc" selected="@(ViewBag.CurrentSort == "price_desc")">💲 Giá giảm dần</option>
+                </select>
+            </div>
+
+            <!-- Nút lọc -->
+            <div>
+                <button type="submit" class="btn btn-primary rounded-pill px-4 fw-bold shadow-sm">
+                    <i class="bi bi-funnel"></i> Lọc
+                </button>
+            </div>
+        </div>
     </form>
 
     <!-- Card sách -->
     <div class="row">
         @foreach (var item in Model)
         {
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm hover-card">
-                    <img src="~/images/@item.HinhAnh" class="card-img-top" alt="@item.TenSach" style="height:250px; object-fit:cover;" />
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">@item.TenSach</h5>
-                        <p class="card-text text-muted">Tác giả: @item.TacGia</p>
-                        <p class="fw-bold text-danger">@item.GiaBan.ToString("n0") ₫</p>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="book-card shadow-sm border-0 rounded h-100 d-flex flex-column">
 
+                    <!-- Ảnh sách -->
+                    <div class="book-img-wrapper position-relative">
+                        <img src="~/images/@item.HinhAnh"
+                             alt="@item.TenSach"
+                             class="book-img img-fluid" />
+
+                        <!-- Badge tình trạng -->
                         @if (item.SoLuong > 0)
                         {
-                            <span class="badge bg-success mb-2">Còn hàng</span>
+                            <span class="badge bg-success position-absolute top-0 start-0 m-2">✔ Còn hàng</span>
                         }
                         else
                         {
-                            <span class="badge bg-danger mb-2">Hết hàng</span>
+                            <span class="badge bg-danger position-absolute top-0 start-0 m-2">❌ Hết hàng</span>
                         }
 
-                        <div class="mt-auto">
-                            <a asp-action="Details" asp-route-id="@item.MaSach" class="btn btn-info btn-sm w-100 mb-2">
+                        <!-- Overlay khi hover -->
+                        <div class="overlay d-flex flex-column justify-content-center align-items-center">
+                            <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@item.MaSach"
+                               class="btn btn-success btn-sm w-75 mb-2 @(item.SoLuong == 0 ? "disabled" : "")">
+                                <i class="bi bi-cart-plus"></i> Thêm giỏ
+                            </a>
+                            <a asp-action="Details" asp-route-id="@item.MaSach"
+                               class="btn btn-outline-light btn-sm w-75">
                                 <i class="bi bi-info-circle"></i> Chi tiết
                             </a>
-                            <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@item.MaSach"
-                               class="btn btn-success btn-sm w-100 @(item.SoLuong == 0 ? "disabled" : "")">
-                                <i class="bi bi-cart-plus"></i> Thêm vào giỏ
-                            </a>
                         </div>
+                    </div>
+
+                    <!-- Thông tin sách -->
+                    <div class="p-3 text-center mt-auto">
+                        <h6 class="fw-bold text-truncate">@item.TenSach</h6>
+                        <p class="text-muted small mb-1">✍ @item.TacGia</p>
+                        <p class="fw-bold text-danger">@item.GiaBan.ToString("n0") ₫</p>
                     </div>
                 </div>
             </div>
@@ -120,21 +173,68 @@
 </div>
 
 <style>
-    .hover-card {
-        transition: transform 0.3s, box-shadow 0.3s;
+
+
+/* Thanh filter bar */
+.filter-bar {
+    background: #f8f9fa;
+    border: 1px solid #e1e1e1;
+}
+
+    .filter-bar select,
+    .filter-bar input {
+        min-width: 180px;
     }
 
-    .hover-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    .filter-bar .form-select:focus,
+    .filter-bar .form-control:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 6px rgba(13,110,253,0.3);
     }
 
-    /* Carousel ảnh nét hơn */
-    #bookCarousel img {
-        width: 100%;
-        height: auto;
-        max-height: 400px;
-        object-fit: cover;
-        image-rendering: auto;
+/* Card sách hiện đại */
+.book-card {
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    min-height: 440px; /* đồng đều */
+}
+
+    .book-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
+
+/* Ảnh sách */
+.book-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.book-img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    border-bottom: 1px solid #eee;
+}
+
+.book-card:hover .book-img {
+    transform: scale(1.08);
+}
+
+/* Overlay khi hover */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.book-card:hover .overlay {
+    opacity: 1;
+}
 </style>

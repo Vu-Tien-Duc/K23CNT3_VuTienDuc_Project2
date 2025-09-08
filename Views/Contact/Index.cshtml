@@ -1,59 +1,65 @@
 ﻿@model QLBanSachWeb.Models.ContactViewModel
-
 @{
     ViewData["Title"] = "Liên hệ";
 }
 
-<h2>📞 Liên hệ với chúng tôi</h2>
+<div class="container my-5">
+    <h2 class="text-center text-primary mb-4">📞 Liên hệ với chúng tôi</h2>
 
-@if (TempData["Success"] != null)
-{
-    <div class="alert alert-success">@TempData["Success"]</div>
-}
-@if (TempData["Error"] != null)
-{
-    <div class="alert alert-danger">@TempData["Error"]</div>
-}
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
 
-<div class="row">
-    <!-- Form liên hệ -->
-    <div class="col-md-6">
-        <form asp-action="Index" method="post">
-            <div class="mb-3">
-                <label class="form-label">Họ tên</label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+    <div class="row">
+        <!-- Form liên hệ -->
+        <div class="col-md-6">
+            <div class="card shadow-sm p-4 border-0">
+                <h5 class="fw-bold mb-3">Gửi tin nhắn</h5>
+                <form asp-action="Index" method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Họ tên</label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Số điện thoại</label>
+                        <input asp-for="Phone" class="form-control" />
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Nội dung</label>
+                        <textarea asp-for="Message" class="form-control" rows="5"></textarea>
+                        <span asp-validation-for="Message" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">📤 Gửi liên hệ</button>
+                </form>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Số điện thoại</label>
-                <input asp-for="Phone" class="form-control" />
-                <span asp-validation-for="Phone" class="text-danger"></span>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Nội dung</label>
-                <textarea asp-for="Message" class="form-control" rows="5"></textarea>
-                <span asp-validation-for="Message" class="text-danger"></span>
-            </div>
-            <button type="submit" class="btn btn-primary">Gửi</button>
-        </form>
-    </div>
+        </div>
 
-    <!-- Bản đồ và thông tin -->
-    <div class="col-md-6">
-        <h4>Địa chỉ</h4>
-        <p>123 Đường ABC, Quận XYZ, Thành phố HCM</p>
-        <p>Email: info@webbansach.com</p>
-        <p>Hotline: 0123 456 789</p>
+        <!-- Bản đồ và thông tin -->
+        <div class="col-md-6">
+            <div class="card shadow-sm p-4 border-0">
+                <h5 class="fw-bold mb-3">Thông tin</h5>
+                <p><strong>📍 Địa chỉ:</strong> 123 Đường ABC, Quận XYZ, TP.HCM</p>
+                <p><strong>📧 Email:</strong> info@webbansach.com</p>
+                <p><strong>☎ Hotline:</strong> 0123 456 789</p>
 
-        <h4>Bản đồ</h4>
-        <div class="ratio ratio-16x9">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.123456!2d106.123456!3d10.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752abcdef12345%3A0x123456789abcdef!2sQLBanSach!5e0!3m2!1sen!2s!4v1696060000000!5m2!1sen!2s"
-                    style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <h5 class="fw-bold mt-4 mb-2">Bản đồ</h5>
+                <div class="ratio ratio-16x9 rounded">
+                    <iframe src="https://www.google.com/maps/embed?pb=..."
+                            style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
         </div>
     </div>
 </div>

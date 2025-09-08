@@ -1,5 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using QLBanSachWeb.Models;
+using System.Text;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +22,7 @@ builder.Services.AddDbContext<QLBanSachContext>(options =>
 
 var app = builder.Build();
 
+// Middleware pipeline
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -29,7 +33,10 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+// ⚡ Session đặt ở đây, sau UseRouting và trước UseAuthorization
 app.UseSession();
+
 app.UseAuthorization();
 
 app.MapControllerRoute(
@@ -41,3 +48,5 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+

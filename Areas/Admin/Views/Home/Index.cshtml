@@ -3,53 +3,82 @@
 }
 
 <div class="container mt-4">
-    <h2 class="mb-4">📊 Thống kê doanh thu theo tháng</h2>
-
-    <div class="card shadow-sm p-3 mb-4 bg-white rounded">
-        <canvas id="doanhThuChart" width="800" height="400"></canvas>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">📊 Thống kê doanh thu theo tháng</h2>
     </div>
 
-    <h3 class="mt-5">📋 Bảng thống kê chi tiết</h3>
-    <table class="table table-bordered table-striped mt-3">
-        <thead class="table-dark">
-            <tr>
-                <th>Tháng/Năm</th>
-                <th>Doanh thu (VNĐ)</th>
-            </tr>
-        </thead>
-        <tbody id="doanhThuTable"></tbody>
-    </table>
+    <!-- Biểu đồ -->
+    <div class="card shadow-sm p-4 mb-4 chart-card rounded">
+        <h5 class="mb-3 fw-semibold">Biểu đồ doanh thu</h5>
+        <canvas id="doanhThuChart" style="max-height: 420px;"></canvas>
+    </div>
+
+    <!-- Bảng chi tiết -->
+    <div class="card shadow-sm p-4 table-card rounded">
+        <h5 class="mb-3 fw-semibold">📋 Bảng thống kê chi tiết</h5>
+        <table class="table table-bordered table-striped mt-3 text-center align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>Tháng/Năm</th>
+                    <th>Doanh thu (VNĐ)</th>
+                </tr>
+            </thead>
+            <tbody id="doanhThuTable"></tbody>
+        </table>
+    </div>
 </div>
 
 @section Scripts {
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
     <script>
-        // Dữ liệu từ Controller
-        var doanhThuData = @Html.Raw(ViewBag.DoanhThuTheoThang);
+        const doanhThuData = @Html.Raw(ViewBag.DoanhThuTheoThang);
+        const ctx = document.getElementById('doanhThuChart').getContext('2d');
 
-        // Labels: Tháng/Năm
-        var labels = doanhThuData.map(d => d.Month + "/" + d.Year);
-        var data = doanhThuData.map(d => d.TongDoanhThu);
+        function isDarkMode() {
+            return document.body.classList.contains('dark');
+        }
 
-        // Tạo gradient
-        var ctx = document.getElementById('doanhThuChart').getContext('2d');
-        var gradient = ctx.createLinearGradient(0, 0, 0, 400);
-        gradient.addColorStop(0, 'rgba(75, 192, 192, 0.8)');
-        gradient.addColorStop(1, 'rgba(54, 162, 235, 0.6)');
+        function getGradient(ctx, dark) {
+            const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+            if (dark) {
+                gradient.addColorStop(0, 'rgba(255,99,132,0.8)');
+                gradient.addColorStop(1, 'rgba(255,159,64,0.6)');
+            } else {
+                gradient.addColorStop(0, 'rgba(75,192,192,0.8)');
+                gradient.addColorStop(1, 'rgba(54,162,235,0.6)');
+            }
+            return gradient;
+        }
 
-        // Render biểu đồ
-        var myChart = new Chart(ctx, {
-            type: 'bar',
+        const labels = doanhThuData.map(d => `${d.Month}/${d.Year}`);
+        const dataValues = doanhThuData.map(d => d.TongDoanhThu);
+
+        let myChart = new Chart(ctx, {
             data: {
                 labels: labels,
-                datasets: [{
-                    label: 'Doanh thu (VNĐ)',
-                    data: data,
-                    backgroundColor: gradient,
-                    borderRadius: 10, // bo góc thanh
-                    hoverBackgroundColor: 'rgba(255, 99, 132, 0.8)'
-                }]
+                datasets: [
+                    {
+                        type: 'bar',
+                        label: 'Doanh thu (VNĐ)',
+                        data: dataValues,
+                        backgroundColor: getGradient(ctx, isDarkMode()),
+                        borderRadius: 10,
+                        order: 2
+                    },
+                    {
+                        type: 'line',
+                        label: 'Xu hướng',
+                        data: dataValues,
+                        borderColor: '#ff6384',
+                        borderWidth: 2,
+                        pointBackgroundColor: '#ff6384',
+                        pointRadius: 5,
+                        tension: 0.3,
+                        fill: false,
+                        order: 1
+                    }
+                ]
             },
             options: {
                 responsive: true,
@@ -57,52 +86,77 @@
                     legend: {
                         display: true,
                         position: 'top',
-                        labels: { font: { size: 14 } }
+                        labels: { color: isDarkMode() ? '#fff' : '#000', font: { size: 14 } }
                     },
                     datalabels: {
                         anchor: 'end',
                         align: 'end',
-                        color: '#000',
+                        color: isDarkMode() ? '#fff' : '#000',
                         font: { weight: 'bold', size: 12 },
-                        formatter: function (value) {
-                            return value.toLocaleString('vi-VN') + " ₫";
+                        formatter: function (val, ctx) {
+                            if (ctx.dataset.type === 'bar') return val.toLocaleString('vi-VN') + ' ₫';
+                            return null;
                         }
                     },
                     tooltip: {
                         callbacks: {
-                            label: function (context) {
-                                return context.dataset.label + ': ' + context.raw.toLocaleString('vi-VN') + " ₫";
-                            }
+                            label: ctx => `${ctx.dataset.label}: ${ctx.raw.toLocaleString('vi-VN')} ₫`
                         }
                     }
                 },
                 scales: {
-                    y: {
-                        beginAtZero: true,
-                        ticks: {
-                            callback: function (value) {
-                                return value.toLocaleString('vi-VN') + " ₫";
-                            }
-                        }
-                    },
-                    x: {
-                        ticks: {
-                            font: { size: 12 }
-                        }
-                    }
+                    y: { beginAtZero: true, ticks: { color: isDarkMode() ? '#fff' : '#000', callback: val => val.toLocaleString('vi-VN') + ' ₫' } },
+                    x: { ticks: { color: isDarkMode() ? '#fff' : '#000', font: { size: 12 } } }
                 }
             },
             plugins: [ChartDataLabels]
         });
 
-        // Render bảng chi tiết
-        var tableBody = document.getElementById("doanhThuTable");
-        doanhThuData.forEach(d => {
-            var row = `<tr>
-                                <td>${d.Month}/${d.Year}</td>
-                                <td>${d.TongDoanhThu.toLocaleString('vi-VN')} ₫</td>
-                            </tr>`;
-            tableBody.innerHTML += row;
-        });
+        // Thêm transition CSS cho bảng
+        const tbody = document.getElementById("doanhThuTable");
+        tbody.style.transition = "background-color 0.5s, color 0.5s";
+
+        // Bảng chi tiết
+        function renderTable() {
+            tbody.innerHTML = "";
+            doanhThuData.forEach(d => {
+                const tr = document.createElement('tr');
+                tr.style.transition = "background-color 0.5s, color 0.5s"; // fade cho từng row
+                tr.style.backgroundColor = isDarkMode() ? '#2c2c2c' : '#fff';
+                tr.style.color = isDarkMode() ? '#f1f1f1' : '#000';
+                tr.innerHTML = `<td><strong>${d.Month}/${d.Year}</strong></td>
+                                        <td>${d.TongDoanhThu.toLocaleString('vi-VN')} ₫</td>`;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function applyDarkModeWithFade() {
+            const dark = isDarkMode();
+
+            // Chart
+            myChart.data.datasets[0].backgroundColor = getGradient(ctx, dark);
+            myChart.options.plugins.datalabels.color = dark ? '#fff' : '#000';
+            myChart.options.scales.y.ticks.color = dark ? '#fff' : '#000';
+            myChart.options.scales.x.ticks.color = dark ? '#fff' : '#000';
+            myChart.options.plugins.legend.labels.color = dark ? '#fff' : '#000';
+            myChart.update();
+
+            // Bảng + card
+            renderTable();
+            document.querySelectorAll(".card").forEach(c => {
+                c.style.transition = "background-color 0.5s, color 0.5s"; // fade cho card
+                c.style.backgroundColor = dark ? '#333' : '#fff';
+                c.style.color = dark ? '#f1f1f1' : '#000';
+            });
+        }
+
+        // Event từ LayoutAdmin
+        document.addEventListener("darkModeChanged", applyDarkModeWithFade);
+
+        // Load lần đầu
+        window.onload = function () {
+            if (localStorage.getItem("darkMode") === 'true') document.body.classList.add('dark');
+            applyDarkModeWithFade();
+        };
     </script>
 }

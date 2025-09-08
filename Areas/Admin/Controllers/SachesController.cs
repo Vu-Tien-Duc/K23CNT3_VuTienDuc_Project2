@@ -120,6 +120,8 @@ namespace QLBanSachWeb.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, Sach sach, string? oldImage)
+
+
         {
             if (id != sach.MaSach) return NotFound();
 

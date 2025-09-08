@@ -56,16 +56,13 @@ namespace QLBanSachWeb.Controllers
                     return View(model);
                 }
 
-                // ✅ Kiểm tra mật khẩu ≥6 ký tự
                 if (string.IsNullOrEmpty(model.MatKhau) || model.MatKhau.Length < 6)
                 {
                     ViewBag.Error = "Mật khẩu phải lớn hơn hoặc bằng 6 ký tự.";
                     return View(model);
                 }
 
-                // ✅ Hash mật khẩu trước khi lưu
                 model.MatKhau = HashPassword(model.MatKhau);
-
                 _context.KhachHangs.Add(model);
                 _context.SaveChanges();
 
@@ -94,84 +91,14 @@ namespace QLBanSachWeb.Controllers
                 return View();
             }
 
+            // Tạo mật khẩu mới
             var newPassword = GenerateRandomPassword(8);
-            user.MatKhau = HashPassword(newPassword); // ✅ Hash lại mật khẩu mới
-            _context.SaveChanges();
-
-            Console.WriteLine($"[DEBUG] Gửi email tới {email}: Mật khẩu mới = {newPassword}");
-
-            TempData["Success"] = "Mật khẩu mới đã được gửi đến email của bạn!";
-            return RedirectToAction("Login");
-        }
-
-        // ================= SETTINGS =================
-        public IActionResult Settings()
-        {
-            var maKH = HttpContext.Session.GetInt32("MaKH");
-            if (maKH == null) return RedirectToAction("Login");
-
-            var user = _context.KhachHangs.Find(maKH);
-            if (user == null) return NotFound();
-
-            return View(user);
-        }
-
-        [HttpPost]
-        public IActionResult UpdateProfile(KhachHang model)
-        {
-            var maKH = HttpContext.Session.GetInt32("MaKH");
-            if (maKH == null) return RedirectToAction("Login");
-
-            var user = _context.KhachHangs.Find(maKH);
-            if (user == null) return NotFound();
-
-            user.HoTen = model.HoTen;
-            user.Email = model.Email;
-            user.SDT = model.SDT;
-            user.DiaChi = model.DiaChi;
-
-            _context.Update(user);
-            _context.SaveChanges();
-
-            TempData["Success"] = "Cập nhật thông tin thành công!";
-            return RedirectToAction("Settings");
-        }
-
-        // ================= CHANGE PASSWORD =================
-        [HttpPost]
-        public IActionResult ChangePassword(string currentPassword, string newPassword, string confirmPassword)
-        {
-            var maKH = HttpContext.Session.GetInt32("MaKH");
-            if (maKH == null) return RedirectToAction("Login");
-
-            var user = _context.KhachHangs.Find(maKH);
-            if (user == null) return NotFound();
-
-            var currentHashed = HashPassword(currentPassword);
-            if (user.MatKhau != currentHashed)
-            {
-                TempData["Error"] = "Mật khẩu hiện tại không đúng!";
-                return RedirectToAction("Settings");
-            }
-
-            if (newPassword != confirmPassword)
-            {
-                TempData["Error"] = "Mật khẩu xác nhận không khớp!";
-                return RedirectToAction("Settings");
-            }
-
-            if (newPassword.Length < 6)
-            {
-                TempData["Error"] = "Mật khẩu mới phải lớn hơn hoặc bằng 6 ký tự!";
-                return RedirectToAction("Settings");
-            }
-
             user.MatKhau = HashPassword(newPassword);
-            _context.Update(user);
             _context.SaveChanges();
 
-            TempData["Success"] = "Đổi mật khẩu thành công!";
-            return RedirectToAction("Settings");
+            // Hiển thị trực tiếp mật khẩu mới cho khách
+            TempData["Success"] = $"Mật khẩu mới của bạn là: {newPassword}";
+            return View();
         }
 
         // ================= UTILS =================
@@ -181,10 +108,10 @@ namespace QLBanSachWeb.Controllers
             {
                 var bytes = Encoding.UTF8.GetBytes(password);
                 var hash = sha.ComputeHash(bytes);
-                return Convert.ToBase64String(hash); // ✅ Chuẩn Base64
+                return Convert.ToBase64String(hash);
             }
         }
-
+     
         private string GenerateRandomPassword(int length)
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";

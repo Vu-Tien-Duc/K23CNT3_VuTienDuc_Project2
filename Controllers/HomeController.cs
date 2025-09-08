@@ -12,7 +12,7 @@ public class HomeController : Controller
     }
 
     // GET: /Home/Index
-    public async Task<IActionResult> Index(string? searchString, int? categoryId, string? sortOrder, int page = 1, int pageSize = 6)
+    public async Task<IActionResult> Index(string? searchString, int? categoryId, string? sortOrder, int page = 1, int pageSize = 16)
     {
         var sach = _context.Saches.AsQueryable();
 

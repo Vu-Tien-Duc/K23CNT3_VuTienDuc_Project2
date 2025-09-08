@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\QLBanSachWeb.bundle.scp.css"
     },
     {
+      "Id": "D:\\Project2\\QLBanSachWeb\\wwwroot\\css\\admin-darkmode.css",
+      "PackagePath": "staticwebassets\\css\\admin-darkmode.css"
+    },
+    {
+      "Id": "D:\\Project2\\QLBanSachWeb\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
       "Id": "D:\\Project2\\QLBanSachWeb\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -17,12 +25,24 @@
       "PackagePath": "staticwebassets\\images\\LapTrinhC.jpg"
     },
     {
+      "Id": "D:\\Project2\\QLBanSachWeb\\wwwroot\\images\\admins\\duc.jpg",
+      "PackagePath": "staticwebassets\\images\\admins\\duc.jpg"
+    },
+    {
       "Id": "D:\\Project2\\QLBanSachWeb\\wwwroot\\images\\anhsv1.jpg",
       "PackagePath": "staticwebassets\\images\\anhsv1.jpg"
     },
     {
       "Id": "D:\\Project2\\QLBanSachWeb\\wwwroot\\images\\anhsv2.jpg",
       "PackagePath": "staticwebassets\\images\\anhsv2.jpg"
+    },
+    {
+      "Id": "D:\\Project2\\QLBanSachWeb\\wwwroot\\images\\book1.jpg",
+      "PackagePath": "staticwebassets\\images\\book1.jpg"
+    },
+    {
+      "Id": "D:\\Project2\\QLBanSachWeb\\wwwroot\\images\\book2.jpg",
+      "PackagePath": "staticwebassets\\images\\book2.jpg"
     },
     {
       "Id": "D:\\Project2\\QLBanSachWeb\\wwwroot\\images\\chao3.jpg",

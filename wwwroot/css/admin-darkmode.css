@@ -1,0 +1,9 @@
+﻿/* Chuyển màu mượt cho bảng và table elements */
+table, table tbody tr, table tbody td, table thead th {
+    transition: background-color 0.5s, color 0.5s;
+}
+
+    /* Ví dụ thêm hover row mượt */
+    table tbody tr:hover {
+        transition: background-color 0.3s;
+    }

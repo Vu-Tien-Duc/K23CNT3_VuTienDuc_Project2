@@ -15,7 +15,7 @@ namespace QLBanSachWeb.Controllers
         }
 
         // 📖 Danh sách tất cả sách (có phân trang + lọc theo loại sách)
-        public IActionResult Index(int? maLoai, int page = 1, int pageSize = 6)
+        public IActionResult Index(int? maLoai, int page = 1, int pageSize = 12)
         {
             var query = _context.Saches
                 .Include(s => s.MaLoaiNavigation)

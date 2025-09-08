@@ -1,0 +1,168 @@
+﻿/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Background gradient */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+/* Container */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Box with glass effect */
+.login-box {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    width: 380px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .login-box:hover {
+        transform: scale(1.03);
+        box-shadow: 0 15px 50px rgba(0, 229, 255, 0.3);
+    }
+
+    .login-box h2 {
+        text-align: center;
+        color: #00e5ff;
+        margin-bottom: 30px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+/* Input */
+.user-box {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+    .user-box input {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 16px;
+        color: #fff;
+        border: none;
+        border-bottom: 2px solid #aaa;
+        outline: none;
+        background: transparent;
+        transition: 0.3s;
+    }
+
+        .user-box input:focus {
+            border-color: #00e5ff;
+            box-shadow: 0 4px 8px rgba(0, 229, 255, 0.2);
+        }
+
+    .user-box label {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        color: #aaa;
+        font-size: 16px;
+        transition: 0.3s;
+        pointer-events: none;
+    }
+
+    .user-box input:focus ~ label,
+    .user-box input:valid ~ label {
+        top: -18px;
+        font-size: 13px;
+        color: #00e5ff;
+    }
+
+/* Button base */
+.login-btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    box-shadow: 0 4px 12px rgba(0, 114, 255, 0.4);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+    .login-btn:hover:not(.loading) {
+        background: linear-gradient(135deg, #0072ff, #00c6ff);
+        box-shadow: 0 0 15px #00c6ff, 0 0 40px #0072ff;
+        transform: translateY(-2px) scale(1.02);
+    }
+
+    /* Loading state */
+    .login-btn.loading {
+        pointer-events: none;
+        opacity: 0.8;
+    }
+
+    .login-btn .spinner {
+        border: 3px solid rgba(255,255,255,0.3);
+        border-top: 3px solid #fff;
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        animation: spin 1s linear infinite;
+    }
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/* Error message */
+.error-msg {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 6px;
+    color: #fff;
+    background: rgba(255, 0, 0, 0.3);
+    border: 1px solid #ff4c4c;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

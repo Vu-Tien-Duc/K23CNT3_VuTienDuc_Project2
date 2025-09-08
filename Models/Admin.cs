@@ -12,4 +12,6 @@ public partial class Admin
     public string Email { get; set; } = null!;
 
     public string MatKhau { get; set; } = null!;
+
+    public string HinhAnh { get; set; } 
 }
