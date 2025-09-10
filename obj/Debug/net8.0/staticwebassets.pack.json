@@ -9,6 +9,14 @@
       "PackagePath": "staticwebassets\\css\\admin-darkmode.css"
     },
     {
+      "Id": "D:\\Project2\\QLBanSachWeb\\wwwroot\\css\\layoutAdmin.css",
+      "PackagePath": "staticwebassets\\css\\layoutAdmin.css"
+    },
+    {
+      "Id": "D:\\Project2\\QLBanSachWeb\\wwwroot\\css\\layoutUser.css",
+      "PackagePath": "staticwebassets\\css\\layoutUser.css"
+    },
+    {
       "Id": "D:\\Project2\\QLBanSachWeb\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },

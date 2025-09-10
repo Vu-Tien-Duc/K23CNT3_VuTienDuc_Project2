@@ -1,34 +1,42 @@
 ﻿@model QLBanSachWeb.Models.GioHang
 
-<h2>🛒 Chi tiết giỏ hàng - @Model.MaKHNavigation?.HoTen</h2>
+<h2 class="mb-4">🛒 Chi tiết Giỏ Hàng - @Model.MaKHNavigation?.HoTen</h2>
 
-<p><strong>Mã GH:</strong> @Model.MaGH</p>
-<p><strong>Ngày tạo:</strong> @Model.NgayTao?.ToString("dd/MM/yyyy")</p>
+<div class="card shadow-sm mb-3">
+    <div class="card-body">
+        <p><strong>Mã GH:</strong> @Model.MaGH</p>
+        <p><strong>Ngày tạo:</strong> @Model.NgayTao?.ToString("dd/MM/yyyy")</p>
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Sách</th>
-            <th>Giá</th>
-            <th>Số lượng</th>
-            <th>Thành tiền</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.CT_GioHangs)
-        {
-            <tr>
-                <td>@item.MaSachNavigation.TenSach</td>
-                <td>@item.MaSachNavigation.GiaBan.ToString("N0") đ</td>
-                <td>@item.SoLuong</td>
-                <td>@(item.SoLuong * item.MaSachNavigation.GiaBan).ToString("N0") đ</td>
-            </tr>
-        }
-    </tbody>
-</table>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Sách</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.CT_GioHangs)
+                    {
+                        <tr>
+                            <td>@item.MaSachNavigation.TenSach</td>
+                            <td>@item.MaSachNavigation.GiaBan.ToString("N0") đ</td>
+                            <td>@item.SoLuong</td>
+                            <td>@((item.SoLuong * item.MaSachNavigation.GiaBan).ToString("N0")) đ</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
 
-<h4 class="text-end">
-    Tổng cộng: @Model.CT_GioHangs.Sum(i => i.SoLuong * i.MaSachNavigation.GiaBan).ToString("N0") đ
-</h4>
+        <h4 class="text-end mt-3">
+            Tổng cộng: @Model.CT_GioHangs.Sum(i => i.SoLuong * i.MaSachNavigation.GiaBan).ToString("N0") đ
+        </h4>
 
-<a asp-action="Index" class="btn btn-secondary">⬅️ Quay lại</a>
+        <a asp-action="Index" class="btn btn-secondary mt-2">
+            <i class="bi bi-arrow-left-circle"></i> Quay lại
+        </a>
+    </div>
+</div>

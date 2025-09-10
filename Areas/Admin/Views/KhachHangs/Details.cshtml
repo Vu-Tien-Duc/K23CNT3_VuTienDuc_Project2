@@ -4,13 +4,17 @@
     ViewData["Title"] = "Chi tiết khách hàng";
 }
 
-<h2>Chi tiết khách hàng</h2>
+<h2 class="mb-4">Chi tiết khách hàng</h2>
 
-<div>
-    <p><b>Họ tên:</b> @Model.HoTen</p>
-    <p><b>Email:</b> @Model.Email</p>
-    <p><b>SĐT:</b> @Model.SDT</p>
-    <p><b>Địa chỉ:</b> @Model.DiaChi</p>
+<div class="card shadow-sm mb-3" style="max-width: 600px;">
+    <div class="card-body">
+        <h5 class="card-title"><i class="bi bi-person-circle"></i> @Model.HoTen</h5>
+        <p class="card-text"><b>Email:</b> @Model.Email</p>
+        <p class="card-text"><b>SĐT:</b> @Model.SDT</p>
+        <p class="card-text"><b>Địa chỉ:</b> @Model.DiaChi</p>
+    </div>
 </div>
 
-<a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+<a asp-action="Index" class="btn btn-secondary">
+    <i class="bi bi-arrow-left-circle"></i> Quay lại
+</a>

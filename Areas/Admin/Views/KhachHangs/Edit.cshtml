@@ -6,40 +6,47 @@
 
 <h2 class="mb-4">Chỉnh sửa Khách Hàng</h2>
 
-<form asp-action="Edit" method="post">
+<form asp-action="Edit" method="post" class="needs-validation" novalidate>
     <input type="hidden" asp-for="MaKH" />
 
     <div class="mb-3">
-        <label asp-for="HoTen" class="form-label"></label>
-        <input asp-for="HoTen" class="form-control" />
+        <label asp-for="HoTen" class="form-label">Họ tên</label>
+        <input asp-for="HoTen" class="form-control" placeholder="Nhập họ tên khách hàng" required />
         <span asp-validation-for="HoTen" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
-        <label asp-for="Email" class="form-label"></label>
-        <input asp-for="Email" class="form-control" />
+        <label asp-for="Email" class="form-label">Email</label>
+        <input asp-for="Email" class="form-control" placeholder="Nhập email" type="email" required />
         <span asp-validation-for="Email" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
-        <label asp-for="MatKhau" class="form-label"></label>
+        <label asp-for="MatKhau" class="form-label">Mật khẩu</label>
         <input asp-for="MatKhau" type="password" class="form-control" placeholder="Để trống nếu không đổi" />
         <span asp-validation-for="MatKhau" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
-        <label asp-for="SDT" class="form-label"></label>
-        <input asp-for="SDT" class="form-control" />
+        <label asp-for="SDT" class="form-label">SĐT</label>
+        <input asp-for="SDT" class="form-control" placeholder="Nhập số điện thoại" required />
         <span asp-validation-for="SDT" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
-        <label asp-for="DiaChi" class="form-label"></label>
-        <input asp-for="DiaChi" class="form-control" />
+        <label asp-for="DiaChi" class="form-label">Địa chỉ</label>
+        <input asp-for="DiaChi" class="form-control" placeholder="Nhập địa chỉ" required />
         <span asp-validation-for="DiaChi" class="text-danger"></span>
     </div>
 
-    <button type="submit" class="btn btn-success">Cập nhật</button>
+    <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-success">
+            <i class="bi bi-check-lg"></i> Cập nhật
+        </button>
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="bi bi-x-lg"></i> Hủy
+        </a>
+    </div>
 </form>
 
 @section Scripts {

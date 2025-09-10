@@ -4,41 +4,48 @@
     ViewData["Title"] = "Thêm Khách Hàng";
 }
 
-<h2 class="mb-4">Thêm Khách Hàng</h2>
+<h2 class="mb-4"><i class="bi bi-person-plus"></i> Thêm Khách Hàng</h2>
 
-<form asp-action="Create" method="post">
-    <div class="mb-3">
-        <label asp-for="HoTen" class="form-label"></label>
-        <input asp-for="HoTen" class="form-control" />
-        <span asp-validation-for="HoTen" class="text-danger"></span>
-    </div>
+<div class="card shadow-sm p-4" style="max-width: 600px;">
+    <form asp-action="Create" method="post">
+        <div class="mb-3">
+            <label asp-for="HoTen" class="form-label"></label>
+            <input asp-for="HoTen" class="form-control" placeholder="Nhập họ tên" />
+            <span asp-validation-for="HoTen" class="text-danger"></span>
+        </div>
 
-    <div class="mb-3">
-        <label asp-for="Email" class="form-label"></label>
-        <input asp-for="Email" class="form-control" />
-        <span asp-validation-for="Email" class="text-danger"></span>
-    </div>
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label"></label>
+            <input asp-for="Email" class="form-control" placeholder="Nhập email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
 
-    <div class="mb-3">
-        <label asp-for="MatKhau" class="form-label"></label>
-        <input asp-for="MatKhau" type="password" class="form-control" />
-        <span asp-validation-for="MatKhau" class="text-danger"></span>
-    </div>
+        <div class="mb-3">
+            <label asp-for="MatKhau" class="form-label"></label>
+            <input asp-for="MatKhau" type="password" class="form-control" placeholder="Nhập mật khẩu" />
+            <span asp-validation-for="MatKhau" class="text-danger"></span>
+        </div>
 
-    <div class="mb-3">
-        <label asp-for="SDT" class="form-label"></label>
-        <input asp-for="SDT" class="form-control" />
-        <span asp-validation-for="SDT" class="text-danger"></span>
-    </div>
+        <div class="mb-3">
+            <label asp-for="SDT" class="form-label"></label>
+            <input asp-for="SDT" class="form-control" placeholder="Nhập số điện thoại" />
+            <span asp-validation-for="SDT" class="text-danger"></span>
+        </div>
 
-    <div class="mb-3">
-        <label asp-for="DiaChi" class="form-label"></label>
-        <input asp-for="DiaChi" class="form-control" />
-        <span asp-validation-for="DiaChi" class="text-danger"></span>
-    </div>
+        <div class="mb-3">
+            <label asp-for="DiaChi" class="form-label"></label>
+            <input asp-for="DiaChi" class="form-control" placeholder="Nhập địa chỉ" />
+            <span asp-validation-for="DiaChi" class="text-danger"></span>
+        </div>
 
-    <button type="submit" class="btn btn-primary">Thêm mới</button>
-</form>
+        <button type="submit" class="btn btn-primary">
+            <i class="bi bi-plus-lg"></i> Thêm mới
+        </button>
+        <a asp-action="Index" class="btn btn-secondary ms-2">
+            <i class="bi bi-arrow-left-circle"></i> Quay lại
+        </a>
+    </form>
+</div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

@@ -67,16 +67,22 @@
                         <td>@item.GiaBan.ToString("C0")</td>
                         <td>@item.SoLuong</td>
                         <td class="text-truncate" style="max-width:150px;">@item.MoTa</td>
-                        <td class="text-center">
+                        <td class="text-center" style="width:180px;">
                             <div class="btn-group" role="group">
-                                <a asp-action="Edit" asp-route-id="@item.MaSach" class="btn btn-sm btn-warning">✏️ Edit</a>
-                                <a asp-action="Details" asp-route-id="@item.MaSach" class="btn btn-sm btn-info">ℹ️ Details</a>
-                                <form asp-action="Delete" asp-route-id="@item.MaSach" method="post" class="d-inline">
-                                    <button type="submit" class="btn btn-sm btn-danger"
-                                            onclick="return confirm('Bạn có chắc chắn muốn xóa sách này?');">
-                                        🗑️ Delete
-                                    </button>
-                                </form>
+                                <!-- Edit -->
+                                <a asp-action="Edit" asp-route-id="@item.MaSach" class="btn btn-sm btn-warning p-1">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+
+                                <!-- Details -->
+                                <a asp-action="Details" asp-route-id="@item.MaSach" class="btn btn-sm btn-info p-1">
+                                    <i class="bi bi-eye"></i>
+                                </a>
+
+                                <!-- Trigger Delete Modal -->
+                                <button type="button" class="btn btn-sm btn-danger p-1 flex-shrink-0" data-bs-toggle="modal" data-bs-target="#deleteModal-@item.MaSach">
+                                    <i class="bi bi-trash"></i>
+                                </button>
                             </div>
                         </td>
                     </tr>
@@ -96,9 +102,32 @@
     </div>
 </div>
 
+<!-- Delete Modals (outside table to tránh layout dật) -->
+@foreach (var item in Model)
+{
+    <div class="modal fade" id="deleteModal-@item.MaSach" tabindex="-1" aria-labelledby="deleteModalLabel-@item.MaSach" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="deleteModalLabel-@item.MaSach">Xác nhận xóa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Bạn có chắc chắn muốn xóa sách "<strong>@item.TenSach</strong>" không?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <form asp-action="Delete" asp-route-id="@item.MaSach" method="post" asp-antiforgery="true" class="d-inline">
+                        <button type="submit" class="btn btn-danger">Xóa</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
 @section Styles {
     <style>
-        /* Hover hiệu ứng + shadow */
         .table tbody tr {
             transition: all 0.3s;
             border-radius: 0.25rem;
@@ -113,14 +142,12 @@
             transition: background 0.3s, color 0.3s;
         }
 
-        /* Text truncate */
         .text-truncate {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
-        /* Buttons hover */
         .btn:hover {
             filter: brightness(0.9);
         }
@@ -129,7 +156,6 @@
 
 @section Scripts {
     <script>
-        // Optionally: Dark mode support
         document.addEventListener("darkModeChanged", () => {
             document.querySelectorAll(".table-responsive").forEach(tbl => {
                 if (document.body.classList.contains('dark')) {

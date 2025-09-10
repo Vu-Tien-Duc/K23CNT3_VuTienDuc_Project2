@@ -1,0 +1,176 @@
+﻿/* Sidebar */
+.sidebar {
+    background-color: #000;
+    color: #fff;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    min-height: 100vh;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+    .sidebar-header img {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        display: block;
+        margin: 0 auto 10px auto;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+        .sidebar-header img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(255,255,255,0.4);
+        }
+
+    .sidebar-header h5, .sidebar-header small {
+        margin: 0;
+    }
+
+.nav-links a {
+    display: block;
+    padding: 12px 15px;
+    color: #fff;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+    .nav-links a:hover, .nav-links a.active {
+        background-color: #0d6efd;
+        color: #fff;
+    }
+
+/* Sidebar bottom */
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+.mode-toggle {
+    cursor: pointer;
+    padding: 8px;
+    background: #111;
+    border-radius: 6px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.logout-btn {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 8px;
+    background: #1a1a1a;
+    transition: 0.3s;
+}
+
+    .logout-btn:hover {
+        background: #dc3545;
+        color: #fff;
+    }
+
+/* Content */
+.content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: #f8f9fa;
+}
+
+    .content .card {
+        margin: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+/* Footer */
+footer {
+    background: #0b5ed7;
+    color: #ffc107;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Dark mode */
+body.dark {
+    background: #121212;
+    color: #fff;
+}
+
+    body.dark .content {
+        background: #1e1e1e;
+    }
+
+    body.dark footer {
+        background: #0d6efd;
+    }
+
+/* Hamburger / Mobile Sidebar */
+#hamburgerBtn {
+    position: fixed;
+    z-index: 999;
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateX(-260px);
+        height: 100%;
+        z-index: 998;
+    }
+
+        .sidebar.show-sidebar {
+            transform: translateX(0);
+        }
+
+    .content {
+        margin-left: 0 !important;
+    }
+}
+
+/* Form cải tiến */
+.card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+    .card form label {
+        font-weight: 600;
+    }
+
+    .card form input,
+    .card form select,
+    .card form textarea {
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        transition: 0.3s;
+    }
+
+        .card form input:focus,
+        .card form select:focus,
+        .card form textarea:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 5px rgba(13,110,253,0.5);
+            outline: none;
+        }
+
+    .card form button {
+        align-self: flex-start;
+        border-radius: 8px;
+        padding: 8px 16px;
+    }

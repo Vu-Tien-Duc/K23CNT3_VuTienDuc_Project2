@@ -4,17 +4,20 @@
     ViewData["Title"] = "Danh sách loại sách";
 }
 
-<h1>Danh sách loại sách</h1>
+<h1 class="mb-4">Danh sách loại sách</h1>
+
 <p>
-    <a asp-action="Create" class="btn btn-primary">Thêm loại sách</a>
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="bi bi-plus-lg"></i> Thêm loại sách
+    </a>
 </p>
 
-<table class="table">
-    <thead>
+<table class="table table-striped table-hover align-middle">
+    <thead class="table-dark">
         <tr>
             <th>Mã loại</th>
             <th>Tên loại</th>
-            <th></th>
+            <th style="width:200px">Active</th>
         </tr>
     </thead>
     <tbody>
@@ -23,17 +26,45 @@
             <tr>
                 <td>@item.MaLoai</td>
                 <td>@item.TenLoai</td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.MaLoai" class="btn btn-sm btn-warning">Sửa</a>
-                    <a asp-action="Details" asp-route-id="@item.MaLoai" class="btn btn-sm btn-success">Detail</a>
-                    <form asp-area="Admin" asp-controller="LoaiSaches" asp-action="Delete" asp-route-id="@item.MaLoai" method="post" asp-antiforgery="true" style="display:inline">
-                        <button type="submit" class="btn btn-sm btn-danger"
-                                onclick="return confirm('Bạn có chắc chắn muốn xóa sách này?');">
-                            Delete
+
+                <td style="width: 150px;">
+                    <div class="d-flex flex-nowrap align-items-center">
+                        <a asp-action="Edit" asp-route-id="@item.MaLoai" class="btn btn-sm btn-warning me-1 p-1">
+                            <i class="bi bi-pencil-square"></i>
+                        </a>
+                        <a asp-action="Details" asp-route-id="@item.MaLoai" class="btn btn-sm btn-success me-1 p-1">
+                            <i class="bi bi-eye"></i>
+                        </a>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-sm btn-danger p-1" data-bs-toggle="modal" data-bs-target="#deleteModal-@item.MaLoai">
+                            <i class="bi bi-trash"></i>
                         </button>
-                    </form>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="deleteModal-@item.MaLoai" tabindex="-1" aria-labelledby="deleteModalLabel-@item.MaLoai" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header bg-danger text-white">
+                                    <h5 class="modal-title" id="deleteModalLabel-@item.MaLoai">Xác nhận xóa</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Bạn có chắc chắn muốn xóa loại sách "<strong>@item.TenLoai</strong>" không?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <form asp-area="Admin" asp-controller="LoaiSaches" asp-action="Delete" asp-route-id="@item.MaLoai" method="post" asp-antiforgery="true">
+                                        <button type="submit" class="btn btn-danger">Xóa</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </td>
-                
+
+
             </tr>
         }
     </tbody>

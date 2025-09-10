@@ -1,0 +1,178 @@
+﻿/* Navbar hiện đại */
+.navbar {
+    background: #0d6efd;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+    .navbar .nav-link {
+        color: #fff !important;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+        .navbar .nav-link:hover {
+            color: #ffc107 !important;
+        }
+
+.navbar-brand img {
+    height: 45px;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+.badge-cart {
+    font-size: 0.8rem;
+    font-weight: bold;
+    animation: pop 0.3s ease;
+}
+/* Fix responsive navbar */
+@media (max-width: 576px) {
+    .navbar-nav .nav-item {
+        width: 100%;
+    }
+
+        .navbar-nav .nav-item .nav-link {
+            padding-left: 1rem;
+        }
+}
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Footer hiện đại */
+footer {
+    background: #0b5ed7;
+    box-shadow: inset 0 2px 4px rgba(255,255,255,0.05);
+}
+
+    footer a {
+        color: #ffc107;
+        transition: 0.3s;
+    }
+
+        footer a:hover {
+            text-decoration: underline;
+            color: #fff;
+        }
+
+/* Card content gọn gàng */
+main.container {
+    min-height: 75vh;
+}
+
+/* Buttons */
+.btn-outline-light:hover {
+    background-color: #ffc107;
+    color: #000 !important;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    color: #fff !important;
+}
+
+/* Dropdown */
+.dropdown-menu {
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+/* ================= Banner/Slider ================= */
+.carousel-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.carousel-item:hover .carousel-img {
+    transform: scale(1.05);
+}
+
+/* ================= Filter bar ================= */
+.filter-bar {
+    background: #f8f9fa;
+    border: 1px solid #e1e1e1;
+}
+
+    .filter-bar select,
+    .filter-bar input {
+        min-width: 180px;
+    }
+
+    .filter-bar .form-select:focus,
+    .filter-bar .form-control:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 8px rgba(13,110,253,0.35);
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+/* ================= Card sách ================= */
+.book-card {
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    min-height: 460px;
+}
+
+    .book-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+    }
+
+.book-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.book-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    border-bottom: 1px solid #eee;
+}
+
+.book-card:hover .book-img {
+    transform: scale(1.08);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.book-card:hover .overlay {
+    opacity: 1;
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+    .carousel-img {
+        height: 250px;
+    }
+
+    .book-img {
+        height: 250px;
+    }
+
+    .filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+}

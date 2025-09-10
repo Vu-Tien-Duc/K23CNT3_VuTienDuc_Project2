@@ -3,9 +3,16 @@
     ViewData["Title"] = "Danh sách Đơn Hàng";
 }
 
-<h2>Danh sách Đơn Hàng</h2>
+<h2 class="mb-4">📃 Danh sách Đơn Hàng</h2>
 
-<table class="table table-bordered table-striped">
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <a asp-action="Create" class="btn btn-success btn-lg shadow-sm">
+        <i class="bi bi-plus-circle me-1"></i> Thêm đơn hàng mới
+    </a>
+</div>
+
+
+<table class="table table-striped table-hover shadow-sm">
     <thead class="table-dark">
         <tr>
             <th>Mã DH</th>
@@ -17,9 +24,9 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var dh in Model)
         {
-            string badgeClass = item.TrangThai switch
+            string badgeClass = dh.TrangThai switch
             {
                 "Chờ xử lý" => "badge bg-warning text-dark",
                 "Đang giao" => "badge bg-info text-dark",
@@ -29,22 +36,50 @@
             };
 
             <tr>
-                <td>@item.MaDH</td>
-                <td>@item.MaKHNavigation?.HoTen</td>
-                <td>@item.NgayDat?.ToString("dd/MM/yyyy HH:mm")</td>
-                <td>@item.TongTien?.ToString("N0") đ</td>
-                <td><span class="@badgeClass">@item.TrangThai</span></td>
+                <td>@dh.MaDH</td>
+                <td>@dh.MaKHNavigation?.HoTen</td>
+                <td>@dh.NgayDat?.ToString("dd/MM/yyyy HH:mm")</td>
+                <td>@dh.TongTien?.ToString("N0") đ</td>
+                <td><span class="@badgeClass">@dh.TrangThai</span></td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@item.MaDH" class="btn btn-sm btn-info">Chi tiết</a>
-                    <a asp-action="Edit" asp-route-id="@item.MaDH" class="btn btn-sm btn-warning">Sửa</a>
-                    <form asp-action="Delete" asp-route-id="@item.MaDH" method="post" style="display:inline"
-                          onsubmit="return confirm('Bạn có chắc muốn xóa đơn này?');">
-                        <button type="submit" class="btn btn-sm btn-danger">Xóa</button>
-                    </form>
+                    <!-- Details -->
+                    <a asp-action="Details" asp-route-id="@dh.MaDH" class="btn btn-info btn-sm me-1">
+                        <i class="bi bi-eye"></i> Xem
+                    </a>
+
+                    <!-- Edit -->
+                    <a asp-action="Edit" asp-route-id="@dh.MaDH" class="btn btn-warning btn-sm me-1">
+                        <i class="bi bi-pencil-square"></i> Sửa
+                    </a>
+
+                    <!-- Delete trigger -->
+                    <button type="button" class="btn btn-danger btn-sm p-1" data-bs-toggle="modal" data-bs-target="#deleteModal-@dh.MaDH">
+                        <i class="bi bi-trash"></i> Xóa
+                    </button>
+
+                    <!-- Modal Delete -->
+                    <div class="modal fade" id="deleteModal-@dh.MaDH" tabindex="-1" aria-labelledby="deleteModalLabel-@dh.MaDH" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header bg-danger text-white">
+                                    <h5 class="modal-title" id="deleteModalLabel-@dh.MaDH">Xác nhận xóa</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Bạn có chắc chắn muốn xóa đơn hàng của "<strong>@dh.MaKHNavigation?.HoTen</strong>" (Mã DH: @dh.MaDH) không?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <form asp-action="Delete" asp-route-id="@dh.MaDH" method="post" asp-antiforgery="true">
+                                        <button type="submit" class="btn btn-danger">Xóa</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Modal -->
                 </td>
             </tr>
         }
     </tbody>
 </table>
-
-<a asp-action="Create" class="btn btn-primary">➕ Thêm mới</a>

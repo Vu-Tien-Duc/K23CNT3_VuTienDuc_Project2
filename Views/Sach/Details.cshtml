@@ -4,22 +4,48 @@
     ViewData["Title"] = "Chi tiết Sách";
 }
 
-<div class="row mt-4">
-    <div class="col-md-4">
-        <img src="~/images/@Model.HinhAnh"
-             class="img-fluid rounded shadow"
-             alt="@Model.TenSach" />
+<div class="row mt-5 justify-content-center">
+    <div class="col-lg-4 col-md-5 mb-4">
+        <div class="card shadow rounded-4 overflow-hidden">
+            <img src="~/images/@Model.HinhAnh"
+                 class="card-img-top book-img"
+                 alt="@Model.TenSach"
+                 style="height: 450px; object-fit: cover;">
+        </div>
     </div>
-    <div class="col-md-8">
-        <h2>@Model.TenSach</h2>
-        <p><strong>Tác giả:</strong> @Model.TacGia</p>
-        <p><strong>Thể loại:</strong> @Model.MaLoaiNavigation?.TenLoai</p>
-        <p><strong>Giá bán:</strong> <span class="text-danger fw-bold">@Model.GiaBan.ToString("N0") đ</span></p>
-        <p><strong>Mô tả:</strong> @Model.MoTa</p>
 
-        <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@Model.MaSach" class="btn btn-success">
-            🛒 Thêm vào giỏ
-        </a>
-        <a asp-action="Index" class="btn btn-secondary">⬅️ Quay lại</a>
+    <div class="col-lg-6 col-md-7">
+        <h2 class="fw-bold mb-3">@Model.TenSach</h2>
+        <p class="mb-2"><strong>Tác giả:</strong> <span class="badge bg-primary">@Model.TacGia</span></p>
+        <p class="mb-2"><strong>Thể loại:</strong> <span class="badge bg-info text-dark">@Model.MaLoaiNavigation?.TenLoai</span></p>
+        <p class="mb-3"><strong>Giá bán:</strong> <span class="text-danger fw-bold fs-4">@Model.GiaBan.ToString("N0") đ</span></p>
+
+        <div class="mb-4">
+            <h5 class="fw-semibold">Mô tả sách:</h5>
+            <p class="text-secondary" style="line-height: 1.6;">@Model.MoTa</p>
+        </div>
+
+        <div class="d-flex flex-wrap gap-3">
+            <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@Model.MaSach" class="btn btn-success btn-lg shadow-sm">
+                🛒 Thêm vào giỏ
+            </a>
+            <a asp-action="Index" class="btn btn-outline-secondary btn-lg shadow-sm">
+                ⬅️ Quay lại
+            </a>
+        </div>
     </div>
 </div>
+
+<style>
+    /* Thêm hover nhẹ cho ảnh */
+    .book-img {
+        transition: transform 0.3s ease;
+        border-radius: 12px;
+    }
+    .book-img:hover {
+        transform: scale(1.03);
+    }
+
+
+   
+</style>

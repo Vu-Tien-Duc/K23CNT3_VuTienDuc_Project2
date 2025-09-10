@@ -7,121 +7,68 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Web Bán Sách</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/layoutUser.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+    <!-- JS -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <style>
-        /* Navbar */
-        .navbar {
-            background: linear-gradient(90deg, #0d6efd, #0b5ed7);
-        }
-
-            .navbar .nav-link {
-                color: #fff !important;
-                transition: 0.3s;
-            }
-
-                .navbar .nav-link:hover {
-                    color: #ffc107 !important;
-                }
-
-        .navbar-brand img {
-            height: 40px;
-            margin-right: 8px;
-        }
-        /* Footer */
-        footer {
-            background: #0d6efd;
-        }
-
-            footer a:hover {
-                text-decoration: underline;
-            }
-    </style>
 </head>
 <body class="bg-light">
     <!-- Navbar -->
-    <header class="navbar navbar-expand-lg navbar-dark shadow-sm sticky-top">
+    <header class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <!-- Logo -->
-            <a class="navbar-brand fw-bold d-flex align-items-center" asp-controller="Home" asp-action="Index">
-                <img src="~/images/logoD.jpg" alt="Logo" /> Web Bán Sách
+            <a class="navbar-brand d-flex align-items-center fw-bold" asp-controller="Home" asp-action="Index">
+                <img src="~/images/logoD.jpg" alt="Logo" class="me-2" /> Web Bán Sách
             </a>
-
-            <!-- Nút toggle mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Menu -->
             <div class="collapse navbar-collapse" id="navbarNav">
-                <!-- Menu trái -->
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Home" asp-action="Index">
-                            <i class="bi bi-house-door"></i> Trang chủ
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Sach" asp-action="Index">
-                            <i class="bi bi-journal-bookmark"></i> Sách
-                        </a>
-                    </li>
+                <!-- Menu chính -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index"><i class="bi bi-house-door"></i> Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Sach" asp-action="Index"><i class="bi bi-journal-bookmark"></i> Sách</a></li>
                     <li class="nav-item position-relative">
-                        <a class="nav-link" asp-controller="Cart" asp-action="Index">
-                            <i class="bi bi-cart3"></i> Giỏ hàng
-                            <span class="badge bg-danger position-absolute top-0 start-100 translate-middle rounded-pill">
+                        <a class="nav-link d-flex align-items-center" asp-controller="Cart" asp-action="Index">
+                            <i class="bi bi-cart3 me-1"></i> Giỏ Hàng
+                            <span class="badge bg-danger rounded-pill ms-1 badge-cart">
                                 @(HttpContextAccessor.HttpContext.Session.GetInt32("CartCount") ?? 0)
                             </span>
                         </a>
                     </li>
                     @if (HttpContextAccessor.HttpContext.Session.GetInt32("MaKH") != null)
                     {
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Cart" asp-action="MyOrders">
-                                <i class="bi bi-receipt"></i> Đơn hàng
-                            </a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Cart" asp-action="MyOrders"><i class="bi bi-receipt"></i> Đơn hàng</a></li>
                     }
                 </ul>
 
-                <!-- Menu phải -->
-                <ul class="navbar-nav ms-auto align-items-center">
+                <!-- Menu account -->
+                <ul class="navbar-nav ms-auto align-items-center flex-row flex-wrap">
                     @if (HttpContextAccessor.HttpContext.Session.GetInt32("MaKH") != null)
                     {
-                        <!-- Dropdown tài khoản -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="accountDropdown" data-bs-toggle="dropdown">
                                 👋 Xin chào, <strong>@HttpContextAccessor.HttpContext.Session.GetString("TenKH")</strong>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-end shadow">
-                                <li>
-                                    <a class="dropdown-item" asp-controller="Account" asp-action="Settings">
-                                        <i class="bi bi-gear"></i> Cài đặt
-                                    </a>
-                                </li>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" asp-controller="Account" asp-action="Settings"><i class="bi bi-gear"></i> Cài đặt</a></li>
                                 <li><hr class="dropdown-divider" /></li>
-                                <li>
-                                    <a class="dropdown-item text-danger" asp-controller="Account" asp-action="Logout">
-                                        <i class="bi bi-box-arrow-right"></i> Đăng xuất
-                                    </a>
-                                </li>
+                                <li><a class="dropdown-item text-danger" asp-controller="Account" asp-action="Logout"><i class="bi bi-box-arrow-right"></i> Đăng xuất</a></li>
                             </ul>
                         </li>
                     }
                     else
                     {
-                        <li class="nav-item">
-                            <a class="btn btn-outline-light me-2" asp-controller="Account" asp-action="Login">
-                                <i class="bi bi-box-arrow-in-right"></i> Đăng nhập
-                            </a>
+                        <li class="nav-item me-2 mb-2 mb-lg-0">
+                            <a class="btn btn-outline-light w-100 w-lg-auto" asp-controller="Account" asp-action="Login"><i class="bi bi-box-arrow-in-right"></i> Đăng nhập</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="btn btn-warning" asp-controller="Account" asp-action="Signup">
-                                <i class="bi bi-person-plus"></i> Đăng ký
-                            </a>
+                        <li class="nav-item mb-2 mb-lg-0">
+                            <a class="btn btn-warning w-100 w-lg-auto" asp-controller="Account" asp-action="Signup"><i class="bi bi-person-plus"></i> Đăng ký</a>
                         </li>
                     }
                 </ul>
@@ -130,23 +77,25 @@
     </header>
 
     <!-- Nội dung chính -->
-    <main class="container mt-4">
+    <main class="container mt-5">
         @RenderBody()
     </main>
 
     <!-- Footer -->
-    <footer class="text-light text-center p-4 mt-5 border-top shadow-sm">
+    <footer class="text-light text-center p-4 mt-5 border-top">
         <p class="mb-2">
             &copy; 2025 - <strong>Web Bán Sách</strong> |
-            <a class="text-warning text-decoration-none" asp-controller="Contact" asp-action="Index">Liên hệ</a>
+            <a asp-controller="Contact" asp-action="Index">Liên hệ</a>
         </p>
-        <div>
-            <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="text-light"><i class="bi bi-twitter"></i></a>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a href="https://www.facebook.com/profile.php?id=100064686787394" target="_blank"><i class="bi bi-facebook fs-4 text-light"></i></a>
+            <a href="https://www.instagram.com/bookstore_sample/" target="_blank"><i class="bi bi-instagram fs-4 text-light"></i></a>
+            <a href="https://twitter.com/bookstore_sample" target="_blank"><i class="bi bi-twitter fs-4 text-light"></i></a>
         </div>
     </footer>
 
     @RenderSection("Scripts", required: false)
+
+   
 </body>
 </html>

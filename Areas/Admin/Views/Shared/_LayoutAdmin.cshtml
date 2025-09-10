@@ -1,245 +1,93 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Quản Trị</title>
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/admin-darkmode.css" />
+    <link rel="stylesheet" href="~/css/layoutAdmin.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.0/font/bootstrap-icons.css">
+
     @RenderSection("Styles", required: false)
-    <style>
-        body {
-            display: flex;
-            min-height: 100vh;
-            flex-direction: row;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            width: 250px;
-            min-height: 100vh;
-            background: linear-gradient(180deg, #212529, #343a40);
-            color: white;
-            position: fixed;
-            top: 0;
-            left: 0;
-            display: flex;
-            flex-direction: column;
-            transition: background 0.3s;
-        }
-
-        .sidebar-header {
-            text-align: center;
-            padding: 20px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-            .sidebar-header img {
-                width: 80px;
-                height: 80px;
-                object-fit: cover;
-                border-radius: 50%;
-                border: 2px solid #fff;
-                margin-bottom: 10px;
-            }
-
-            .sidebar-header h5 {
-                margin: 0;
-                font-weight: 600;
-            }
-
-            .sidebar-header small {
-                color: #adb5bd;
-                font-size: 0.85rem;
-            }
-
-        .nav-links {
-            flex-grow: 1;
-            width: 100%;
-        }
-
-            .nav-links a {
-                color: #adb5bd;
-                text-decoration: none;
-                display: block;
-                padding: 12px 20px;
-                transition: all 0.2s;
-                font-size: 0.95rem;
-            }
-
-                .nav-links a:hover,
-                .nav-links a.active {
-                    background-color: #495057;
-                    color: #fff;
-                    border-left: 4px solid #0d6efd;
-                    padding-left: 16px;
-                }
-
-        /* Content */
-        .content {
-            margin-left: 250px;
-            flex-grow: 1;
-            padding: 30px;
-            background: #f1f3f5;
-            transition: background 0.3s, color 0.3s;
-        }
-
-            .content .card {
-                border-radius: 12px;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-                transition: background 0.3s, color 0.3s;
-            }
-
-        /* Footer */
-        footer {
-            background: #212529;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            left: 250px;
-            width: calc(100% - 250px);
-            font-size: 0.85rem;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        /* Dark mode */
-        body.dark {
-            background: #1e1e1e;
-            color: #f1f1f1;
-        }
-
-            body.dark .sidebar {
-                background: linear-gradient(180deg, #111, #222);
-            }
-
-            body.dark .content {
-                background: #2c2c2c;
-            }
-
-                body.dark .content .card {
-                    background: #333;
-                    color: #f1f1f1;
-                }
-
-            body.dark footer {
-                background: #111;
-                color: #ccc;
-            }
-
-        .mode-toggle {
-            margin: 15px;
-            padding: 8px;
-            border-radius: 8px;
-            background: #495057;
-            color: #fff;
-            cursor: pointer;
-            text-align: center;
-            font-size: 0.9rem;
-            transition: background 0.3s;
-        }
-
-            .mode-toggle:hover {
-                background: #6c757d;
-            }
-    </style>
 </head>
 <body>
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <img src="@Context.Session.GetString("HinhAnh")" alt="Admin Avatar" />
-            <h5>@Context.Session.GetString("TenAdmin")</h5>
-            <small>Quản trị viên</small>
-        </div>
+    <div class="d-flex" style="min-height: 100vh; flex-direction: row;">
 
-        <!-- Navigation -->
-        <div class="nav-links">
-            <a asp-area="Admin" asp-controller="Home" asp-action="Index"
-               class="@(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" ? "active" : "")">🏠 Trang chủ</a>
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <img src="@Context.Session.GetString("HinhAnh")" alt="Admin Avatar" />
+                <h5>@Context.Session.GetString("TenAdmin")</h5>
+                <small>Quản trị viên</small>
+            </div>
 
-            <a asp-area="Admin" asp-controller="Saches" asp-action="Index"
-               class="@(ViewContext.RouteData.Values["controller"]?.ToString() == "Saches" ? "active" : "")">📚 Quản lý Sách</a>
+            <div class="nav-links">
+                <a asp-area="Admin" asp-controller="Home" asp-action="Index"
+                   class="@(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" ? "active" : "")">🏠 Trang chủ</a>
+                <a asp-area="Admin" asp-controller="Saches" asp-action="Index"
+                   class="@(ViewContext.RouteData.Values["controller"]?.ToString() == "Saches" ? "active" : "")">📚 Quản lý Sách</a>
+                <a asp-area="Admin" asp-controller="LoaiSaches" asp-action="Index"
+                   class="@(ViewContext.RouteData.Values["controller"]?.ToString() == "LoaiSaches" ? "active" : "")">🗂️ Quản lý Loại Sách</a>
+                <a asp-area="Admin" asp-controller="KhachHangs" asp-action="Index"
+                   class="@(ViewContext.RouteData.Values["controller"]?.ToString() == "KhachHangs" ? "active" : "")">👤 Khách Hàng</a>
+                <a asp-area="Admin" asp-controller="GioHang" asp-action="Index"
+                   class="@(ViewContext.RouteData.Values["controller"]?.ToString() == "GioHang" ? "active" : "")">🛒 Giỏ Hàng</a>
+                <a asp-area="Admin" asp-controller="DonHang" asp-action="Index"
+                   class="@(ViewContext.RouteData.Values["controller"]?.ToString() == "DonHang" ? "active" : "")">🧾 Đơn Hàng</a>
+            </div>
 
-            <a asp-area="Admin" asp-controller="KhachHangs" asp-action="Index"
-               class="@(ViewContext.RouteData.Values["controller"]?.ToString() == "KhachHangs" ? "active" : "")">👤 Khách Hàng</a>
-
-            <a asp-area="Admin" asp-controller="GioHang" asp-action="Index"
-               class="@(ViewContext.RouteData.Values["controller"]?.ToString() == "GioHang" ? "active" : "")">🛒 Giỏ Hàng</a>
-
-            <a asp-area="Admin" asp-controller="DonHang" asp-action="Index"
-               class="@(ViewContext.RouteData.Values["controller"]?.ToString() == "DonHang" ? "active" : "")">🧾 Đơn Hàng</a>
-        </div>
-
-        <div class="mode-toggle" onclick="toggleMode()">🌙 Chế độ tối</div>
-
-        <a asp-area="" asp-controller="Home" asp-action="Index" class="text-danger text-center mb-3">🚪 Đăng xuất</a>
-    </div>
-
-    <!-- Content -->
-    <div class="content">
-        <div class="container-fluid">
-            <div class="card p-4">
-                @RenderBody()
+            <div class="sidebar-bottom">
+                <div class="mode-toggle" onclick="toggleMode()">🌙 Chế độ tối</div>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="logout-btn text-danger mt-3">
+                    🚪 Đăng xuất
+                </a>
             </div>
         </div>
+
+        <!-- Hamburger Button -->
+        <button class="btn btn-dark d-md-none m-2" id="hamburgerBtn">
+            <i class="bi bi-list"></i>
+        </button>
+
+        <!-- Content -->
+        <div class="content d-flex flex-column flex-grow-1">
+            <div class="container-fluid flex-grow-1">
+                <div class="card p-4">
+                    @RenderBody()
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="mt-auto">
+                <small>© 2025 - Hệ thống quản trị bán sách</small>
+            </footer>
+        </div>
     </div>
 
-    <footer>
-        <small>© 2025 - Hệ thống quản trị bán sách</small>
-    </footer>
-
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function toggleMode() {
-            document.body.classList.toggle("dark");
-            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const sidebar = document.getElementById('sidebar');
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
 
-            // Phát event để các page con biết
-            document.dispatchEvent(new Event("darkModeChanged"));
-        }
-
-
-
-        // load trạng thái dark/light khi reload
-        window.onload = function () {
-            if (localStorage.getItem("darkMode") === "true") {
-                document.body.classList.add("dark");
-            }
-        }
-
-        function updateTablesDarkMode() {
-            const dark = document.body.classList.contains('dark');
-
-            document.querySelectorAll('table').forEach(table => {
-                // Header
-                table.querySelectorAll('thead').forEach(thead => {
-                    thead.style.backgroundColor = dark ? '#343a40' : '#212529'; // màu header
-                    thead.style.color = '#fff';
-                });
-
-                // Body
-                table.querySelectorAll('tbody tr').forEach(tr => {
-                    tr.style.backgroundColor = dark ? '#2c2c2c' : '#fff';
-                    tr.style.color = dark ? '#f1f1f1' : '#000';
-                });
-            });
-        }
-
-        // Lắng nghe sự kiện darkModeChanged từ toggle
-        document.addEventListener("darkModeChanged", updateTablesDarkMode);
-
-        // Load trạng thái lần đầu
-        window.addEventListener("DOMContentLoaded", () => {
-            if (localStorage.getItem("darkMode") === 'true') document.body.classList.add('dark');
-            updateTablesDarkMode();
+    if (sidebar && hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('show-sidebar');
         });
+    }
 
-    </script>
+    // Dark mode
+    if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark");
+    }
+});
+</script>
+
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>

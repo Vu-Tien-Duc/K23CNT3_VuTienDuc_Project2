@@ -3,35 +3,41 @@
     ViewData["Title"] = "Tạo Đơn Hàng";
 }
 
-<h2>Tạo Đơn Hàng</h2>
+<h2 class="mb-4">➕ Tạo Đơn Hàng</h2>
 
-<form asp-action="Create" method="post">
-    <div class="mb-3">
-        <label>Khách hàng</label>
-        <select asp-for="MaKH" class="form-select"
-                asp-items="@(new SelectList(ViewBag.KhachHangs, "MaKH", "HoTen"))">
-            <option value="">--Chọn khách hàng--</option>
-        </select>
+<div class="shadow-sm p-4 bg-white rounded">
+    <form asp-action="Create" method="post">
+        <div class="mb-3">
+            <label class="form-label">Khách hàng</label>
+            <select asp-for="MaKH" class="form-select"
+                    asp-items="@(new SelectList(ViewBag.KhachHangs, "MaKH", "HoTen"))">
+                <option value="">-- Chọn khách hàng --</option>
+            </select>
+        </div>
 
-    </div>
+        <div class="mb-3">
+            <label class="form-label">Ngày đặt</label>
+            <input asp-for="NgayDat" class="form-control" type="datetime-local"
+                   value="@(Model.NgayDat?.ToString("yyyy-MM-ddTHH:mm") ?? DateTime.Now.ToString("yyyy-MM-ddTHH:mm"))" />
+        </div>
 
-    <div class="mb-3">
-        <label>Ngày đặt</label>
-        <input asp-for="NgayDat" class="form-control" type="datetime-local"
-               value="@(Model.NgayDat?.ToString("yyyy-MM-ddTHH:mm"))" />
-    </div>
+        <div class="mb-3">
+            <label class="form-label">Tổng tiền</label>
+            <input asp-for="TongTien" class="form-control" placeholder="Nhập tổng tiền đơn hàng" />
+        </div>
 
-    <div class="mb-3">
-        <label>Tổng tiền</label>
-        <input asp-for="TongTien" class="form-control" />
-    </div>
+        <div class="mb-3">
+            <label class="form-label">Trạng thái</label>
+            <select asp-for="TrangThai" class="form-select" asp-items="new SelectList(ViewBag.TrangThaiList)">
+                <option value="">-- Chọn trạng thái --</option>
+            </select>
+        </div>
 
-    <div class="mb-3">
-        <label>Trạng thái</label>
-        <select asp-for="TrangThai" class="form-select" asp-items="new SelectList(ViewBag.TrangThaiList)">
-        </select>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Lưu</button>
-    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
-</form>
+        <button type="submit" class="btn btn-success">
+            <i class="bi bi-save"></i> Lưu
+        </button>
+        <a asp-action="Index" class="btn btn-secondary ms-2">
+            <i class="bi bi-x-circle"></i> Hủy
+        </a>
+    </form>
+</div>

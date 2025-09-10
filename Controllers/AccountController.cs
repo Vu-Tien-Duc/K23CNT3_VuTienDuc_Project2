@@ -100,6 +100,75 @@ namespace QLBanSachWeb.Controllers
             TempData["Success"] = $"Mật khẩu mới của bạn là: {newPassword}";
             return View();
         }
+        // ================= SETTINGS =================
+        public IActionResult Settings()
+        {
+            var maKH = HttpContext.Session.GetInt32("MaKH");
+            if (maKH == null) return RedirectToAction("Login");
+
+            var user = _context.KhachHangs.Find(maKH);
+            if (user == null) return NotFound();
+
+            return View(user);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateProfile(KhachHang model)
+        {
+            var maKH = HttpContext.Session.GetInt32("MaKH");
+            if (maKH == null) return RedirectToAction("Login");
+
+            var user = _context.KhachHangs.Find(maKH);
+            if (user == null) return NotFound();
+
+            user.HoTen = model.HoTen;
+            user.Email = model.Email;
+            user.SDT = model.SDT;
+            user.DiaChi = model.DiaChi;
+
+            _context.Update(user);
+            _context.SaveChanges();
+
+            TempData["Success"] = "Cập nhật thông tin thành công!";
+            return RedirectToAction("Settings");
+        }
+
+        // ================= CHANGE PASSWORD =================
+        [HttpPost]
+        public IActionResult ChangePassword(string currentPassword, string newPassword, string confirmPassword)
+        {
+            var maKH = HttpContext.Session.GetInt32("MaKH");
+            if (maKH == null) return RedirectToAction("Login");
+
+            var user = _context.KhachHangs.Find(maKH);
+            if (user == null) return NotFound();
+
+            var currentHashed = HashPassword(currentPassword);
+            if (user.MatKhau != currentHashed)
+            {
+                TempData["Error"] = "Mật khẩu hiện tại không đúng!";
+                return RedirectToAction("Settings");
+            }
+
+            if (newPassword != confirmPassword)
+            {
+                TempData["Error"] = "Mật khẩu xác nhận không khớp!";
+                return RedirectToAction("Settings");
+            }
+
+            if (newPassword.Length < 6)
+            {
+                TempData["Error"] = "Mật khẩu mới phải lớn hơn hoặc bằng 6 ký tự!";
+                return RedirectToAction("Settings");
+            }
+
+            user.MatKhau = HashPassword(newPassword);
+            _context.Update(user);
+            _context.SaveChanges();
+
+            TempData["Success"] = "Đổi mật khẩu thành công!";
+            return RedirectToAction("Settings");
+        }
 
         // ================= UTILS =================
         private string HashPassword(string password)

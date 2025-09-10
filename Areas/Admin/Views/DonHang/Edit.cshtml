@@ -3,36 +3,51 @@
     ViewData["Title"] = "Chỉnh sửa Đơn Hàng";
 }
 
-<h2>Chỉnh sửa Đơn Hàng</h2>
+<h2 class="mb-4">✏️ Chỉnh sửa Đơn Hàng</h2>
 
-<form asp-action="Edit" method="post">
+<form asp-action="Edit" method="post" class="shadow-sm p-4 bg-white rounded">
     <input type="hidden" asp-for="MaDH" />
 
     <div class="mb-3">
-        <label>Khách hàng</label>
+        <label asp-for="MaKH" class="form-label">Khách hàng</label>
         <select asp-for="MaKH" class="form-select"
                 asp-items="@(new SelectList(ViewBag.KhachHangs, "MaKH", "HoTen", Model.MaKH))">
+            <option value="">-- Chọn khách hàng --</option>
         </select>
-
+        <span asp-validation-for="MaKH" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
-        <label>Ngày đặt</label>
+        <label asp-for="NgayDat" class="form-label">Ngày đặt</label>
         <input asp-for="NgayDat" class="form-control" type="datetime-local"
                value="@(Model.NgayDat?.ToString("yyyy-MM-ddTHH:mm"))" />
+        <span asp-validation-for="NgayDat" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
-        <label>Tổng tiền</label>
+        <label asp-for="TongTien" class="form-label">Tổng tiền</label>
         <input asp-for="TongTien" class="form-control" />
+        <span asp-validation-for="TongTien" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
-        <label>Trạng thái</label>
+        <label asp-for="TrangThai" class="form-label">Trạng thái</label>
         <select asp-for="TrangThai" class="form-select" asp-items="new SelectList(ViewBag.TrangThaiList)">
+            <option value="">-- Chọn trạng thái --</option>
         </select>
+        <span asp-validation-for="TrangThai" class="text-danger"></span>
     </div>
 
-    <button type="submit" class="btn btn-success">Cập nhật</button>
-    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+    <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-success">
+            <i class="bi bi-save"></i> Cập nhật
+        </button>
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="bi bi-x-circle"></i> Hủy
+        </a>
+    </div>
 </form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
