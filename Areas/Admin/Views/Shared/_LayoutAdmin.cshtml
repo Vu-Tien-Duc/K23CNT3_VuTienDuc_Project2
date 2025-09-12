@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Quản Trị</title>
-
+   
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/admin-darkmode.css" />
@@ -41,7 +41,10 @@
             </div>
 
             <div class="sidebar-bottom">
-                <div class="mode-toggle" onclick="toggleMode()">🌙 Chế độ tối</div>
+                <div class="mode-toggle" onclick="toggleMode()">
+                    <i class="bi bi-moon"></i>
+                    <span>Chế độ tối</span>
+                </div>
                 <a asp-area="" asp-controller="Home" asp-action="Index" class="logout-btn text-danger mt-3">
                     🚪 Đăng xuất
                 </a>
@@ -67,25 +70,56 @@
             </footer>
         </div>
     </div>
-
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
- <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const sidebar = document.getElementById('sidebar');
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Dark mode mặc định theo localStorage
+            if (localStorage.getItem("darkMode") === "true") {
+                document.body.classList.add("dark");
+            }
 
-    if (sidebar && hamburgerBtn) {
-        hamburgerBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('show-sidebar');
+            // Toggle dark mode
+            window.toggleMode = function () {
+                document.body.classList.toggle("dark");
+                localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+                document.dispatchEvent(new Event("darkModeChanged"));
+            };
+
+            // Hàm áp dụng dark mode cho toàn trang
+            function applyDarkMode() {
+                const dark = document.body.classList.contains("dark");
+
+                // Card
+                document.querySelectorAll(".card").forEach(c => {
+                    c.style.transition = "background-color 0.5s, color 0.5s";
+                    c.style.backgroundColor = dark ? "#333" : "#fff";
+                    c.style.color = dark ? "#f1f1f1" : "#000";
+                });
+
+                // Table
+                document.querySelectorAll("table").forEach(t => {
+                    t.style.transition = "background-color 0.5s, color 0.5s";
+                    t.style.backgroundColor = dark ? "#2a2a2a" : "#fff";
+                    t.style.color = dark ? "#f1f1f1" : "#000";
+                });
+
+                // Form control
+                document.querySelectorAll(".form-control").forEach(fc => {
+                    fc.style.transition = "background-color 0.5s, color 0.5s";
+                    fc.style.backgroundColor = dark ? "#333" : "#fff";
+                    fc.style.color = dark ? "#f1f1f1" : "#000";
+                });
+            }
+
+            // Lắng nghe sự kiện đổi mode
+            document.addEventListener("darkModeChanged", applyDarkMode);
+
+            // Load lần đầu
+            applyDarkMode();
         });
-    }
+    </script>
 
-    // Dark mode
-    if (localStorage.getItem("darkMode") === "true") {
-        document.body.classList.add("dark");
-    }
-});
-</script>
+
 
 
     @RenderSection("Scripts", required: false)

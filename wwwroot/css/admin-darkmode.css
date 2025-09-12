@@ -3,7 +3,43 @@ table, table tbody tr, table tbody td, table thead th {
     transition: background-color 0.5s, color 0.5s;
 }
 
-    /* Ví dụ thêm hover row mượt */
+    /* Hover row mượt */
     table tbody tr:hover {
         transition: background-color 0.3s;
     }
+
+/* ===== DARK MODE TABLE FIX ===== */
+body.dark .table {
+    background-color: #2a2a2a;
+    color: #fff;
+    border-color: #444;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+    /* Thead */
+    body.dark .table thead {
+        background-color: #333;
+        color: #fff;
+    }
+
+    /* Dòng bình thường */
+    body.dark .table tbody tr {
+        background-color: #2a2a2a;
+    }
+
+/* Dòng chẵn (nếu dùng table-striped) */
+body.dark .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #2f2f2f;
+}
+
+/* Hover row */
+body.dark .table-hover tbody tr:hover {
+    background-color: #444 !important; /* sáng hơn nền để nổi bật */
+    color: #fff !important;
+}
+
+/* Border cho cell */
+body.dark .table td,
+body.dark .table th {
+    border-color: #444;
+}

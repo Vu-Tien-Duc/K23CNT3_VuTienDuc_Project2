@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sd0N37qaE2rYtcp3A9V9EINFSsnS//DA7p4qVG/Z+8w=",
+  "Hash": "SY6ONdSfWP8HLPxh6OS8LOoM1bYsebMDmq402uJBNFo=",
   "Source": "QLBanSachWeb",
   "BasePath": "_content/QLBanSachWeb",
   "Mode": "Default",
@@ -300,6 +300,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\chao5.jpg"
+    },
+    {
+      "Identity": "D:\\Project2\\QLBanSachWeb\\wwwroot\\images\\chao6.jpg",
+      "SourceId": "QLBanSachWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project2\\QLBanSachWeb\\wwwroot\\",
+      "BasePath": "_content/QLBanSachWeb",
+      "RelativePath": "images/chao6.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\chao6.jpg"
     },
     {
       "Identity": "D:\\Project2\\QLBanSachWeb\\wwwroot\\images\\chi pheo.jpg",
