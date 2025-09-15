@@ -4,47 +4,62 @@
     ViewData["Title"] = "Đăng ký";
 }
 
-<h2 class="mb-4">Đăng ký tài khoản</h2>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h3 class="text-center text-success mb-4">Đăng ký tài khoản</h3>
 
-<form asp-action="SignUp" method="post">
-    <div class="mb-3">
-        <label asp-for="HoTen" class="form-label"></label>
-        <input asp-for="HoTen" class="form-control" />
-        <span asp-validation-for="HoTen" class="text-danger"></span>
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger">@ViewBag.Error</div>
+                    }
+
+                    <form asp-action="SignUp" method="post">
+                        <div class="mb-3">
+                            <label asp-for="HoTen" class="form-label"></label>
+                            <input asp-for="HoTen" class="form-control" placeholder="Nhập họ tên" />
+                            <span asp-validation-for="HoTen" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label"></label>
+                            <input asp-for="Email" class="form-control" placeholder="Nhập email" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="MatKhau" class="form-label"></label>
+                            <input asp-for="MatKhau" type="password" class="form-control" placeholder="Tối thiểu 6 ký tự" />
+                            <span asp-validation-for="MatKhau" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="SDT" class="form-label"></label>
+                            <input asp-for="SDT" class="form-control" placeholder="Nhập số điện thoại" />
+                            <span asp-validation-for="SDT" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="DiaChi" class="form-label"></label>
+                            <input asp-for="DiaChi" class="form-control" placeholder="Nhập địa chỉ" />
+                            <span asp-validation-for="DiaChi" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid mb-3">
+                            <button type="submit" class="btn btn-success">Đăng ký</button>
+                        </div>
+
+                        <div class="text-center">
+                            <a asp-action="Login" class="btn btn-link">Đã có tài khoản? Đăng nhập</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="mb-3">
-        <label asp-for="Email" class="form-label"></label>
-        <input asp-for="Email" class="form-control" />
-        <span asp-validation-for="Email" class="text-danger"></span>
-    </div>
-
-    <div class="mb-3">
-        <label asp-for="MatKhau" class="form-label"></label>
-        <input asp-for="MatKhau" type="password" class="form-control" placeholder="Tối thiểu 6 ký tự" />
-        <span asp-validation-for="MatKhau" class="text-danger"></span>
-    </div>
-
-    <div class="mb-3">
-        <label asp-for="SDT" class="form-label"></label>
-        <input asp-for="SDT" class="form-control" />
-        <span asp-validation-for="SDT" class="text-danger"></span>
-    </div>
-
-    <div class="mb-3">
-        <label asp-for="DiaChi" class="form-label"></label>
-        <input asp-for="DiaChi" class="form-control" />
-        <span asp-validation-for="DiaChi" class="text-danger"></span>
-    </div>
-
-    @if (ViewBag.Error != null)
-    {
-        <div class="alert alert-danger">@ViewBag.Error</div>
-    }
-
-    <button type="submit" class="btn btn-success">Đăng ký</button>
-    <a asp-action="Login" class="btn btn-link">Đăng nhập</a>
-</form>
+</div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

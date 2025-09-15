@@ -12,53 +12,26 @@ public class HomeController : Controller
     }
 
     // GET: /Home/Index
-    public async Task<IActionResult> Index(string? searchString, int? categoryId, string? sortOrder, int page = 1, int pageSize = 16)
+    public async Task<IActionResult> Index()
     {
-        var sach = _context.Saches.AsQueryable();
+        // Sách bán chạy: top 8 theo số lượng bán trong CT_DonHang
+        var bestSellers = await _context.Saches
+            .Include(s => s.CT_DonHangs)
+            .OrderByDescending(s => s.CT_DonHangs.Sum(ct => (int?)ct.SoLuong) ?? 0)
+            .Take(8)
+            .ToListAsync();
 
-        // Lọc theo từ khóa
-        if (!string.IsNullOrEmpty(searchString))
-        {
-            sach = sach.Where(s => s.TenSach.Contains(searchString));
-        }
+        // Sách nổi bật: ví dụ lấy 8 sách mới nhất (theo năm XB)
+        var featuredBooks = await _context.Saches
+            .OrderByDescending(s => s.NamXB ?? 0)
+            .Take(8)
+            .ToListAsync();
 
-        // Lọc theo thể loại
-        if (categoryId.HasValue)
-        {
-            sach = sach.Where(s => s.MaLoai == categoryId);
-        }
+        ViewBag.BestSellers = bestSellers;
+        ViewBag.FeaturedBooks = featuredBooks;
 
-        // Sắp xếp
-        ViewBag.CurrentSort = sortOrder;
-        ViewBag.PriceSort = sortOrder == "price_asc" ? "price_desc" : "price_asc";
-
-        switch (sortOrder)
-        {
-            case "price_asc":
-                sach = sach.OrderBy(s => s.GiaBan);
-                break;
-            case "price_desc":
-                sach = sach.OrderByDescending(s => s.GiaBan);
-                break;
-            default:
-                sach = sach.OrderBy(s => s.TenSach);
-                break;
-        }
-
-        // Phân trang
-        int totalItems = await sach.CountAsync();
-        var items = await sach.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
-
-        ViewBag.TotalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
-        ViewBag.CurrentPage = page;
-
-        // Thể loại
-        ViewBag.Categories = await _context.LoaiSaches.ToListAsync();
-        ViewBag.SelectedCategory = categoryId;
-
-        return View(items);
+        return View();
     }
-
 
     // GET: /Home/Details/5
     public async Task<IActionResult> Details(int? id)
@@ -66,7 +39,7 @@ public class HomeController : Controller
         if (id == null) return NotFound();
 
         var sach = await _context.Saches
-            .Include(s => s.MaLoaiNavigation) // để lấy tên thể loại
+            .Include(s => s.MaLoaiNavigation) // lấy thêm thể loại
             .FirstOrDefaultAsync(m => m.MaSach == id);
 
         if (sach == null) return NotFound();

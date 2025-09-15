@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QLBanSachWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b2f073d24a48008a59a1c1becb008cd86522fca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32d51735b5e68c8ee5f4eb5bf168413f301a327d")]
 [assembly: System.Reflection.AssemblyProductAttribute("QLBanSachWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QLBanSachWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

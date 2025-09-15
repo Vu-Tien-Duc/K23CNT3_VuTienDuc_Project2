@@ -2,29 +2,45 @@
     ViewData["Title"] = "Đăng nhập";
 }
 
-<h2 class="mb-4">Đăng nhập</h2>
-@if (TempData["Success"] != null)
-{
-    <div class="alert alert-success">@TempData["Success"]</div>
-}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h3 class="text-center text-primary mb-4">Đăng nhập</h3>
 
-<form asp-action="Login" method="post">
-    <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" name="email" class="form-control" placeholder="Nhập email" required />
+                    @if (TempData["Success"] != null)
+                    {
+                        <div class="alert alert-success">@TempData["Success"]</div>
+                    }
+
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger">@ViewBag.Error</div>
+                    }
+
+                    <form asp-action="Login" method="post">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" name="email" class="form-control" placeholder="Nhập email" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Mật khẩu</label>
+                            <input type="password" name="password" class="form-control" placeholder="Nhập mật khẩu" required />
+                        </div>
+
+                        <div class="d-grid mb-3">
+                            <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                        </div>
+
+                        <div class="text-center">
+                            <a asp-action="SignUp" class="btn btn-link">Đăng ký</a> |
+                            <a asp-action="ForgotPassword" class="btn btn-link">Quên mật khẩu?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="mb-3">
-        <label for="password" class="form-label">Mật khẩu</label>
-        <input type="password" name="password" class="form-control" placeholder="Nhập mật khẩu" required />
-    </div>
-
-    @if (ViewBag.Error != null)
-    {
-        <div class="alert alert-danger">@ViewBag.Error</div>
-    }
-
-    <button type="submit" class="btn btn-primary">Đăng nhập</button>
-    <a asp-action="SignUp" class="btn btn-link">Đăng ký</a>
-    <a asp-action="ForgotPassword" class="btn btn-link">Quên mật khẩu?</a>
-</form>
+</div>
