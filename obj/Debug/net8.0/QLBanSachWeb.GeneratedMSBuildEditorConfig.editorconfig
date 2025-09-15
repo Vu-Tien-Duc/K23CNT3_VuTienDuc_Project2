@@ -17,175 +17,177 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = QLBanSachWeb
 build_property.RootNamespace = QLBanSachWeb
-build_property.ProjectDir = D:\Project2\QLBanSachWeb\
+build_property.ProjectDir = D:\Project2\phamvanvu_project2\QLBanSachWeb\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Project2\QLBanSachWeb
+build_property.MSBuildProjectDirectory = D:\Project2\phamvanvu_project2\QLBanSachWeb
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
 
-[D:/Project2/QLBanSachWeb/Areas/Admin/Views/AdminAccount/Login.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Areas/Admin/Views/AdminAccount/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5BY2NvdW50XExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Areas/Admin/Views/DonHang/Create.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Areas/Admin/Views/DonHang/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRG9uSGFuZ1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Areas/Admin/Views/DonHang/Details.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Areas/Admin/Views/DonHang/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRG9uSGFuZ1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Areas/Admin/Views/DonHang/Edit.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Areas/Admin/Views/DonHang/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRG9uSGFuZ1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Areas/Admin/Views/DonHang/Index.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Areas/Admin/Views/DonHang/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRG9uSGFuZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Areas/Admin/Views/GioHang/Details.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Areas/Admin/Views/GioHang/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2lvSGFuZ1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Areas/Admin/Views/GioHang/Index.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Areas/Admin/Views/GioHang/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2lvSGFuZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Areas/Admin/Views/Home/Index.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Areas/Admin/Views/KhachHangs/Create.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Areas/Admin/Views/KhachHangs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcS2hhY2hIYW5nc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Areas/Admin/Views/KhachHangs/Details.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Areas/Admin/Views/KhachHangs/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcS2hhY2hIYW5nc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Areas/Admin/Views/KhachHangs/Edit.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Areas/Admin/Views/KhachHangs/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcS2hhY2hIYW5nc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Areas/Admin/Views/KhachHangs/Index.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Areas/Admin/Views/KhachHangs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcS2hhY2hIYW5nc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Areas/Admin/Views/LoaiSaches/Create.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Areas/Admin/Views/LoaiSaches/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9haVNhY2hlc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Areas/Admin/Views/LoaiSaches/Details.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Areas/Admin/Views/LoaiSaches/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9haVNhY2hlc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Areas/Admin/Views/LoaiSaches/Edit.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Areas/Admin/Views/LoaiSaches/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9haVNhY2hlc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Areas/Admin/Views/LoaiSaches/Index.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Areas/Admin/Views/LoaiSaches/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9haVNhY2hlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Areas/Admin/Views/Saches/Create.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Areas/Admin/Views/Saches/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2FjaGVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Areas/Admin/Views/Saches/Details.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Areas/Admin/Views/Saches/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2FjaGVzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Areas/Admin/Views/Saches/Edit.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Areas/Admin/Views/Saches/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2FjaGVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Areas/Admin/Views/Saches/Index.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Areas/Admin/Views/Saches/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2FjaGVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Areas/Admin/Views/_ViewImports.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Areas/Admin/Views/_ViewStart.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Views/Account/ForgotPassword.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Views/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Views/Account/Login.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Views/Account/Settings.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Views/Account/Settings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTZXR0aW5ncy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Views/Account/Signup.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Views/Account/Signup.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTaWdudXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Views/Cart/Checkout.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Views/Cart/Checkout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDaGVja291dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Views/Cart/Index.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Views/Cart/MyOrders.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Views/Cart/MyOrders.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxNeU9yZGVycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Views/Cart/OrderSuccess.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Views/Cart/OrderSuccess.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxPcmRlclN1Y2Nlc3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Views/Contact/Index.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Views/Contact/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Views/Home/Details.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Views/Home/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Views/Home/Index.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Views/Sach/Details.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Views/Sach/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FjaFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Views/Sach/Index.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Views/Sach/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FjaFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Views/Shared/Error.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Views/_ViewImports.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Views/_ViewStart.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project2/QLBanSachWeb/Views/Shared/_Layout.cshtml]
+[D:/Project2/phamvanvu_project2/QLBanSachWeb/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-osowq4yljz
